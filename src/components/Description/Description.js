@@ -3,7 +3,7 @@ import './Description.css';
 import banner from '../../images/banner-short.png';
 
 function Description() {
-  return(
+  return (
     <section className='description'>
       <div className='description__container'>
         <h1 className='description__title'>Специальные монтажные комплекты для профессиональной установки межкомнатных дверей</h1>
