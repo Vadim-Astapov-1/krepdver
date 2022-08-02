@@ -1,4 +1,5 @@
 .complete-set__card {
+  margin: 0 auto;
   max-width: 344px;
   display: flex;
   flex-direction: column;

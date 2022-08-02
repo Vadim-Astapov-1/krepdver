@@ -6,7 +6,10 @@ function CompleteSetCard({name, price, description, img}) {
 
   function handleCountClick(evt) {
     if(evt.target.id === 'complete-set-btn-up') {
-      console.log('more')
+      if(count === 99) {
+        return;
+      }
+
       return setCount(count + 1);
     }
 
