@@ -6,7 +6,7 @@ function CompleteSetCard({name, price, description, img, onAddInCart}) {
   const [priceProduct, setPriceProduct] = useState(0);
 
   function handleCountClick(evt) {
-    if(evt.target.id === 'complete-set-btn-up') {
+    if(evt.target.id === 'set-card-btn-up') {
       if(count === 99) {
         return;
       }
@@ -42,22 +42,22 @@ function CompleteSetCard({name, price, description, img, onAddInCart}) {
   }, [price]);
 
   return(
-    <article className='complete-set__card'>
-      <img className='complete-set__img' src={img} alt={name}></img>
-      <h3 className='complete-set__title'>{name}</h3>
-      <div className='complete-set__info'>
-        <p className='complete-set__price'>{`Цена: ${priceProduct} руб`}</p>
-        <button className='complete-set__btn-info'>Подробнее</button>
+    <article className='set-card'>
+      <img className='set-card__img' src={img} alt={name}></img>
+      <h3 className='set-card__title'>{name}</h3>
+      <div className='set-card__info'>
+        <p className='set-card__price'>{`Цена: ${priceProduct} руб`}</p>
+        <button className='set-card__btn-info'>Подробнее</button>
       </div>
-      <p className='complete-set__description'>{description}</p>
-      <form className='complete-set__btn-container' onSubmit={handleCardSubmit}>
-        <div className='complete-set__calculator'>
-          <button type='button' className='complete-set__btn-up' id='complete-set-btn-up' onClick={handleCountClick}></button>
-          <p className='complete-set__count'>{count}</p>
-          <p className='complete-set__count-text'>шт</p>
-          <button type='button' className='complete-set__btn-under' id='complete-set-btn-under' onClick={handleCountClick}></button>
+      <p className='set-card__description'>{description}</p>
+      <form className='set-card__btn-container' onSubmit={handleCardSubmit}>
+        <div className='set-card__calculator'>
+          <button type='button' className='set-card__btn-up' id='set-card-btn-up' onClick={handleCountClick}></button>
+          <p className='set-card__count'>{count}</p>
+          <p className='set-card__count-text'>шт</p>
+          <button type='button' className='set-card__btn-under' id='set-card-btn-under' onClick={handleCountClick}></button>
         </div>
-        <button type='submit' className='complete-set__btn' onSubmit={handleCardSubmit}>Добавить в корзину</button>
+        <button type='submit' className='set-card__btn' onSubmit={handleCardSubmit}>Добавить в корзину</button>
       </form>
     </article>
   );
