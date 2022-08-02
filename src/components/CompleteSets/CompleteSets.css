@@ -20,13 +20,12 @@
 }
 
 .complete-sets__card-list {
-  height: 1000px;
   padding-top: 34px;
   max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(271px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
   grid-template-rows: auto;
-  gap: 31px 72px;
+  gap: 34px 77px;
 }
 
 @media all and (max-width: 1280px) {
