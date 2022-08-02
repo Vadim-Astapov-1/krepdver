@@ -49,6 +49,11 @@
   color: #8B9499;
   border: 0;
   background: transparent;
+  transition: 0.3s;
+}
+
+.complete-set__btn-info:hover {
+  opacity: 0.7;
 }
 
 .complete-set__description {
@@ -71,7 +76,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .complete-set__btn-container:hover {

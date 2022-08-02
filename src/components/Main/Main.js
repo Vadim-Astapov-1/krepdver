@@ -7,11 +7,11 @@ import Advantages from '../Advantages/Advantages';
 import Videos from '../Videos/Videos';
 import Map from '../Map/Map';
 
-function Main() {
+function Main({ handleCardSubmit }) {
   return(
     <main className='content'>
       <Description />
-      <CompleteSets />
+      <CompleteSets handleCardSubmit={handleCardSubmit} />
       <Pistols />
       <Advantages />
       <Videos />

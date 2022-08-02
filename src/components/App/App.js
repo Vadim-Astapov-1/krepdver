@@ -5,10 +5,14 @@ import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 
 function App() {
+  function handleCardSubmit({ name, count, price }) {
+    console.log(`Добавлен товар в корзину ${name} ${count} шт, цена: ${price}`);
+  }
+
   return (
     <div className="app">
       <Header />
-      <Main />
+      <Main handleCardSubmit={handleCardSubmit} />
       <Footer />
     </div>
   );
