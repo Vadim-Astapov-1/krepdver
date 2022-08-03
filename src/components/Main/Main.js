@@ -12,7 +12,7 @@ function Main({ handleCardSubmit }) {
     <main className='content'>
       <Description />
       <CompleteSets handleCardSubmit={handleCardSubmit} />
-      <Extra />
+      <Extra handleCardSubmit={handleCardSubmit} />
       <Advantages />
       <Videos />
       <Map />
