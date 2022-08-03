@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.extra__container {
+  max-width: 100%;
+}
+
 .extra__title {
   max-width: 100%;
   margin: 0;

@@ -24,7 +24,7 @@
   z-index: 2;
 }
 
-.card-form__btn-up {
+.card-form__btn-triangle {
   width: 18px;
   height: 14px;
   background: 0;
@@ -35,9 +35,15 @@
   border: 0;
   transition: 0.5s;
   opacity: 1;
+  cursor: pointer;
 }
 
-.card-form__btn-up:hover {
+.card-form__btn-triangle_type_under {
+  transform: rotate(180deg);
+  grid-row: 3/4;
+}
+
+.card-form__btn-triangle:hover {
   opacity: 0.5;
 }
 
@@ -52,6 +58,7 @@
   color: #ffffff;
   grid-row: 2/3;
   text-align: center;
+  cursor: default;
 }
 
 .card-form__count-text {
@@ -63,25 +70,7 @@
   line-height: 22px;
   color: #ffffff;
   grid-row: 2/3;
-}
-
-.card-form__btn-under {
-  width: 18px;
-  height: 14px;
-  background: 0;
-  background-image: url('../../images/triangle.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  border: 0;
-  transition: 0.5s;
-  opacity: 1;
-  transform: rotate(180deg);
-  grid-row: 3/4;
-}
-
-.card-form__btn-under:hover {
-  opacity: 0.5;
+  cursor: default;
 }
 
 .card-form__btn {
@@ -95,4 +84,5 @@
   border: 0;
   background: transparent;
   color: #ffffff;
+  cursor: pointer;
 }
