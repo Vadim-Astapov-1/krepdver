@@ -1,0 +1,98 @@
+.card-form {
+  max-width: 100%;
+  margin: 0;
+  border-radius: 30px;
+  background-color: #17B111;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.card-form:hover {
+  opacity: 0.8;
+}
+
+.card-form__calculator {
+  margin: 3px 0 3px 31px;
+  display: grid;
+  grid-template-columns: 1fr 33px;
+  grid-template-rows: repeat(3, min-content);
+  align-items: center;
+  gap: 4px 5px;
+  z-index: 2;
+}
+
+.card-form__btn-up {
+  width: 18px;
+  height: 14px;
+  background: 0;
+  background-image: url('../../images/triangle.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.card-form__btn-up:hover {
+  opacity: 0.5;
+}
+
+.card-form__count {
+  width: 21px;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  grid-row: 2/3;
+  text-align: center;
+}
+
+.card-form__count-text {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  grid-row: 2/3;
+}
+
+.card-form__btn-under {
+  width: 18px;
+  height: 14px;
+  background: 0;
+  background-image: url('../../images/triangle.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0;
+  transition: 0.5s;
+  opacity: 1;
+  transform: rotate(180deg);
+  grid-row: 3/4;
+}
+
+.card-form__btn-under:hover {
+  opacity: 0.5;
+}
+
+.card-form__btn {
+  max-width: 228px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 21px 47px 21px 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+}

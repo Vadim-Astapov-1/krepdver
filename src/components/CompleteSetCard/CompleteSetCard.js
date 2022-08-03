@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import './CompleteSetCard.css';
 
+import CardForm from '../CardForm/CardForm';
+
 function CompleteSetCard({name, price, description, img, onAddInCart}) {
   const [count, setCount] = useState(1);
   const [priceProduct, setPriceProduct] = useState(0);
 
   function handleCountClick(evt) {
-    if(evt.target.id === 'set-card-btn-up') {
+    if(evt.target.name === 'set-card-btn-up') {
       if(count === 99) {
         return;
       }
@@ -50,15 +52,7 @@ function CompleteSetCard({name, price, description, img, onAddInCart}) {
         <button className='set-card__btn-info'>Подробнее</button>
       </div>
       <p className='set-card__description'>{description}</p>
-      <form className='set-card__btn-container' onSubmit={handleCardSubmit}>
-        <div className='set-card__calculator'>
-          <button type='button' className='set-card__btn-up' id='set-card-btn-up' onClick={handleCountClick}></button>
-          <p className='set-card__count'>{count}</p>
-          <p className='set-card__count-text'>шт</p>
-          <button type='button' className='set-card__btn-under' id='set-card-btn-under' onClick={handleCountClick}></button>
-        </div>
-        <button type='submit' className='set-card__btn' onSubmit={handleCardSubmit}>Добавить в корзину</button>
-      </form>
+      <CardForm onSubmit={handleCardSubmit} onBtnClick={handleCountClick} count={count} place='set-card' />
     </article>
   );
 }

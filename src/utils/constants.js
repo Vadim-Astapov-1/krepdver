@@ -44,8 +44,8 @@ export const completeSetsList = [{
   img: setImg,
 },];
 
-export const pistolsList = [{
-  article: '590005',
+export const extraList = [{
+  article: '590004',
   name: 'Fomeron - профессиональные пистолеты для монтажной пены PREMIUM-класса',
   description: [
     'Исключительная герметичность! Могут стоять с навинченным баллоном пены до 4х месяцев!',
