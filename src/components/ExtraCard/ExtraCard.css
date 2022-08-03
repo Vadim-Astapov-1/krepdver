@@ -1,0 +1,76 @@
+.extra-card {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 32px;
+}
+
+.extra-card:last-child {
+  margin-bottom: 0;
+}
+
+.extra-card__img {
+  width: 353px;
+  height: 215px;
+}
+
+.extra-card__info {
+  max-width: 764px;
+  margin: 0 0 0 37px;
+  display: flex;
+  flex-direction: column;
+}
+
+.extra-card__title {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #17B111;
+}
+
+.extra-card__subtitle {
+  max-width: 100%;
+  margin: 10px 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #17B111;
+}
+
+.extra-card__paragraph {
+  max-width: 100%;
+  margin: 0 0 15px 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #17B111;
+}
+
+.extra-card__info-price {
+  max-width: 100%;
+  margin: 22px 0 0 0;
+  display: grid;
+  grid-template-columns: 210px 353px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.extra-card__price {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #617960;
+}
+
+
+
+

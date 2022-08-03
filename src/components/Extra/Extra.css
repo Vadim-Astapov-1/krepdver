@@ -1,11 +1,23 @@
 .extra {
-
+  max-width: 1184px;
+  margin: 53px auto 0 auto;
 }
 
 .extra__title {
-
+  max-width: 100%;
+  margin: 0;
+  padding: 0 0 12px 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  color: #17B111;
+  border-bottom: 3px solid #17B111;
 }
 
 .extra__card-list {
-
+  max-width: 100%;
+  margin-top: 41px;
+  display: flex;
+  flex-direction: column;
 }
