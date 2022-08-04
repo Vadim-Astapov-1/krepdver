@@ -1,0 +1,33 @@
+.contacs {
+  max-width: 226px;
+  display: grid;
+  grid-template-columns: 37px max-content;
+  gap: 7px 21px;
+  align-items: center;
+}
+
+.contacs__icon {
+  width: 37px;
+  height: 37px;
+}
+
+.contacs__text {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #17B111;
+}
+
+@media all and (max-width: 1024px) {
+  .contacs {
+    gap: 3px 5px;
+  }
+
+  .contacs__icon {
+    width: 32px;
+    height: 32px;
+  }
+}

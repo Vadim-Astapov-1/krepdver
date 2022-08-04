@@ -4,7 +4,7 @@ import Description from '../Description/Description';
 import CompleteSets from '../CompleteSets/CompleteSets';
 import Extra from '../Extra/Extra';
 import Advantages from '../Advantages/Advantages';
-import Videos from '../Videos/Videos';
+import Video from '../Video/Video';
 import Map from '../Map/Map';
 
 function Main({ handleCardSubmit }) {
@@ -14,7 +14,7 @@ function Main({ handleCardSubmit }) {
       <CompleteSets handleCardSubmit={handleCardSubmit} />
       <Extra handleCardSubmit={handleCardSubmit} />
       <Advantages />
-      <Videos />
+      <Video />
       <Map />
     </main>
   );

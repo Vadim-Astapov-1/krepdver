@@ -38,29 +38,6 @@
   grid-column: 2/3;
 }
 
-.header__column-contacs {
-  max-width: 226px;
-  display: grid;
-  grid-template-columns: 37px max-content;
-  gap: 7px 21px;
-  align-items: center;
-}
-
-.header__icon-contacs {
-  width: 37px;
-  height: 37px;
-}
-
-.header__text-contacs {
-  margin: 0;
-  padding: 0;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: #17B111;
-}
-
 @media all and (max-width: 1280px) {
   .header {
     max-width: calc(100% - 96px);
@@ -80,15 +57,6 @@
   .header__icon-delivery {
     width: 48px;
     height: 49px;
-  }
-
-  .header__column-contacs {
-    gap: 3px 5px;
-  }
-
-  .header__icon-contacs {
-    width: 32px;
-    height: 32px;
   }
 }
 
