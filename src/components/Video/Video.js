@@ -9,26 +9,26 @@ function Video() {
           <iframe
             className='video__iframe'
             src='https://www.youtube.com/embed/eK8cfGMZySc'
-            title='Как установить межкомнатную дверь'
-            frameBorder='0'
+            title='YouTube video player'
+            frameborder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
+            allowfullscreen
           ></iframe>
           <iframe
             className='video__iframe'
             src='https://www.youtube.com/embed/FKFllxbXSR8'
-            title='Установка дверей на СК 3'
-            frameBorder='0'
+            title='YouTube video player'
+            frameborder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
+            allowfullscreen
           ></iframe>
           <iframe
             className='video__iframe'
             src='https://www.youtube.com/embed/EOYErFyWZIw'
-            title='Установка дверей инструкция СМС К 1 0'
-            frameBorder='0'
+            title='YouTube video player'
+            frameborder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
+            allowfullscreen
           ></iframe>
         </div>
       </div>

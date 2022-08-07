@@ -13,6 +13,9 @@ function Main({ handleCardSubmit }) {
       <Description />
       <CompleteSets handleCardSubmit={handleCardSubmit} />
       <Extra handleCardSubmit={handleCardSubmit} />
+      <Advantages />
+      <Video />
+      <Map />
     </main>
   );
 }
