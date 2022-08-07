@@ -15,7 +15,7 @@
 }
 
 .extra-card__info {
-  max-width: 764px;
+  max-width: 794px;
   margin: 0 0 0 37px;
   display: flex;
   flex-direction: column;
@@ -58,12 +58,14 @@
   max-width: 100%;
   margin: 22px 0 0 0;
   display: grid;
-  grid-template-columns: 210px 353px;
+  grid-template-columns: 210px minmax(277px, 353px);
   align-items: center;
   justify-content: space-between;
 }
 
 .extra-card__price {
+  margin: 20px 0;
+  padding: 0;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -71,6 +73,34 @@
   color: #617960;
 }
 
+@media all and (max-width: 1024px) {
+  .extra-card__img {
+    width: 314px;
+    height: 202px;
+  }
+
+  .extra-card__info {
+    margin-left: 15px;
+  }
+
+  .extra-card__info-price {
+    margin-top: 2px;
+  }
+}
+
+@media all and (max-width: 940px) {
+  .extra-card__info-price {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 0;
+  }
+
+  .extra-card__price {
+    margin: 10px 0 20px 0;
+  }
+}
 
 
 

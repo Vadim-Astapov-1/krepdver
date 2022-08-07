@@ -24,7 +24,7 @@
   padding-top: 34px;
   max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(271px, 1fr));
   grid-template-rows: auto;
   gap: 34px 77px;
 }
@@ -32,5 +32,17 @@
 @media all and (max-width: 1280px) {
   .complete-sets {
     max-width: calc(100% - 96px);
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .complete-sets__title {
+    font-size: 26px;
+    line-height: 31px;
+  }
+
+  .complete-sets__card-list {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 30px 55px;
   }
 }

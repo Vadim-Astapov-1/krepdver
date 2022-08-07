@@ -66,3 +66,28 @@
   line-height: 22px;
   color: #17B111;
 }
+
+@media all and (max-width: 1024px) {
+  .set-card {
+    max-width: 268px;
+  }
+
+  .set-card__img {
+    height: 162px;
+  }
+
+  .set-card__title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@media all and (max-width: 940px) {
+  .set-card__info {
+    flex-direction: column-reverse;
+  }
+
+  .set-card__btn-info {
+    margin-bottom: 5px;
+  }
+}

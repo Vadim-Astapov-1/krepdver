@@ -13,7 +13,7 @@ function App() {
     <div className="app">
       <Header />
       <Main handleCardSubmit={handleCardSubmit} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

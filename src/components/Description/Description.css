@@ -14,6 +14,7 @@
 .description__img {
   width: 470px;
   height: 466px;
+  object-fit: cover;
 }
 
 .description__title {
@@ -38,7 +39,8 @@
 }
 
 .description__btn {
-  margin: 64px auto 83px 0;
+  /* margin-right 83px */
+  margin: 64px auto 0 0;
   border: 0;
   border-radius: 30px;
   background-color: #17B111;
@@ -58,5 +60,46 @@
 @media all and (max-width: 1280px) {
   .description {
     max-width: calc(100% - 96px);
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .description__img {
+    width: 330px;
+    height: 340px;
+  }
+
+  .description__title {
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .description__subtitle {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .description__btn {
+    margin-top: 19px;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 28px 30px;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .description__title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .description__subtitle {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .description__btn {
+    font-size: 22px;
+    line-height: 26px;
   }
 }

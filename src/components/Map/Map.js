@@ -3,9 +3,9 @@ import './Map.css';
 function Map() {
   return (
     <section className='map'>
-      <h2 className='map__title'>
+      <h1 className='map__title'>
         Крепежи для установки дверей также можно купить у наших партнеров
-      </h2>
+      </h1>
       <ul className='map__btn-list'>
         <li className='map__list-element'>
           <button type='button' className='map__btn'>

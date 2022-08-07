@@ -60,4 +60,10 @@
   }
 }
 
+@media all and (max-width: 930px) {
+  .header__column-delivery {
+    display: none;
+  }
+}
+
 
