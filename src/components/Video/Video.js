@@ -10,25 +10,25 @@ function Video() {
             className='video__iframe'
             src='https://www.youtube.com/embed/eK8cfGMZySc'
             title='YouTube video player'
-            frameborder='0'
+            frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowfullscreen
+            allowFullScreen
           ></iframe>
           <iframe
             className='video__iframe'
             src='https://www.youtube.com/embed/FKFllxbXSR8'
             title='YouTube video player'
-            frameborder='0'
+            frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowfullscreen
+            allowFullScreen
           ></iframe>
           <iframe
             className='video__iframe'
             src='https://www.youtube.com/embed/EOYErFyWZIw'
             title='YouTube video player'
-            frameborder='0'
+            frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </div>

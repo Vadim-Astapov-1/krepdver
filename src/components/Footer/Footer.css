@@ -21,6 +21,7 @@
 .footer__logo {
   width: 100%;
   height: 88px;
+  object-fit: contain;
 }
 
 .footer__copyright {
@@ -75,6 +76,23 @@
 .footer__img-link {
   width: 40px;
   height: 40px;
+}
+
+@media all and (max-width: 1280px) {
+  .footer__container {
+    max-width: calc(100% - 96px);
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .footer__column-view {
+    max-width: 240px;
+  }
+
+  .footer__columns {
+    max-width: 430px;
+    margin-left: 70px;
+  }
 }
 
 

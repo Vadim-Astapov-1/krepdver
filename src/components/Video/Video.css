@@ -25,7 +25,7 @@
 .video__list {
   max-width: 100%;
   display: grid;
-  grid-template-columns: minmax(432px, 552px) minmax(432px, 552px);
+  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
   gap: 72px 75px;
 }
 
@@ -38,5 +38,31 @@
 @media all and (max-width: 1280px) {
   .video__container {
     max-width: calc(100% - 96px);
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .video__title {
+    font-size: 52px;
+    line-height: 63px;
+    margin-bottom: 54px;
+  }
+
+  .video__list {
+    gap: 63px 59px;
+  }
+
+  .video__iframe {
+    height: 360px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .video__list {
+    gap: 50px 46px;
+  }
+
+  .video__iframe {
+    height: 300px;
   }
 }

@@ -60,3 +60,26 @@
   height: 400px;
   border: 0;
 }
+
+@media all and (max-width: 1024px) {
+  .map__title {
+    max-width: 667px;
+    font-size: 32px;
+    line-height: 39px;
+    margin-top: 72px;
+  }
+
+  .map__btn-list {
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .map__btn {
+    padding: 8px 0;
+  }
+
+  .map__iframe {
+    height: 360px;
+  }
+}
