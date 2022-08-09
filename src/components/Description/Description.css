@@ -133,26 +133,26 @@
 
 @media all and (max-width: 600px) {
   .description {
-    position: relative;
+    flex-direction: column-reverse;
+    align-items: center;
   }
 
   .description__img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0.3;
-    height: 239px;
-  }
-
-  .description__container {
-    position: relative;
-    z-index: 1;
-    max-width: 320px;
-    margin-left: 0;
+    width: 350px;
+    height: 350px;
+    margin-bottom: 20px;
   }
 
   .description__btn {
-    max-width: 100%;
-    margin-right: 0;
+    padding: 19px 40px;
+    margin-left: auto;
+  }
+
+  .description__title {
+    text-align: center;
+  }
+
+  .description__subtitle {
+    text-align: center;
   }
 }
