@@ -4,10 +4,11 @@
   grid-template-columns: 37px max-content;
   gap: 7px 21px;
   align-items: center;
+  align-self: start;
 }
 
 .contacs__icon {
-  width: 37px;
+  width: 100%;
   height: 37px;
 }
 
@@ -23,11 +24,28 @@
 
 @media all and (max-width: 1024px) {
   .contacs {
+    grid-template-columns: 32px max-content;
     gap: 3px 5px;
   }
 
   .contacs__icon {
-    width: 32px;
     height: 32px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .contacs {
+    max-width: 152px;
+    grid-template-columns: 18px max-content;
+    gap: 9px;
+  }
+
+  .contacs__icon {
+    height: 18px;
+  }
+
+  .contacs__text {
+    font-size: 12px;
+    line-height: 15px;
   }
 }

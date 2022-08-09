@@ -3,6 +3,7 @@
   margin: 103px auto 0 auto;
 }
 
+/* Для непрерываемого фона */
 .complete-sets__container {
   max-width: 100%;
   padding-bottom: 53px;
@@ -44,5 +45,28 @@
   .complete-sets__card-list {
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 30px 55px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .complete-sets {
+    max-width: calc(100% - 48px);
+    margin-top: 51px;
+  }
+
+  .complete-sets__title {
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 11px;
+  }
+
+  .complete-sets__card-list {
+    padding-top: 36px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 36px 55px;
+  }
+
+  .complete-sets__container {
+    padding-bottom: 41px;
   }
 }

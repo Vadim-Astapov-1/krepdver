@@ -5,6 +5,7 @@
 
 .extra__container {
   max-width: 100%;
+  padding-bottom: 87px;
 }
 
 .extra__title {
@@ -21,8 +22,6 @@
 
 .extra__card-list {
   max-width: 100%;
-  margin-top: 41px;
-  padding-bottom: 87px;
   display: flex;
   flex-direction: column;
 }
@@ -34,8 +33,28 @@
 }
 
 @media all and (max-width: 1024px) {
+  .extra__container {
+    padding-bottom: 67px;
+  }
+
   .extra__title {
     font-size: 26px;
     line-height: 31px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .extra {
+    max-width: calc(100% - 48px);
+  }
+
+  .extra__container {
+    padding-bottom: 45px;
+  }
+
+  .extra__title {
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 11px;
   }
 }

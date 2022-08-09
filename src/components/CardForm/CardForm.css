@@ -100,4 +100,25 @@
   }
 }
 
+@media all and (max-width: 768px) {
+  .card-form__calculator {
+    grid-template-columns: 1fr 29px;
+    gap: 3px 4px;
+  }
+
+  .card-form__count {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .card-form__count-text {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .card-form__btn {
+    padding: 18px 25px 18px 0;
+  }
+}
+
 

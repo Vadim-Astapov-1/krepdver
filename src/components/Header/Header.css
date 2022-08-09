@@ -12,6 +12,7 @@
   width: 368px;
   height: 102px;
   align-self: start;
+  object-fit: contain;
 }
 
 .header__column-delivery {
@@ -66,4 +67,22 @@
   }
 }
 
+@media all and (max-width: 768px) {
+  .header {
+    max-width: calc(100% - 48px);
+    padding-top: 15px;
+  }
+
+  .header__logo {
+    width: 270px;
+    height: 70px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .header__logo {
+    width: 230px;
+    height: 60px;
+  }
+}
 

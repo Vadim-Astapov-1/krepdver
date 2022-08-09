@@ -66,3 +66,28 @@
     height: 300px;
   }
 }
+
+@media all and (max-width: 768px) {
+  .video__container {
+    max-width: calc(100% - 48px);
+    padding-top: 27px;
+  }
+
+  .video__title {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 25px;
+  }
+
+  .video__list {
+    max-width: 486px;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    row-gap: 38px;
+  }
+
+  .video__iframe {
+    height: 347px;
+  }
+}
