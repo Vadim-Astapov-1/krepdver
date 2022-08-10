@@ -8,6 +8,7 @@ function Video() {
         <div className='video__list'>
           <iframe
             className='video__iframe'
+            loading='lazy'
             src='https://www.youtube.com/embed/eK8cfGMZySc'
             title='YouTube video player'
             frameBorder='0'
@@ -16,6 +17,7 @@ function Video() {
           ></iframe>
           <iframe
             className='video__iframe'
+            loading='lazy'
             src='https://www.youtube.com/embed/FKFllxbXSR8'
             title='YouTube video player'
             frameBorder='0'
@@ -24,6 +26,7 @@ function Video() {
           ></iframe>
           <iframe
             className='video__iframe'
+            loading='lazy'
             src='https://www.youtube.com/embed/EOYErFyWZIw'
             title='YouTube video player'
             frameBorder='0'

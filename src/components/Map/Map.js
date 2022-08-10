@@ -35,6 +35,7 @@ function Map() {
       </ul>
       <iframe
         className='map__iframe'
+        loading='lazy'
         title='Москва'
         src='https://yandex.ru/map-widget/v1/?um=constructor%3Ab66098a6adc4d19b07bd15b2420002590ce542672060a2079fe3bc4e72fc9c47&amp;source=constructor'
         frameBorder='0'
