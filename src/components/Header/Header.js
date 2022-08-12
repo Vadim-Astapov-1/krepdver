@@ -1,4 +1,7 @@
 import './Header.css';
+import { useEffect, useState } from 'react';
+
+import { webPageNotFoundName } from '../../utils/constants';
 
 import logo from '../../images/logo.png';
 import sdek from '../../images/icon-sdek.svg';
@@ -6,7 +9,19 @@ import sdek from '../../images/icon-sdek.svg';
 import Contacs from '../Contacs/Contacs';
 
 function Header() {
+  // fix: мерцание компонента во время перехода по роуту, где он не должен отображаться
+  const [isHidden, setIsHidden] = useState(undefined);
+
+  useEffect(() => {
+    if(document.title === webPageNotFoundName) {
+      return setIsHidden(true);
+    }
+
+    setIsHidden(false);
+  }, []);
+
   return(
+    isHidden === false &&
     <header className='header'>
       <img className='header__logo' src={logo} alt='Логотип'></img>
       <div className='header__column-delivery'>

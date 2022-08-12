@@ -1,6 +1,11 @@
 import setImg from '../images/complete-set.png';
 import pistol from '../images/pistol.png';
 
+// example name
+export const websiteLink = 'https://krepdver';
+export const websiteName = 'Крепеж для установки межкомнатных дверей в Москве';
+export const webPageNotFoundName = '404 Not Found';
+
 export const productsList = [{
   id: 1,
   type: 'complete-set',

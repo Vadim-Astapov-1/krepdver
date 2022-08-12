@@ -1,4 +1,7 @@
 import './Main.css';
+import { useEffect } from 'react';
+
+import { websiteName } from '../../utils/constants';
 
 import Description from '../Description/Description';
 import CompleteSets from '../CompleteSets/CompleteSets';
@@ -8,6 +11,11 @@ import Video from '../Video/Video';
 import Map from '../Map/Map';
 
 function Main({ handleCardSubmit }) {
+
+  useEffect(() => {
+    document.title = websiteName;
+  }, [])
+
   return(
     <main className='content'>
       <Description />
