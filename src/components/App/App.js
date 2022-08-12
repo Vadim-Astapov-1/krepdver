@@ -25,8 +25,8 @@ function App() {
   );
 }
 
-// !Во всех path прописан /krepdver для корректной работы сайта на github
-// !Ошибка связана с добавление homepage в package.json
+// !Во всех path прописан /krepdver для корректной работы сайта.
+// !Ошибка связана с добавление homepage в package.json.
 // !Убрать /krepdver и homepage при релизе!
 
 
