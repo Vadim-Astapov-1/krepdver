@@ -80,3 +80,12 @@ export const productsList = [{
   ],
   img: pistol,
 },];
+
+export const productsRouters = productsList.map((item) => `/products/${item.id}`);
+export const headerRouters = [
+  '/',
+];
+
+export const footerRouters = [
+  '/',
+];

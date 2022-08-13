@@ -1,7 +1,6 @@
 import './Footer.css';
-import { useState, useEffect } from 'react';
-
-import { webPageNotFoundName } from '../../utils/constants';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import logo from '../../images/logo.png';
 import youtube from '../../images/youtube.svg';
@@ -9,20 +8,18 @@ import whatsapp from '../../images/whatsapp.svg';
 
 import Contacs from '../Contacs/Contacs';
 
-function Footer() {
-  // fix: мерцание компонента во время перехода по роуту, где он не должен отображаться
-  const [isHidden, setIsHidden] = useState(undefined);
+import { productsRouters, footerRouters } from '../../utils/constants';
+
+function Footer({ handleComponentVisible }) {
+  const [myRouters, setMyRouters] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
-    if(document.title === webPageNotFoundName) {
-      return setIsHidden(true);
-    }
-
-    setIsHidden(false);
+    setMyRouters([...productsRouters, ...footerRouters]);
   }, []);
 
   return (
-    isHidden === false &&
+    handleComponentVisible(myRouters, location) &&
     <footer className='footer'>
       <div className='footer__container'>
         <div className='footer__column-view'>

@@ -1,27 +1,24 @@
 import './Header.css';
 import { useEffect, useState } from 'react';
-
-import { webPageNotFoundName } from '../../utils/constants';
+import { useLocation } from 'react-router-dom';
 
 import logo from '../../images/logo.png';
 import sdek from '../../images/icon-sdek.svg';
 
 import Contacs from '../Contacs/Contacs';
 
-function Header() {
-  // fix: мерцание компонента во время перехода по роуту, где он не должен отображаться
-  const [isHidden, setIsHidden] = useState(undefined);
+import { productsRouters, headerRouters } from '../../utils/constants';
+
+function Header({ handleComponentVisible }) {
+  const [myRouters, setMyRouters] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
-    if(document.title === webPageNotFoundName) {
-      return setIsHidden(true);
-    }
-
-    setIsHidden(false);
+    setMyRouters([...productsRouters, ...headerRouters]);
   }, []);
 
   return(
-    isHidden === false &&
+    handleComponentVisible(myRouters, location) &&
     <header className='header'>
       <img className='header__logo' src={logo} alt='Логотип'></img>
       <div className='header__column-delivery'>

@@ -20,7 +20,7 @@ function NotFound() {
         <p className='not-found__text'>Страница не найдена</p>
       </div>
       <p className='not-found__description'>Адрес запрашиваемой страницы: <span className='not-found__location-link'>{`${websiteLink}${location.pathname}`}</span></p>
-      <Link reloadDocument to='/krepdver' className='not-found__link'>Вернуться на главную страницу</Link>
+      <Link to='/' className='not-found__link'>Вернуться на главную страницу</Link>
     </div>
   );
 }
