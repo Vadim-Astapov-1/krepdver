@@ -9,7 +9,20 @@ function Extra({ handleCardSubmit }) {
       <div className='container extra__container'>
         <h2 className='extra__title'>ВАМ МОЖЕТ ПОНАДОБИТЬСЯ</h2>
         <div className='extra__card-list'>
-          {productsList.map((item) => item.type === 'extra' && <ExtraCard key={item.id} article={item.article} name={item.name} price={item.price} descriptionList={item.descriptionList} img={item.img} onAddInCart={handleCardSubmit} />)}
+          {productsList.map(
+            (item) =>
+              item.type === 'extra' && (
+                <ExtraCard
+                  key={item.id}
+                  article={item.article}
+                  name={item.name}
+                  price={item.price}
+                  descriptionList={item.descriptionList}
+                  img={item.img}
+                  onAddInCart={handleCardSubmit}
+                />
+              )
+          )}
         </div>
       </div>
     </section>
