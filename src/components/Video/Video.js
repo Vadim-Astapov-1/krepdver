@@ -1,8 +1,8 @@
 import './Video.css';
 
-function Video() {
+function Video({ sectionRef }) {
   return (
-    <section className='video'>
+    <section className='video' ref={sectionRef}>
       <div className='container video__container'>
         <h2 className='video__title'>Видео</h2>
         <div className='video__list'>

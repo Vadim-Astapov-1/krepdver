@@ -1,11 +1,13 @@
-import { useLocation } from 'react-router-dom';
 import './Product.css';
 
-function Product() {
-  const location = useLocation();
+import Navigation from '../Navigation/Navigation';
 
+function Product() {
   return(
-    <p>Страница продукта</p>
+    <section className='product'>
+      <Navigation />
+      <p>Страница продукта</p>
+    </section>
   );
 }
 

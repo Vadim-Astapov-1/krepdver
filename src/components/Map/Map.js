@@ -1,8 +1,8 @@
 import './Map.css';
 
-function Map() {
+function Map({ sectionRef }) {
   return (
-    <section className='map'>
+    <section className='map' ref={sectionRef}>
       <h1 className='map__title'>
         Крепежи для установки дверей также можно купить у наших партнеров
       </h1>

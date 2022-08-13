@@ -3,9 +3,9 @@ import './CompleteSets.css';
 import CompleteSetCard from '../CompleteSetCard/CompleteSetCard';
 import { productsList } from '../../utils/constants';
 
-function CompleteSets({ handleCardSubmit }) {
+function CompleteSets({ handleCardSubmit, sectionRef }) {
   return (
-    <section className='complete-sets'>
+    <section className='complete-sets' ref={sectionRef}>
       <h2 className='complete-sets__title'>
         Монтажные комплекты для установки дверей
       </h2>
