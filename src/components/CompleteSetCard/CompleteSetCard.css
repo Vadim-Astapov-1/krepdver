@@ -41,11 +41,12 @@
   font-size: 18px;
   line-height: 22px;
   color: #17B111;
-  text-decoration: none;
+  text-decoration-color: transparent;
+  transition: text-decoration 0.3s;
 }
 
 .set-card__description:hover {
-  text-decoration: underline;
+  text-decoration: underline #17B111;
 }
 
 @media all and (max-width: 1024px) {

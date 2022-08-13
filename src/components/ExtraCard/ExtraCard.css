@@ -38,11 +38,12 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  text-decoration: none;
+  text-decoration-color: transparent;
+  transition: text-decoration 0.3s;
 }
 
 .extra-card__container-link:hover {
-  text-decoration: underline 1px solid #17B111;
+  text-decoration: underline #17B111;
 }
 
 .extra-card__subtitle {
