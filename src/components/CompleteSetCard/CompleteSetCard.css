@@ -21,40 +21,15 @@
   color: #17B111;
 }
 
-.set-card__info {
-  width: 100%;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
 .set-card__price {
-  margin: 0;
+  width: 100%;
+  margin: 10px auto 0 0;
   padding: 0;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
   color: #617960;
-}
-
-.set-card__btn-info {
-  margin: 0;
-  padding: 0;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  color: #8B9499;
-  border: 0;
-  background: transparent;
-  transition: 0.3s;
-}
-
-.set-card__btn-info:hover {
-  opacity: 0.7;
 }
 
 .set-card__description {
@@ -66,6 +41,11 @@
   font-size: 18px;
   line-height: 22px;
   color: #17B111;
+  text-decoration: none;
+}
+
+.set-card__description:hover {
+  text-decoration: underline;
 }
 
 @media all and (max-width: 1024px) {
@@ -76,16 +56,6 @@
   .set-card__title {
     font-size: 24px;
     line-height: 29px;
-  }
-}
-
-@media all and (max-width: 940px) {
-  .set-card__info {
-    flex-direction: column-reverse;
-  }
-
-  .set-card__btn-info {
-    margin-bottom: 5px;
   }
 }
 
@@ -104,17 +74,8 @@
     line-height: 22px;
   }
 
-  .set-card__info {
-    margin-top: 12px;
-    flex-direction: row;
-  }
-
   .set-card__price {
-    font-size: 16px;
-    line-height: 19px;
-  }
-
-  .set-card__btn-info {
+    margin-top: 12px;
     font-size: 16px;
     line-height: 19px;
   }

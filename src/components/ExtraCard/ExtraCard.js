@@ -1,9 +1,10 @@
 import './ExtraCard.css';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import CardForm from '../CardForm/CardForm';
-import { useEffect, useState } from 'react';
 
-function ExtraCard({ article, name, descriptionList, price, img, onAddInCart }) {
+function ExtraCard({ id, article, name, descriptionList, price, img, onAddInCart }) {
   const [count, setCount] = useState(1);
   const [priceProduct, setPriceProduct] = useState(0);
 
@@ -48,8 +49,10 @@ function ExtraCard({ article, name, descriptionList, price, img, onAddInCart }) 
       <img className='extra-card__img' src={img} alt={article}></img>
       <div className='extra-card__info'>
         <h3 className='extra-card__title'>{article}</h3>
-        <p className='extra-card__subtitle'>{name}</p>
-        {descriptionList.map((item, index) => <p key={index} className='extra-card__paragraph'>{`${index + 1}. ${item}`}</p>)}
+        <Link to={`/products/${id}`} className='extra-card__container-link'>
+          <p className='extra-card__subtitle'>{name}</p>
+          {descriptionList.map((item, index) => <p key={index} className='extra-card__paragraph'>{`${index + 1}. ${item}`}</p>)}
+        </Link>
         <div className='extra-card__info-price'>
           <p className='extra-card__price'>{`Цена: ${priceProduct} руб`}</p>
           <CardForm onSubmit={handleCardSubmit} onBtnClick={handleCountClick} count={count} place='extra-card' />

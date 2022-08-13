@@ -1,13 +1,13 @@
 .advantages {
   max-width: 100%;
   background-color: rgba(23, 177, 17, 0.8);
+  display: flex;
+  flex-direction: column;
 }
 
 .advantages__container {
   max-width: 894px;
-  margin: 0 auto;
-  padding-top: 25px;
-  padding-bottom: 55px;
+  margin: 25px auto 55px auto;
 }
 
 .advantages__title {
@@ -78,9 +78,9 @@
 
 @media all and (max-width: 768px) {
   .advantages__container {
-    padding-top: 27px;
-    padding-bottom: 30px;
     max-width: 525px;
+    margin-top: 27px;
+    margin-bottom: 30px;
   }
 
   .advantages__title {

@@ -14,6 +14,7 @@ function Extra({ handleCardSubmit }) {
               item.type === 'extra' && (
                 <ExtraCard
                   key={item.id}
+                  id={item.id}
                   article={item.article}
                   name={item.name}
                   price={item.price}

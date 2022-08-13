@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
 import './CompleteSetCard.css';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import CardForm from '../CardForm/CardForm';
 
-function CompleteSetCard({name, price, description, img, onAddInCart}) {
+function CompleteSetCard({ id, name, price, description, img, onAddInCart}) {
   const [count, setCount] = useState(1);
   const [priceProduct, setPriceProduct] = useState(0);
 
@@ -47,11 +48,8 @@ function CompleteSetCard({name, price, description, img, onAddInCart}) {
     <article className='set-card'>
       <img className='set-card__img' src={img} alt={name}></img>
       <h3 className='set-card__title'>{name}</h3>
-      <div className='set-card__info'>
-        <p className='set-card__price'>{`Цена: ${priceProduct} руб`}</p>
-        <button className='set-card__btn-info'>Подробнее</button>
-      </div>
-      <p className='set-card__description'>{description}</p>
+      <p className='set-card__price'>{`Цена: ${priceProduct} руб`}</p>
+      <Link to={`/products/${id}`} className='set-card__description'>{description}</Link>
       <CardForm onSubmit={handleCardSubmit} onBtnClick={handleCountClick} count={count} place='set-card' />
     </article>
   );

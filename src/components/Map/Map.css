@@ -1,12 +1,11 @@
 .map {
   max-width: 100%;
-  margin: 0 auto;
+  margin: 85px auto 0 auto;
 }
 
 .map__title {
   max-width: 833px;
   margin: 0 auto;
-  margin-top: 85px;
   padding: 0;
   font-style: normal;
   font-weight: 700;
@@ -62,11 +61,14 @@
 }
 
 @media all and (max-width: 1024px) {
+  .map {
+    margin-top: 72px;
+  }
+
   .map__title {
     max-width: 667px;
     font-size: 32px;
     line-height: 39px;
-    margin-top: 72px;
   }
 
   .map__btn-list {

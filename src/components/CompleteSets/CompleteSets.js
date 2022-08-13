@@ -16,6 +16,7 @@ function CompleteSets({ handleCardSubmit }) {
               item.type === 'complete-set' && (
                 <CompleteSetCard
                   key={item.id}
+                  id={item.id}
                   name={item.article}
                   price={item.price}
                   description={item.description}

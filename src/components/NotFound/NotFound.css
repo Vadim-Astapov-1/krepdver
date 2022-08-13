@@ -28,6 +28,7 @@
 .not-found__code {
   max-width: 100%;
   margin: 0;
+  font-style: normal;
   font-weight: 500;
   font-size: 48px;
   line-height: 58px;
@@ -37,6 +38,7 @@
 .not-found__text {
   max-width: 100%;
   margin: 0 0 0 25px;
+  font-style: normal;
   font-weight: 400;
   font-size: 30px;
   line-height: 36px;
@@ -47,6 +49,7 @@
 .not-found__description {
   max-width: 100%;
   margin: 0;
+  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
@@ -63,6 +66,7 @@
   padding: 17px 32px;
   background-color: #D9D9D9;
   border-radius: 30px;
+  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;

@@ -33,9 +33,21 @@
   color: #17B111;
 }
 
+.extra-card__container-link {
+  max-width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.extra-card__container-link:hover {
+  text-decoration: underline 1px solid #17B111;
+}
+
 .extra-card__subtitle {
   max-width: 100%;
-  margin: 10px 0;
+  margin: 0 0 10px 0;
   padding: 0;
   font-style: normal;
   font-weight: 700;
@@ -123,7 +135,7 @@
   }
 
   .extra-card__subtitle {
-    margin: 10px 0 5px 0;
+    margin-bottom: 5px;
     font-size: 16px;
     line-height: 19px;
   }
