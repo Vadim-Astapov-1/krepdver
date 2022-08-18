@@ -30,18 +30,12 @@ function App() {
       <Header handleComponentVisible={handleComponentVisible} />
       <Routes>
         <Route exact path='/' element={<Main handleCardSubmit={handleCardSubmit} />} />
-        {productsList.map((item) => <Route path={`/products/${item.id}`} key={item.id} element={<Product />}/>)}
+        {productsList.map((item) => <Route path={`/product/${item.id}`} key={item.id} element={<Product article={item.article} name={item.name} price={item.price} description={item.description} img={item.img} onAddInCart={handleCardSubmit} shortInfo={item.shortInfo} propertyList={item.propertyList} packageInfo={item.packageInfo} notice={item.notice ? item.notice : null} />}/>)}
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer handleComponentVisible={handleComponentVisible} />
     </div>
   );
 }
-
-// Link не рендерит компонент, только переводит на роут.
-// В следствие чего, сложно отследить местонахождение для компонентов,
-// которые отрисовываются по условию местонахождения.
-// Fix: reloadDocument для Link, чтобы страница перезагружалась.
-
 
 export default App;

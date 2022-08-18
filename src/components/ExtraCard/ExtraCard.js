@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import CardForm from '../CardForm/CardForm';
 
-function ExtraCard({ id, article, name, descriptionList, price, img, onAddInCart }) {
+function ExtraCard({ id, article, name, price, descriptionList, img, onAddInCart }) {
   const [count, setCount] = useState(1);
   const [priceProduct, setPriceProduct] = useState(0);
 
@@ -49,7 +49,7 @@ function ExtraCard({ id, article, name, descriptionList, price, img, onAddInCart
       <img className='extra-card__img' src={img} alt={article}></img>
       <div className='extra-card__info'>
         <h3 className='extra-card__title'>{article}</h3>
-        <Link to={`/products/${id}`} className='extra-card__container-link'>
+        <Link to={`/product/${id}`} className='extra-card__container-link'>
           <p className='extra-card__subtitle'>{name}</p>
           {descriptionList.map((item, index) => <p key={index} className='extra-card__paragraph'>{`${index + 1}. ${item}`}</p>)}
         </Link>
