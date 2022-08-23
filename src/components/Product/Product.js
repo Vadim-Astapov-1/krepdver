@@ -1,48 +1,27 @@
 import './Product.css';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import Navigation from '../Navigation/Navigation';
 import CardForm from '../CardForm/CardForm';
+import { Pricing } from '../Pricing/Pricing';
 
 function Product({ article, name, price, description, img, onAddInCart, shortInfo, propertyList, packageInfo, notice }) {
-  const [count, setCount] = useState(1);
-  const [priceProduct, setPriceProduct] = useState(0);
-
-  function handleCountClick(evt) {
-    if(evt.target.name === 'product-btn-up') {
-      if(count === 99) {
-        return;
-      }
-
-      setCount(count + 1);
-      setPriceProduct(priceProduct + price);
-      return;
-    }
-
-    if(count === 1) {
-      return;
-    }
-
-    setCount(count - 1);
-    setPriceProduct(priceProduct - price);
-  }
+  const pricing = Pricing({
+    type: 'product',
+    price: price,
+  });
 
   function handleCardSubmit(evt) {
     evt.preventDefault();
 
     onAddInCart({
       name: name,
-      count: count,
-      price: priceProduct,
+      count: pricing.count,
+      price: pricing.priceProduct,
     });
 
-    setPriceProduct(price);
-    setCount(1);
+    pricing.resetCounter();
   }
-
-  useEffect(() => {
-    setPriceProduct(price);
-  }, [price]);
 
   useEffect(() => {
     document.title = name;
@@ -60,8 +39,8 @@ function Product({ article, name, price, description, img, onAddInCart, shortInf
           <p className='product__description'>{description}</p>
           {notice !== null && <p className='product__notice'>{notice}</p>}
           <div className='product__price-container'>
-            <p className='product__price'>{`Цена: ${priceProduct} руб`}</p>
-            <CardForm onSubmit={handleCardSubmit} onBtnClick={handleCountClick} count={count} place='product' />
+            <p className='product__price'>{`Цена: ${pricing.priceProduct} руб`}</p>
+            <CardForm onSubmit={handleCardSubmit} onBtnClick={pricing.handleCountClick} count={pricing.count} type='product' />
           </div>
         </div>
         <div className='product__characteristic'>

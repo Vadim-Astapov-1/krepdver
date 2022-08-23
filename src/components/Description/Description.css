@@ -157,3 +157,19 @@
     text-align: center;
   }
 }
+
+@media all and (max-width: 425px) {
+  .description {
+    max-width: calc(100% - 32px);
+    flex-direction: column;
+
+  }
+
+  .description__img {
+
+  }
+
+  .description__link {
+    display: none;
+  }
+}
