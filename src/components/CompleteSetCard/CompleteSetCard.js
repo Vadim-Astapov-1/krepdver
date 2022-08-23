@@ -1,56 +1,34 @@
 import './CompleteSetCard.css';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import CardForm from '../CardForm/CardForm';
+import { Pricing } from '../Pricing/Pricing';
 
 function CompleteSetCard({ id, article, price, description, img, onAddInCart }) {
-  const [count, setCount] = useState(1);
-  const [priceProduct, setPriceProduct] = useState(0);
-
-  function handleCountClick(evt) {
-    if(evt.target.name === 'set-card-btn-up') {
-      if(count === 99) {
-        return;
-      }
-
-      setCount(count + 1);
-      setPriceProduct(priceProduct + price);
-      return;
-    }
-
-    if(count === 1) {
-      return;
-    }
-
-    setCount(count - 1);
-    setPriceProduct(priceProduct - price);
-  }
+  const pricing = Pricing({
+    type: 'set-card',
+    price: price,
+  });
 
   function handleCardSubmit(evt) {
     evt.preventDefault();
 
     onAddInCart({
       name: article,
-      count: count,
-      price: priceProduct,
+      count: pricing.count,
+      price: pricing.priceProduct,
     });
 
-    setPriceProduct(price);
-    setCount(1);
+    pricing.resetCounter();
   }
-
-  useEffect(() => {
-    setPriceProduct(price);
-  }, [price]);
 
   return(
     <article className='set-card'>
       <img className='set-card__img' src={img} alt={article}></img>
       <h3 className='set-card__title'>{article}</h3>
-      <p className='set-card__price'>{`Цена: ${priceProduct} руб`}</p>
+      <p className='set-card__price'>{`Цена: ${pricing.priceProduct} руб`}</p>
       <Link to={`/product/${id}`} className='set-card__description'>{description}</Link>
-      <CardForm onSubmit={handleCardSubmit} onBtnClick={handleCountClick} count={count} place='set-card' />
+      <CardForm onSubmit={handleCardSubmit} onBtnClick={pricing.handleCountClick} count={pricing.count} type='set-card' />
     </article>
   );
 }

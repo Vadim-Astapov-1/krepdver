@@ -1,13 +1,13 @@
 import './CardForm.css';
 
-function CardForm({ onSubmit, onBtnClick, count, place }) {
+function CardForm({ onSubmit, onBtnClick, count, type }) {
   return (
     <form className='card-form' onSubmit={onSubmit}>
       <div className='card-form__calculator'>
         <button
           type='button'
           className='card-form__btn-triangle'
-          name={`${place}-btn-up`}
+          name={`${type}-btn-up`}
           onClick={onBtnClick}
         ></button>
         <p className='card-form__count'>{count}</p>
@@ -15,7 +15,7 @@ function CardForm({ onSubmit, onBtnClick, count, place }) {
         <button
           type='button'
           className='card-form__btn-triangle card-form__btn-triangle_type_under'
-          name={`${place}-btn-under`}
+          name={`${type}-btn-under`}
           onClick={onBtnClick}
         ></button>
       </div>
