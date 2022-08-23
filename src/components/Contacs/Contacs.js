@@ -9,9 +9,9 @@ const Contacs = () => (
       <img className='contacs__icon' src={time} alt='Иконка часов'></img>
       <p className='contacs__text'>Пн-Во 8:00-20:00</p>
       <img className='contacs__icon' src={phone} alt='Иконка телефона'></img>
-      <p className='contacs__text'>+7 (926) 367-70-30</p>
+      <a href='tel:+79263677030' className='contacs__text contacs__text_type_link'>+7 (926) 367-70-30</a>
       <img className='contacs__icon' src={email} alt='Иконка почты'></img>
-      <p className='contacs__text'>krepdver@yandex.ru</p>
+      <a href='mailto:krepdver@yandex.ru' className='contacs__text contacs__text_type_link'>krepdver@yandex.ru</a>
     </div>
 );
 

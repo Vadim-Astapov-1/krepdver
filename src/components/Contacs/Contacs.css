@@ -22,6 +22,15 @@
   color: #17B111;
 }
 
+.contacs__text_type_link {
+  text-decoration-color: transparent;
+  transition: text-decoration 0.3s;
+}
+
+.contacs__text_type_link:hover {
+  text-decoration: underline #17B111;
+}
+
 @media all and (max-width: 1024px) {
   .contacs {
     grid-template-columns: 32px max-content;
