@@ -91,3 +91,23 @@
     height: 347px;
   }
 }
+
+@media all and (max-width: 425px) {
+  .video__container {
+    padding-top: 25px;
+  }
+
+  .video__title {
+    font-size: 26px;
+    line-height: 31px;
+    margin-bottom: 15px;
+  }
+
+  .video__list {
+    row-gap: 15px;
+  }
+
+  .video__iframe {
+    height: 225px;
+  }
+}

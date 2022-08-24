@@ -27,6 +27,14 @@
   color: #17B111;
 }
 
+.description__img-mobile {
+  display: none;
+  width: 250px;
+  width: 260px;
+  object-fit: contain;
+  margin: 10px auto 0 auto;
+}
+
 .description__subtitle {
   margin: 10px auto 0 0;
   padding: 0;
@@ -161,12 +169,26 @@
 @media all and (max-width: 425px) {
   .description {
     max-width: calc(100% - 32px);
-    flex-direction: column;
+    margin-top: 10px;
+  }
 
+  .description__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .description__img-mobile {
+    display: block;
+  }
+
+  .description__subtitle {
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 17px;
   }
 
   .description__img {
-
+    display: none;
   }
 
   .description__link {

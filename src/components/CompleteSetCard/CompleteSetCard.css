@@ -87,3 +87,26 @@
     line-height: 18px;
   }
 }
+
+@media all and (max-width: 425px) {
+  .set-card {
+    max-width: 100%;
+  }
+
+  .set-card__img {
+    width: 100%;
+  }
+
+  .set-card__title {
+    margin-top: 5px;
+  }
+
+  .set-card__price {
+    margin-top: 5px;
+  }
+
+  .set-card__description {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+}

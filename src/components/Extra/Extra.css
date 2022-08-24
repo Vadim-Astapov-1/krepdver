@@ -58,3 +58,20 @@
     padding-bottom: 11px;
   }
 }
+
+@media all and (max-width: 425px) {
+  .extra {
+    max-width: calc(100% - 32px);
+  }
+
+  .extra__container {
+    padding-bottom: 30px;
+  }
+
+  .extra__title {
+    font-size: 12px;
+    line-height: 15px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #17B111;
+  }
+}

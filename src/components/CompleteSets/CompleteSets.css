@@ -70,3 +70,27 @@
     padding-bottom: 41px;
   }
 }
+
+@media  all and (max-width: 425px) {
+  .complete-sets {
+    max-width: calc(100% - 32px);
+    margin-top: 11px;
+  }
+
+  .complete-sets__title {
+    font-size: 12px;
+    line-height: 15px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #17B111;
+  }
+
+  .complete-sets__container {
+    padding-bottom: 30px;
+  }
+
+  .complete-sets__card-list {
+    padding-top: 15px;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+}

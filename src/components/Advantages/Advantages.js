@@ -13,7 +13,7 @@ function Advantages() {
         <h2 className='advantages__title'>Преимущества нашей технологии</h2>
         <div className='advantages__description'>
           <img className='advantages__img' src={iconQuality} alt='Иконка качестка'></img>
-          <p className='advantages__paragraph'>Наш крепеж позволяет ставить двери быстро и качественно в проемы любой готовности!</p>
+          <p className='advantages__paragraph'>Наш крепеж позволяет ставить двери быстро и качественно в проёмы любой готовности!</p>
           <img className='advantages__img' src={iconSmile} alt='Иконка смайл'></img>
           <p className='advantages__paragraph'>Пошаговая инструкция по применению в каждом комплекте. Проста в самостоятельной установке!</p>
           <img className='advantages__img' src={iconList} alt='Иконка лист'></img>
@@ -21,7 +21,7 @@ function Advantages() {
           <img className='advantages__img' src={iconForbidden} alt='Иконка Запрещено'></img>
           <p className='advantages__paragraph'>Монтажная система крепежа для дверей - полностью скрытая, снаружи коробка нигде не сверлится!</p>
           <img className='advantages__img' src={iconCross} alt='Иконка крест'></img>
-          <p className='advantages__paragraph'>Шесть комплектов крепежа в одном наборе достаточно чтобы установить межкомнатную дверь жестко в шести точках дверного проема. Этим Вы предотвратите бесконтрольное расширение пены и изменение монтажных зазоров.</p>
+          <p className='advantages__paragraph'>Шесть комплектов крепежа в одном наборе достаточно чтобы установить межкомнатную дверь жёстко в шести точках дверного проёма. Этим Вы предотвратите бесконтрольное расширение пены и изменение монтажных зазоров.</p>
         </div>
       </div>
     </section>
