@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Product from '../Product/Product';
 import Footer from '../Footer/Footer';
+import SideBar from '../SideBar/SideBar';
 import NotFound from '../NotFound/NotFound';
 
 import { productsList } from '../../utils/constants';
@@ -34,6 +35,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer handleComponentVisible={handleComponentVisible} />
+      <SideBar />
     </div>
   );
 }
