@@ -9,7 +9,7 @@ import Contacs from '../Contacs/Contacs';
 
 import { productsRouters, headerRouters } from '../../utils/constants';
 
-function Header({ handleComponentVisible }) {
+function Header({ handleComponentVisible, handleNavMenuVisible }) {
   const [myRouters, setMyRouters] = useState([]);
   const location = useLocation();
 
@@ -34,7 +34,7 @@ function Header({ handleComponentVisible }) {
         <img className='header__logo' src={logo} alt='Логотип'></img>
         <a href='tel:+79263677030' className='header__link header__link_type_tel'></a>
         <a href='mailto:krepdver@yandex.ru' className='header__link header__link_type_email'></a>
-        <button type='button' className='header__btn-menu'></button>
+        <button type='button' className='header__btn-menu' onClick={handleNavMenuVisible}></button>
       </div>
     </header>
   );

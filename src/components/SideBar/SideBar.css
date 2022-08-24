@@ -1,0 +1,58 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  visibility: hidden;
+  transition: right 0.5s ease;
+  z-index: 1;
+}
+
+.sidebar_visible {
+  visibility: visible;
+  right: 0;
+}
+
+.sidebar__menu {
+  max-width: 143px;
+  margin: 80px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar__link {
+  margin: 20px 0 0 0;
+  padding-bottom: 3px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+}
+
+.sidebar__link_active {
+  color: #17B111;
+  border-bottom: 2px solid #17B111;
+}
+
+.sidebar__btn-close {
+  width: 35px;
+  height: 35px;
+  padding: 15px;
+  background-color: transparent;
+  background-image: url('../../images/icon-close.svg');
+  background-repeat: no-repeat;
+  background-size: 35px 35px;
+  background-position: center;
+  box-sizing: content-box;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
