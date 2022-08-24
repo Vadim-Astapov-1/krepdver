@@ -13,6 +13,13 @@
   width: 353px;
   height: 215px;
   object-fit: contain;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.extra-card__img:hover {
+  opacity: 0.7;
 }
 
 .extra-card__info {
