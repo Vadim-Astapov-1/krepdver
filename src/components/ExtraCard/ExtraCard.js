@@ -37,7 +37,7 @@ function ExtraCard({ id, article, name, price, descriptionList, img, onAddInCart
           <p className='extra-card__subtitle'>{name}</p>
           {descriptionList.map((item, index) => <p key={index} className='extra-card__paragraph'>{`${index + 1}. ${item}`}</p>)}
         </Link>
-        <div className='extra-card__info-price'>
+        <div className='extra-card__container-price'>
           <p className='extra-card__price'>{`Цена: ${pricing.priceProduct} руб`}</p>
           <CardForm onSubmit={handleCardSubmit} onBtnClick={pricing.handleCountClick} count={pricing.count} type='extra-card' />
         </div>
