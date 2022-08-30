@@ -127,13 +127,12 @@
 
 .product__container-concept {
   max-width: 1104px;
-  margin: 0 auto 0 0;
-  padding: 20px 0;
+  margin: 0 60px 0 0;
+  padding: 20px 40px 20px 0;
   background-color: #F6F6F6;
   border-radius: 0px 54px 54px 0px;
-  padding-right: 40px;
   display: grid;
-  grid-template-columns: 128px 1fr;
+  grid-template-columns: max-content 1fr;
   column-gap: 35px;
 }
 
@@ -185,5 +184,137 @@
 
   .product__heading {
     margin-top: 25px;
+    grid-template-columns: minmax(250px, 310px) 1fr;
+    column-gap: 20px;
+  }
+
+  .product__img {
+    height: 200px;
+  }
+
+  .product__description {
+    font-size: 22px;
+    line-height: 27px;
+  }
+
+  .product__container-price {
+    grid-template-columns: 190px minmax(288px, 341px);
+  }
+
+  .product__price {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .product__property {
+    margin-top: 20px;
+  }
+
+  .product__subtitle {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .product__text {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .product__container-concept {
+    max-width: 868px;
+    column-gap: 30px;
+  }
+
+  .product__capability-list {
+    margin-bottom: 20px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .product__description {
+    grid-row: 1/2;
+  }
+
+  .product__container-price {
+    grid-template-columns: 341px;
+    justify-content: space-between;
+    grid-row: 2/3;
+    row-gap: 10px;
+  }
+
+  .product__heading {
+    row-gap: 10px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .product {
+    margin-top: 15px;
+  }
+
+  .product__title {
+    max-width: calc(100% - 48px);
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .product__container {
+    max-width: calc(100% - 48px);
+    padding-bottom: 20px;
+  }
+
+  .product__heading {
+    margin-top: 10px;
+    row-gap: 20px;
+  }
+
+  .product__img {
+    height: 166px;
+  }
+
+  .product__description {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .product__container-price {
+    row-gap: 20px;
+  }
+
+  .product__price {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .product__subtitle {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .product__text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .product__concept {
+    max-width: calc(100% - 48px);
+  }
+
+  .product__container-concept {
+    max-width: 680px;
+    padding: 15px 36px 15px 0;
+    column-gap: 25px;
+    margin-right: 50px;
+  }
+
+  .product__capability-list {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .product__capability-item {
+    font-size: 14px;
+    line-height: 17px;
   }
 }

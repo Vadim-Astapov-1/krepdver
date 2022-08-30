@@ -78,7 +78,6 @@
   cursor: default;
 }
 
-/*  padding: 21px 47px 21px 10px; */
 .card-form__btn {
   max-width: 100%;
   text-align: center;
@@ -109,9 +108,20 @@
     padding-top: 0;
   }
 
+  .card-form__count {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .card-form__count-text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
   .card-form__btn {
     align-self: center;
-
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 
@@ -133,10 +143,22 @@
 
   .card-form__btn {
     padding: 18px 25px 18px 0;
+    font-size: 16px;
+    line-height: 19px;
   }
 }
 
 @media all and (max-width: 425px) {
+  .card-form__count {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .card-form__count-text {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
   .card-form__btn {
     font-size: 15px;
     line-height: 18px;

@@ -109,7 +109,7 @@
   }
 }
 
-@media all and (max-width: 940px) {
+@media all and (max-width: 950px) {
   .extra-card__container-price {
     max-width: 300px;
     display: flex;
