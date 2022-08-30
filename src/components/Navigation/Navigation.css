@@ -26,7 +26,7 @@
   color: #ffffff;
 }
 
-.navigation__link_place_first {
+.navigation__link:first-child {
   background-color: #17B111;
   color: #ffffff;
 }
@@ -34,5 +34,27 @@
 @media all and (max-width: 1280px) {
   .navigation__container {
     max-width: calc(100% - 96px);
+  }
+}
+
+@media all and (max-width: 768px) {
+  .navigation__container {
+    max-width: calc(100% - 48px);
+  }
+
+  .navigation__link {
+    padding: 6px 10px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .navigation__container {
+    max-width: calc(100% - 32px);
+  }
+
+  .navigation__link {
+    display: none;
   }
 }
