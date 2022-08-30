@@ -33,8 +33,8 @@ function Product({ article, name, price, description, img, onAddInCart, shortInf
     <>
     <section className='product'>
       <Navigation />
+      <h2 className='product__title'>{name}</h2>
       <div className='container product__container'>
-        <h2 className='product__title'>{name}</h2>
         <div className='product__heading'>
           <img className='product__img' src={img} alt={name}></img>
           <p className='product__description'>{description}</p>
@@ -45,9 +45,9 @@ function Product({ article, name, price, description, img, onAddInCart, shortInf
         </div>
         <div className='product__property'>
           <h3 className='product__subtitle'>Описание</h3>
-          <p className='product__text product__text_descr_type'>{`Тип: ${shortInfo.type}`}</p>
-          <p className='product__text product__text_descr_type'>{`Артикул: ${article}`}</p>
-          <p className='product__text product__text_descr_type'>{`Размер: ${shortInfo.size}`}</p>
+          <p className='product__text product__text_color_gray'>{`Тип: ${shortInfo.type}`}</p>
+          <p className='product__text product__text_color_gray'>{`Артикул: ${article}`}</p>
+          <p className='product__text product__text_color_gray'>{`Размер: ${shortInfo.size}`}</p>
         </div>
         {notice !== null &&
         <div className='product__property'>
@@ -61,7 +61,7 @@ function Product({ article, name, price, description, img, onAddInCart, shortInf
             {propertyList.map((item, index) => <li key={index} className='product__capability-item'>{item}</li>)}
           </ul>
           <h3 className='product__subtitle'>В упаковке:</h3>
-          <p className='product__text'>{packageInfo}</p>
+          <p className='product__text product__text_type_alone'>{packageInfo}</p>
         </div>
       </div>
       <SliderProducts />
