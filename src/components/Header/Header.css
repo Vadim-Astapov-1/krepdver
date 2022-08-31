@@ -1,6 +1,8 @@
 .header {
   max-width: 1184px;
   margin: 30px auto 0 auto;
+  background-color: #ffffff;
+  z-index: 10;
 }
 
 .header__container {
@@ -47,7 +49,6 @@
   margin: 0 auto;
   display: none;
   flex-direction: row;
-  position: relative;
 }
 
 .header__btn-cart {
@@ -103,6 +104,12 @@
   right: 0;
   cursor: pointer;
   border: 0;
+  transition: 0.3s;
+}
+
+.header__btn-menu:hover {
+  background-color: #17B111;
+  background-image: url('../../images/icon-menu-white.svg');
 }
 
 @media all and (max-width: 1280px) {
@@ -158,6 +165,9 @@
     margin: 0;
     padding: 0;
     border-bottom: 2px solid #17B111;
+    position: sticky;
+    top: 0;
+    left: 0;
   }
 
   .header__container {
