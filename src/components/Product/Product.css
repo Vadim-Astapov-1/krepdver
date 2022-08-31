@@ -82,6 +82,7 @@
 }
 
 .product__subtitle {
+  max-width: 100%;
   margin: 0;
   font-style: normal;
   font-weight: 700;
@@ -91,6 +92,7 @@
 }
 
 .product__text {
+  max-width: 100%;
   margin: 10px 0 0 0;
   font-style: normal;
   font-weight: 400;
@@ -103,7 +105,7 @@
   color: #949594;
 }
 
-.product__text_type_alone {
+.product__text_type_package {
   margin-top: 0;
 }
 
@@ -314,6 +316,132 @@
   }
 
   .product__capability-item {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media all and (max-width: 670px) {
+  .product__heading {
+    row-gap: 0;
+  }
+
+  .product__container-price {
+    max-width: calc(100% - 48px);
+    margin: 20px auto;
+    grid-template-columns: 141px 1fr;
+    column-gap: 10px;
+  }
+
+  .product__container-concept {
+    margin-right: 25px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .product__heading {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+
+  .product__img {
+    grid-row: 1/2;
+  }
+
+  .product__description {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .product__container-price {
+    max-width: 70%;
+    grid-template-columns: 1fr;
+    grid-row: 10px;
+    margin-left: 24px;
+  }
+
+  .product__container-concept {
+    margin-right: 15px;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .product {
+    margin-top: 0;
+  }
+
+  .product__title {
+    max-width: calc(100% - 32px);
+    margin-top: 10px;
+    padding-bottom: 0;
+    border-bottom: 0;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  }
+
+  .product__container {
+    max-width: calc(100% - 32px);
+    padding-bottom: 15px;
+  }
+
+  .product__img {
+    height: 185px;
+  }
+
+  .product__description {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .product__property {
+    margin-top: 10px;
+  }
+
+  .product__subtitle {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .product__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .product__concept {
+    max-width: 100%;
+    background-color: #F6F6F6;
+  }
+
+  .product__container-concept {
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+    padding: 10px 0;
+    grid-template-columns: 1fr;
+  }
+
+  .product__capability-list {
+    border-bottom: 2px solid #17B111;
+  }
+
+  .product__capability-item {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .product__text_type_package {
+    margin-top: 10px;
+    grid-row: 3/4;
+  }
+
+  .product__container-price {
+    max-width: 100%;
+    row-gap: 10px;
+  }
+
+  .product__price {
     font-size: 14px;
     line-height: 17px;
   }

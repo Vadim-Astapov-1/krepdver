@@ -25,3 +25,9 @@
   transparent calc((100% / 6) * 5)
   );
 }
+
+@media all and (max-width: 425px) {
+  .container {
+    background: transparent;
+  }
+}
