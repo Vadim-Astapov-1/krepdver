@@ -1,7 +1,7 @@
 import './CompleteSets.css';
 
 import CompleteSetCard from '../CompleteSetCard/CompleteSetCard';
-import { productsList } from '../../utils/constants';
+import { productsList } from '../../utils/productList';
 
 function CompleteSets({ handleCardSubmit, sectionRef }) {
   return (

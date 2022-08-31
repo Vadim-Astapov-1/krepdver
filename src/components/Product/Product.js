@@ -6,7 +6,7 @@ import CardForm from '../CardForm/CardForm';
 import SliderProducts from '../SliderProducts/SliderProducts';
 import { Pricing } from '../Pricing/Pricing';
 
-function Product({ article, name, price, description, img, onAddInCart, shortInfo, propertyList, packageInfo, notice }) {
+function Product({ article, name, price, description, img, onAddInCart, shortInfo, propertyList, packageInfo, feature }) {
   const pricing = Pricing({
     type: 'product',
     price: price,
@@ -56,10 +56,10 @@ function Product({ article, name, price, description, img, onAddInCart, shortInf
             <p className='product__text product__text_color_gray'>{`Артикул: ${article}`}</p>
             <p className='product__text product__text_color_gray'>{`Размер: ${shortInfo.size}`}</p>
           </div>
-          {notice !== null && (
+          {feature !== null && (
             <div className='product__property'>
               <h3 className='product__subtitle'>Особенность</h3>
-              <p className='product__text'>{notice}</p>
+              <p className='product__text'>{feature}</p>
             </div>
           )}
         </div>

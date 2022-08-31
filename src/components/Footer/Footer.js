@@ -8,7 +8,8 @@ import whatsapp from '../../images/whatsapp.svg';
 
 import Contacs from '../Contacs/Contacs';
 
-import { productsRouters, footerRouters } from '../../utils/constants';
+import { footerRouters } from '../../utils/constants';
+import { productsRouters } from '../../utils/productList';
 
 function Footer({ handleComponentVisible }) {
   const [myRouters, setMyRouters] = useState([]);

@@ -9,7 +9,7 @@ import Footer from '../Footer/Footer';
 import SideBar from '../SideBar/SideBar';
 import NotFound from '../NotFound/NotFound';
 
-import { productsList } from '../../utils/constants';
+import { productsList } from '../../utils/productList';
 
 function App() {
   const [isMenuHidden, setIsMenuHidden] = useState(false);
@@ -38,14 +38,43 @@ function App() {
 
   return (
     <div className='app'>
-      <Header handleComponentVisible={handleComponentVisible} handleNavMenuVisible={handleNavMenuVisible} />
+      <Header
+        handleComponentVisible={handleComponentVisible}
+        handleNavMenuVisible={handleNavMenuVisible}
+      />
       <Routes>
-        <Route exact path='/' element={<Main handleCardSubmit={handleCardSubmit} />} />
-        {productsList.map((item) => <Route path={`/product/${item.id}`} key={item.id} element={<Product article={item.article} name={item.name} price={item.price} description={item.description} img={item.img} onAddInCart={handleCardSubmit} shortInfo={item.shortInfo} propertyList={item.propertyList} packageInfo={item.packageInfo} notice={item.notice ? item.notice : null} />}/>)}
+        <Route
+          exact
+          path='/'
+          element={<Main handleCardSubmit={handleCardSubmit} />}
+        />
+        {productsList.map((item) => (
+          <Route
+            path={`/product/${item.id}`}
+            key={item.id}
+            element={
+              <Product
+                article={item.article}
+                name={item.name}
+                price={item.price}
+                description={item.description}
+                img={item.img}
+                onAddInCart={handleCardSubmit}
+                shortInfo={item.shortInfo}
+                propertyList={item.propertyList}
+                packageInfo={item.packageInfo}
+                feature={item.feature ? item.feature : null}
+              />
+            }
+          />
+        ))}
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer handleComponentVisible={handleComponentVisible} />
-      <SideBar isHidden={isMenuHidden} handleNavMenuVisible={handleNavMenuVisible} />
+      <SideBar
+        isHidden={isMenuHidden}
+        handleNavMenuVisible={handleNavMenuVisible}
+      />
     </div>
   );
 }

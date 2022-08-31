@@ -7,7 +7,8 @@ import sdek from '../../images/icon-sdek.svg';
 
 import Contacs from '../Contacs/Contacs';
 
-import { productsRouters, headerRouters } from '../../utils/constants';
+import { headerRouters } from '../../utils/constants';
+import { productsRouters } from '../../utils/productList';
 
 function Header({ handleComponentVisible, handleNavMenuVisible }) {
   const [myRouters, setMyRouters] = useState([]);
