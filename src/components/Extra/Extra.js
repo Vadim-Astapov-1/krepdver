@@ -1,7 +1,7 @@
 import './Extra.css';
 
 import ExtraCard from '../ExtraCard/ExtraCard';
-import { productsList } from '../../utils/productList';
+import { productsList } from '../../utils/productsList';
 
 function Extra({ handleCardSubmit }) {
   return (

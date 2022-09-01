@@ -1,0 +1,59 @@
+.slider-card {
+  width: 246px;
+  grid-row: 1/2;
+  cursor: pointer;
+}
+
+.slider-card__container {
+  width: calc(100% - 46px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-card__img {
+  width: 100%;
+  height: 125px;
+  object-fit: contain;
+}
+
+.slider-card__title {
+  max-width: 100%;
+  margin: 10px 0 0 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #17B111;
+}
+
+.slider-card__price {
+  max-width: 100%;
+  margin: 10px 0 0 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #617960;
+}
+
+@media all and (max-width: 1024px) {
+  .slider-card {
+    width: 232px;
+  }
+
+  .slider-card__container {
+    max-width: calc(100% - 32px);
+  }
+}
+
+/* исправить */
+@media all and (max-width: 425px) {
+  .slider-card {
+    width: 100%;
+  }
+
+  .slider-card__container {
+    max-width: calc(100% - 32px);
+  }
+}

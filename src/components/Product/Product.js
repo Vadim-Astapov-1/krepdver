@@ -1,12 +1,13 @@
 import './Product.css';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import Navigation from '../Navigation/Navigation';
 import CardForm from '../CardForm/CardForm';
 import SliderProducts from '../SliderProducts/SliderProducts';
 import { Pricing } from '../Pricing/Pricing';
+import { productsList } from '../../utils/productsList';
 
-function Product({ article, name, price, description, img, onAddInCart, shortInfo, propertyList, packageInfo, feature }) {
+function Product({ id, article, name, price, description, img, onAddInCart, shortInfo, propertyList, packageInfo, feature }) {
   const pricing = Pricing({
     type: 'product',
     price: price,
@@ -23,6 +24,10 @@ function Product({ article, name, price, description, img, onAddInCart, shortInf
 
     pricing.resetCounter();
   }
+
+  const getAnotherProducts = useMemo(() => {
+    return productsList.filter((item) => item.id !== id);
+  }, [productsList, id]);
 
   useEffect(() => {
     document.title = name;
@@ -89,7 +94,7 @@ function Product({ article, name, price, description, img, onAddInCart, shortInf
                 />
               </div>
             ) : null}
-        <SliderProducts />
+        <SliderProducts productList={getAnotherProducts} />
       </section>
     </>
   );

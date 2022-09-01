@@ -9,7 +9,7 @@ import whatsapp from '../../images/whatsapp.svg';
 import Contacs from '../Contacs/Contacs';
 
 import { footerRouters } from '../../utils/constants';
-import { productsRouters } from '../../utils/productList';
+import { productsRouters } from '../../utils/productsList';
 
 function Footer({ handleComponentVisible }) {
   const [myRouters, setMyRouters] = useState([]);

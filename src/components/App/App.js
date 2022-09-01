@@ -9,7 +9,7 @@ import Footer from '../Footer/Footer';
 import SideBar from '../SideBar/SideBar';
 import NotFound from '../NotFound/NotFound';
 
-import { productsList } from '../../utils/productList';
+import { productsList } from '../../utils/productsList';
 
 function App() {
   const [isMenuHidden, setIsMenuHidden] = useState(false);
@@ -54,6 +54,7 @@ function App() {
             key={item.id}
             element={
               <Product
+                id={item.id}
                 article={item.article}
                 name={item.name}
                 price={item.price}
