@@ -2,13 +2,21 @@
   width: 246px;
   grid-row: 1/2;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider-card:hover {
+  opacity: 0.7;
 }
 
 .slider-card__container {
   width: 200px;
+  height: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content;
+  row-gap: 10px;
 }
 
 .slider-card__img {
@@ -19,22 +27,24 @@
 
 .slider-card__title {
   max-width: 100%;
-  margin: 10px 0 0 0;
+  margin: 0;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
   color: #17B111;
+  align-self: flex-start;
 }
 
 .slider-card__price {
   max-width: 100%;
-  margin: 10px 0 0 0;
+  margin: 0;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
   color: #617960;
+  align-self: flex-end;
 }
 
 @media all and (max-width: 1024px) {

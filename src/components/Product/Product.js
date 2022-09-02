@@ -26,13 +26,13 @@ function Product({ id, article, name, price, description, img, onAddInCart, shor
   }
 
   const getAnotherProducts = useMemo(() => {
-    return productsList.filter((item) => item.id !== id);
-  }, [productsList, id]);
+    // проверить
+    return productsList.filter((item) => item.id !== id).sort(() => Math.random() - 0.5);
+  }, [id]);
 
   useEffect(() => {
     document.title = name;
   }, [name]);
-
 
   return (
     <>
