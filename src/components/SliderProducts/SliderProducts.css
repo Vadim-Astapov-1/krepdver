@@ -1,3 +1,11 @@
+/*
+  .slider-products__container
+  - Полная ширина с внутренними отсупами по бокам.
+
+  .slider-products__container-list
+  - Дисплей. Ширина без отсупов по бокам.
+*/
+
 .slider-products {
   max-width: 100%;
   margin-top: 30px;
@@ -17,7 +25,7 @@
 }
 
 .slider-products__container {
-  max-width: 1184px;
+  max-width: 1230px;
   margin: 20px auto 0 auto;
   position: relative;
 }
@@ -37,6 +45,7 @@
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s;
+  z-index: 2;
 }
 
 .slider-products__btn:hover {
@@ -49,11 +58,19 @@
   filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.25));
 }
 
+.slider-products__container-list {
+  margin: 0 auto;
+  max-width: 1184px;
+  overflow: hidden;
+}
+
 .slider-products__list-card {
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, 246px);
-  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: -23px;
 }
 
 @media all and (max-width: 1280px) {
@@ -62,7 +79,26 @@
   }
 
   .slider-products__container {
-    max-width: calc(100% - 96px);
+    max-width: calc(100% - 50px);
+  }
+
+  .slider-products__container-list {
+    max-width: calc(100% - 46px);
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .slider-products__container {
+    max-width: calc(100% - 60px);
+  }
+
+  .slider-products__container-list {
+    max-width: calc(100% - 32px);
+  }
+
+  .slider-products__list-card {
+    grid-template-columns: repeat(auto-fill, 236px);
+    left: -18px;
   }
 }
 
@@ -74,7 +110,17 @@
   }
 
   .slider-products__container {
-    max-width: calc(100% - 48px);
+    margin-top: 10px;
+    max-width: calc(100% - 16px);
+  }
+
+  .slider-products__container-list {
+    max-width: calc(100% - 32px);
+  }
+
+  .slider-products__list-card {
+    grid-template-columns: repeat(auto-fill, 232px);
+    left: -16px;
   }
 }
 
@@ -86,6 +132,13 @@
   }
 
   .slider-products__container {
+    margin-top: 15px;
     max-width: calc(100% - 32px);
+  }
+
+  .slider-products__list-card {
+    grid-template-columns: repeat(auto-fill, 100%);
+    align-items: center;
+    left: 0;
   }
 }

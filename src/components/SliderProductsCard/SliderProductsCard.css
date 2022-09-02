@@ -5,7 +5,7 @@
 }
 
 .slider-card__container {
-  width: calc(100% - 46px);
+  width: 200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -39,21 +39,23 @@
 
 @media all and (max-width: 1024px) {
   .slider-card {
-    width: 232px;
-  }
-
-  .slider-card__container {
-    max-width: calc(100% - 32px);
+    width: 236px;
   }
 }
 
-/* исправить */
+@media all and (max-width: 768px) {
+  .slider-card {
+    width: 232px;
+  }
+}
+
 @media all and (max-width: 425px) {
   .slider-card {
-    width: 100%;
+    width: 200px;
+    margin: 0 auto;
   }
 
   .slider-card__container {
-    max-width: calc(100% - 32px);
+    max-width: 100%;
   }
 }
