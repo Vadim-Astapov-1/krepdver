@@ -56,7 +56,7 @@ function SliderProducts({ productList }) {
       laptopCardWidht: 236,
       ipadCardWidht: 232,
     });
-  }, [calculateStep]);
+  }, []);
 
   useEffect(() => {
     setTranslateX(0);
