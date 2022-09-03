@@ -11,7 +11,7 @@
 }
 
 .card-form:hover {
-  opacity: 0.8;
+  background-color: #45c141;
 }
 
 .card-form__calculator {
