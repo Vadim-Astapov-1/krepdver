@@ -1,5 +1,5 @@
 import './SliderProducts.css';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import SliderProductsCard from '../SliderProductsCard/SliderProductsCard';
@@ -19,8 +19,7 @@ function SliderProducts({ productList }) {
     setStep(widthCard);
   }
 
-  function  calculateStep({ pcCardWidht, laptopCardWidht, ipadCardWidht }) {
-    // Если не делится без остатка, то будет прокручиваться одна карточка, иначе две.
+  const calculateStep = useCallback(({ pcCardWidht, laptopCardWidht, ipadCardWidht }) => {
     const twoSteps = productList % 2 === 0;
     const widthShortCard = listCardRef.current.offsetWidth;
 
@@ -37,10 +36,9 @@ function SliderProducts({ productList }) {
     }
 
     if(window.innerWidth <= 425) {
-      console.log(widthShortCard)
       return setStep(widthShortCard);
     }
-  }
+  }, [productList])
 
   function scrollLeft() {
     setTranslateX(translateX + step);
@@ -56,7 +54,7 @@ function SliderProducts({ productList }) {
       laptopCardWidht: 236,
       ipadCardWidht: 232,
     });
-  }, []);
+  }, [calculateStep]);
 
   useEffect(() => {
     setTranslateX(0);
