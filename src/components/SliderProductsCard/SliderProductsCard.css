@@ -3,6 +3,7 @@
   grid-row: 1/2;
   cursor: pointer;
   transition: 0.3s;
+  height: 100%;
 }
 
 .slider-card:hover {
@@ -61,7 +62,8 @@
 
 @media all and (max-width: 425px) {
   .slider-card {
-    width: 200px;
+    /* Отступы по бокам 32px + 11px ширина скролла */
+    width: calc(100vw - 43px);
     margin: 0 auto;
   }
 

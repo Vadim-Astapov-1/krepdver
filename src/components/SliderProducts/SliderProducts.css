@@ -71,6 +71,8 @@
   position: relative;
   top: 0;
   left: -23px;
+  transition: 0.3s;
+  transform: translateX(-246px);
 }
 
 @media all and (max-width: 1280px) {
@@ -136,9 +138,12 @@
     max-width: calc(100% - 32px);
   }
 
+  .slider-products__container-list {
+    max-width: 100%;
+  }
+
   .slider-products__list-card {
-    grid-template-columns: repeat(auto-fill, 100%);
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, 100%);
     left: 0;
   }
 }
