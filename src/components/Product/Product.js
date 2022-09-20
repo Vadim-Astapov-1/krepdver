@@ -49,7 +49,7 @@ function Product({
     <>
       <section className='product'>
         <Navigation />
-        <h2 className='product__title'>{name}</h2>
+        <h1 className='product__title'>{name}</h1>
         <div className='container product__container'>
           <div className='product__heading'>
             <img className='product__img' src={img} alt={name}></img>
@@ -67,14 +67,14 @@ function Product({
             ) : null}
           </div>
           <div className='product__property'>
-            <h3 className='product__subtitle'>Описание</h3>
+            <h2 className='product__subtitle'>Описание</h2>
             <p className='product__text product__text_color_gray'>{`Тип: ${shortInfo.type}`}</p>
             <p className='product__text product__text_color_gray'>{`Артикул: ${article}`}</p>
             <p className='product__text product__text_color_gray'>{`Размер: ${shortInfo.size}`}</p>
           </div>
           {feature !== null && (
             <div className='product__property'>
-              <h3 className='product__subtitle'>Особенность</h3>
+              <h2 className='product__subtitle'>Особенность</h2>
               <p className='product__text'>{feature}</p>
             </div>
           )}
@@ -88,7 +88,7 @@ function Product({
                 </li>
               ))}
             </ul>
-            <h3 className='product__subtitle'>В упаковке:</h3>
+            <h2 className='product__subtitle'>В упаковке:</h2>
             <p className='product__text product__text_type_package'>{packageInfo}</p>
           </div>
         </div>

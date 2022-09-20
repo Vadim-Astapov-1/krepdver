@@ -10,9 +10,9 @@ function Map({ sectionRef }) {
 
   return (
     <section className='map' ref={sectionRef}>
-      <h1 className='map__title'>
+      <h2 className='map__title'>
         Крепежи для установки дверей также можно купить у наших партнеров
-      </h1>
+      </h2>
       <ul className='map__btn-list'>
         <li className='map__list-element'>
           <button type='button' className='map__btn'>
