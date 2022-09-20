@@ -7,7 +7,19 @@ import SliderProducts from '../SliderProducts/SliderProducts';
 import { Pricing } from '../Pricing/Pricing';
 import { productsList } from '../../utils/productsList';
 
-function Product({ id, article, name, price, description, img, onAddInCart, shortInfo, propertyList, packageInfo, feature }) {
+function Product({
+  id,
+  article,
+  name,
+  price,
+  description,
+  img,
+  onAddInCart,
+  shortInfo,
+  propertyList,
+  packageInfo,
+  feature,
+}) {
   const pricing = Pricing({
     type: 'product',
     price: price,
@@ -26,7 +38,6 @@ function Product({ id, article, name, price, description, img, onAddInCart, shor
   }
 
   const getAnotherProducts = useMemo(() => {
-    // проверить
     return productsList.filter((item) => item.id !== id).sort(() => Math.random() - 0.5);
   }, [id]);
 
@@ -78,22 +89,20 @@ function Product({ id, article, name, price, description, img, onAddInCart, shor
               ))}
             </ul>
             <h3 className='product__subtitle'>В упаковке:</h3>
-            <p className='product__text product__text_type_package'>
-              {packageInfo}
-            </p>
+            <p className='product__text product__text_type_package'>{packageInfo}</p>
           </div>
         </div>
         {window.innerWidth <= 670 ? (
-              <div className='product__container-price'>
-                <p className='product__price'>{`Цена: ${pricing.priceProduct} руб`}</p>
-                <CardForm
-                  onSubmit={handleCardSubmit}
-                  onBtnClick={pricing.handleCountClick}
-                  count={pricing.count}
-                  type='product'
-                />
-              </div>
-            ) : null}
+          <div className='product__container-price'>
+            <p className='product__price'>{`Цена: ${pricing.priceProduct} руб`}</p>
+            <CardForm
+              onSubmit={handleCardSubmit}
+              onBtnClick={pricing.handleCountClick}
+              count={pricing.count}
+              type='product'
+            />
+          </div>
+        ) : null}
         <SliderProducts productList={getAnotherProducts} />
       </section>
     </>

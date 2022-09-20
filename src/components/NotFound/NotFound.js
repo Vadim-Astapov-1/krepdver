@@ -12,15 +12,20 @@ function NotFound() {
     document.title = webPageNotFoundName;
   }, []);
 
-  return(
+  return (
     <div className='not-found'>
       <img className='not-found__img' src={iconNotFound} alt='Знак ошибки'></img>
       <div className='not-found__code-info'>
         <h2 className='not-found__code'>404</h2>
         <p className='not-found__text'>Страница не найдена</p>
       </div>
-      <p className='not-found__description'>Адрес запрашиваемой страницы: <span className='not-found__location-link'>{`${websiteLink}${location.pathname}`}</span></p>
-      <Link to='/' className='not-found__link'>Вернуться на главную страницу</Link>
+      <p className='not-found__description'>
+        Адрес запрашиваемой страницы:{' '}
+        <span className='not-found__location-link'>{`${websiteLink}${location.pathname}`}</span>
+      </p>
+      <Link to='/' className='not-found__link'>
+        Вернуться на главную страницу
+      </Link>
     </div>
   );
 }

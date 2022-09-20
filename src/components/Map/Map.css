@@ -54,6 +54,10 @@
   color: #17B111;
 }
 
+.map__container {
+  width: 100%;
+}
+
 .map__iframe {
   width: 100%;
   height: 400px;

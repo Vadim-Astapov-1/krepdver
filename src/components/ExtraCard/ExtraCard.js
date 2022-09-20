@@ -13,7 +13,7 @@ function ExtraCard({ id, article, name, price, descriptionList, img, onAddInCart
   });
 
   function handleToProductPage() {
-    navigate(`/product/${id}`)
+    navigate(`/product/${id}`);
   }
 
   function handleCardSubmit(evt) {
@@ -28,18 +28,25 @@ function ExtraCard({ id, article, name, price, descriptionList, img, onAddInCart
     pricing.resetCounter();
   }
 
-  return(
+  return (
     <article className='extra-card'>
       <img className='extra-card__img' src={img} alt={article} onClick={handleToProductPage}></img>
       <div className='extra-card__info'>
         <h3 className='extra-card__title'>{article}</h3>
         <Link to={`/product/${id}`} className='extra-card__container-link'>
           <p className='extra-card__subtitle'>{name}</p>
-          {descriptionList.map((item, index) => <p key={index} className='extra-card__paragraph'>{`${index + 1}. ${item}`}</p>)}
+          {descriptionList.map((item, index) => (
+            <p key={index} className='extra-card__paragraph'>{`${index + 1}. ${item}`}</p>
+          ))}
         </Link>
         <div className='extra-card__container-price'>
           <p className='extra-card__price'>{`Цена: ${pricing.priceProduct} руб`}</p>
-          <CardForm onSubmit={handleCardSubmit} onBtnClick={pricing.handleCountClick} count={pricing.count} type='extra-card' />
+          <CardForm
+            onSubmit={handleCardSubmit}
+            onBtnClick={pricing.handleCountClick}
+            count={pricing.count}
+            type='extra-card'
+          />
         </div>
       </div>
     </article>

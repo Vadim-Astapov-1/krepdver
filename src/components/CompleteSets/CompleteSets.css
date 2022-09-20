@@ -71,7 +71,7 @@
   }
 }
 
-@media  all and (max-width: 425px) {
+@media all and (max-width: 425px) {
   .complete-sets {
     max-width: calc(100% - 32px);
     margin-top: 11px;

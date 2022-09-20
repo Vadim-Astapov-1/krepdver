@@ -5,8 +5,8 @@ export function Pricing({ type, price }) {
   const [priceProduct, setPriceProduct] = useState(0);
 
   function handleCountClick(evt) {
-    if(evt.target.name === `${type}-btn-up`) {
-      if(count === 99) {
+    if (evt.target.name === `${type}-btn-up`) {
+      if (count === 99) {
         return;
       }
 
@@ -15,7 +15,7 @@ export function Pricing({ type, price }) {
       return;
     }
 
-    if(count === 1) {
+    if (count === 1) {
       return;
     }
 
@@ -26,11 +26,11 @@ export function Pricing({ type, price }) {
   const resetCounter = useCallback(() => {
     setPriceProduct(price);
     setCount(1);
-  }, [setCount, setPriceProduct, price])
+  }, [setCount, setPriceProduct, price]);
 
   useEffect(() => {
     setPriceProduct(price);
   }, [price]);
 
-  return {count, priceProduct, handleCountClick, resetCounter};
+  return { count, priceProduct, handleCountClick, resetCounter };
 }

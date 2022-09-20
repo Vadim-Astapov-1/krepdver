@@ -5,10 +5,10 @@ function SliderProductsCard({ id, img, name, description, price }) {
   const navigate = useNavigate();
 
   function goToProductPage() {
-    navigate(`/product/${id}`)
+    navigate(`/product/${id}`);
   }
 
-  return(
+  return (
     <article className='slider-card' onClick={goToProductPage}>
       <div className='slider-card__container'>
         <img className='slider-card__img' src={img} alt={name}></img>

@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import './Map.css';
 
 function Map({ sectionRef }) {
+  const [pointerEvents, setPointerEvents] = useState(false);
+
+  function handlePointerEvents() {
+    setPointerEvents(true);
+  }
+
   return (
     <section className='map' ref={sectionRef}>
       <h1 className='map__title'>
@@ -33,13 +40,16 @@ function Map({ sectionRef }) {
           </button>
         </li>
       </ul>
-      <iframe
-        className='map__iframe'
-        loading='lazy'
-        title='Москва'
-        src='https://yandex.ru/map-widget/v1/?um=constructor%3Ab66098a6adc4d19b07bd15b2420002590ce542672060a2079fe3bc4e72fc9c47&amp;source=constructor'
-        frameBorder='0'
-      ></iframe>
+      <div className='map__container' onClick={handlePointerEvents}>
+        <iframe
+          className='map__iframe'
+          style={{ pointerEvents: `${pointerEvents ? 'all' : 'none'}` }}
+          loading='lazy'
+          title='Москва'
+          src='https://yandex.ru/map-widget/v1/?um=constructor%3Ab66098a6adc4d19b07bd15b2420002590ce542672060a2079fe3bc4e72fc9c47&amp;source=constructor'
+          frameBorder='0'
+        ></iframe>
+      </div>
     </section>
   );
 }

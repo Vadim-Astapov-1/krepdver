@@ -19,7 +19,7 @@ function Main({ handleCardSubmit }) {
   const mapRef = useRef();
 
   function handleScroll(sectionName) {
-    switch(sectionName) {
+    switch (sectionName) {
       case 'complete-sets':
         completeSetsRef.current.scrollIntoView();
         break;
@@ -29,8 +29,8 @@ function Main({ handleCardSubmit }) {
       case 'map':
         mapRef.current.scrollIntoView();
         break;
-        default:
-          console.log('Error: ошибка скроллинга');
+      default:
+        console.log('Error: ошибка скроллинга');
     }
   }
 
@@ -39,12 +39,12 @@ function Main({ handleCardSubmit }) {
   }, []);
 
   useEffect(() => {
-    if(location.state !== null) {
+    if (location.state !== null) {
       handleScroll(location.state.scrollMain);
     }
   }, [location.state]);
 
-  return(
+  return (
     <main className='content'>
       <Description />
       <CompleteSets handleCardSubmit={handleCardSubmit} sectionRef={completeSetsRef} />

@@ -16,7 +16,7 @@ function App() {
   const location = useLocation();
 
   function handleNavMenuVisible() {
-    if(isMenuHidden) {
+    if (isMenuHidden) {
       setIsMenuHidden(false);
     } else {
       setIsMenuHidden(true);
@@ -43,11 +43,7 @@ function App() {
         handleNavMenuVisible={handleNavMenuVisible}
       />
       <Routes>
-        <Route
-          exact
-          path='/'
-          element={<Main handleCardSubmit={handleCardSubmit} />}
-        />
+        <Route exact path='/' element={<Main handleCardSubmit={handleCardSubmit} />} />
         {productsList.map((item) => (
           <Route
             path={`/product/${item.id}`}
@@ -72,10 +68,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer handleComponentVisible={handleComponentVisible} />
-      <SideBar
-        isHidden={isMenuHidden}
-        handleNavMenuVisible={handleNavMenuVisible}
-      />
+      <SideBar isHidden={isMenuHidden} handleNavMenuVisible={handleNavMenuVisible} />
     </div>
   );
 }

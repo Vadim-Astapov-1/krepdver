@@ -40,7 +40,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #17B111;
+  color: #17b111;
   grid-column: 2/3;
 }
 
@@ -74,6 +74,9 @@
   background-repeat: no-repeat;
   background-position: center;
   padding: 5px;
+  /* Скрыт текст внутри ссылок с картинками,
+  чтобы eslint не ругался и они были доступны для чтения с экрана */
+  font-size: 0;
 }
 
 .header__link:first-child {
@@ -108,7 +111,7 @@
 }
 
 .header__btn-menu:hover {
-  background-color: #17B111;
+  background-color: #17b111;
   background-image: url('../../images/icon-menu-white.svg');
 }
 
@@ -164,7 +167,7 @@
     max-width: 100%;
     margin: 0;
     padding: 0;
-    border-bottom: 2px solid #17B111;
+    border-bottom: 2px solid #17b111;
     position: sticky;
     top: 0;
     left: 0;
@@ -185,4 +188,3 @@
     display: flex;
   }
 }
-
