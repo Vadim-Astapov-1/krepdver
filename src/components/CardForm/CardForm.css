@@ -149,6 +149,10 @@
 }
 
 @media all and (max-width: 425px) {
+  .card-form {
+    border-radius: 20px;
+  }
+
   .card-form__count {
     font-size: 15px;
     line-height: 18px;

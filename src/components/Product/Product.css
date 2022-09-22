@@ -435,8 +435,9 @@
   }
 
   .product__container-price {
-    max-width: 100%;
+    max-width: 320px;
     row-gap: 10px;
+    margin: 20px 16px;
   }
 
   .product__price {
