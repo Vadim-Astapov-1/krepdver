@@ -173,8 +173,8 @@
   }
 
   .description__title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 22px;
+    line-height: 26px;
   }
 
   .description__img-mobile {
@@ -183,8 +183,8 @@
 
   .description__subtitle {
     margin-top: 5px;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 15px;
+    line-height: 18px;
   }
 
   .description__img {

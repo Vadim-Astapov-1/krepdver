@@ -74,14 +74,15 @@
 @media all and (max-width: 425px) {
   .complete-sets {
     max-width: calc(100% - 32px);
-    margin-top: 11px;
+    margin-top: 25px;
   }
 
   .complete-sets__title {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 19px;
+    line-height: 22px;
     padding-bottom: 3px;
     border-bottom: 2px solid #17B111;
+    text-align: center;
   }
 
   .complete-sets__container {
@@ -89,8 +90,8 @@
   }
 
   .complete-sets__card-list {
-    padding-top: 15px;
+    padding-top: 35px;
     grid-template-columns: 1fr;
-    row-gap: 15px;
+    row-gap: 35px;
   }
 }
