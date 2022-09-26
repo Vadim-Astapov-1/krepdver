@@ -1,5 +1,5 @@
 import './Product.css';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import Navigation from '../Navigation/Navigation';
 import CardForm from '../CardForm/CardForm';
@@ -20,6 +20,8 @@ function Product({
   packageInfo,
   feature,
 }) {
+  const productRef = useRef();
+
   const pricing = Pricing({
     type: 'product',
     price: price,
@@ -48,9 +50,13 @@ function Product({
     document.title = name;
   }, [name]);
 
+  useEffect(() => {
+    productRef.current.scrollIntoView();
+  }, []);
+
   return (
     <>
-      <section className='product'>
+      <section className='product' ref={productRef}>
         <Navigation />
         <h1 className='product__title'>{name}</h1>
         <div className='container product__container'>

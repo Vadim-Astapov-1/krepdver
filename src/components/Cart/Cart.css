@@ -20,8 +20,6 @@
   font-size: 28px;
   line-height: 34px;
   color: #17B111;
-  grid-column: 1/3;
-  grid-row: 1/2;
 }
 
 .cart__form {
@@ -30,6 +28,7 @@
   display: grid;
   grid-template-columns: 1fr 290px;
   column-gap: 50px;
+  align-items: flex-start;
 }
 
 .cart__card-list {
@@ -40,8 +39,6 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 255px));
   grid-template-rows: min-content;
   gap: 30px;
-  grid-column: 1/2;
-  grid-row: 2/3;
 }
 
 @media all and (max-width: 1280px) {

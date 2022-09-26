@@ -1,0 +1,139 @@
+.cart-result {
+  max-width: 290px;
+  box-sizing: border-box;
+  border: 2px solid #17B111;
+  border-radius: 20px;
+}
+
+.cart-result__container {
+  max-width: 100%;
+  margin: 20px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-result__container-input {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 10px 15px;
+  border: 0;
+}
+
+.cart-result__inputs-title {
+  max-width: 100%;
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #17B111;
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.cart-result__input-range {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background-color: #F4F4F4;
+  cursor: pointer;
+  -ms-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+}
+
+.cart-result__input-range::before {
+  content: '';
+  display: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: #17B111;
+}
+
+.cart-result__input-range:checked::before {
+  display: block;
+}
+
+.cart-result__input-name {
+  max-width: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #17B111;
+  cursor: pointer;
+}
+
+.cart-result__container-price {
+  max-width: 100%;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  row-gap: 15px;
+}
+
+.cart-result__text-price {
+  max-width: 100%;
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #617960;
+  text-align: end;
+}
+
+.cart-result__text-price_type_name {
+  text-align: start;
+}
+
+.cart-result__text-price_style_result {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.cart-result__btn {
+  max-width: 100%;
+  margin-top: 25px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: #17B111;
+  border: 0;
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.cart-result__text {
+  max-width: 100%;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+.cart-result__text-allot {
+  color: #0500F5;
+  cursor: pointer;
+  text-decoration-color: transparent;
+  transition: text-decoration 0.3s;
+}
+
+.cart-result__text-allot:hover {
+  text-decoration: underline #0500F5;
+}

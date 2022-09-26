@@ -1,5 +1,5 @@
 import './Cart.css';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Navigation from '../Navigation/Navigation';
 import CartCard from '../CartCard/CartCard';
@@ -8,9 +8,10 @@ import CartResult from '../CartResult/CartResult';
 
 function Cart({ producs }) {
   const [isSending, setIsSending] = useState(false);
+  const cartRef = useRef();
 
   function handleIsSending() {
-    setIsSending(!isSending)
+    setIsSending(!isSending);
   }
 
   function handleCardSubmit(evt) {
@@ -21,8 +22,12 @@ function Cart({ producs }) {
     evt.preventDefault();
   }
 
+  useEffect(() => {
+    cartRef.current.scrollIntoView();
+  }, []);
+
   return (
-    <section className='cart'>
+    <section className='cart' ref={cartRef}>
       <Navigation />
       <div className='cart__container'>
         <h1 className='cart__title'>{!isSending ? 'Корзина' : 'Оформление заказа'}</h1>
@@ -31,6 +36,7 @@ function Cart({ producs }) {
             <div className='cart__card-list'>
               {producs.map((item) => (
                 <CartCard
+                  key={item.id}
                   id={item.id}
                   name={item.name}
                   count={item.count}
@@ -42,7 +48,7 @@ function Cart({ producs }) {
           ) : (
             <CartInputs />
           )}
-          <CartResult />
+          <CartResult isTypeSending={!isSending} handleIsSending={handleIsSending} />
         </form>
       </div>
     </section>
