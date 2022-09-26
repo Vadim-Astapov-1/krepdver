@@ -1,37 +1,51 @@
 import './Cart.css';
 import { useState } from 'react';
 
-import CartCard from '../CartCard/CartCard';
 import Navigation from '../Navigation/Navigation';
+import CartCard from '../CartCard/CartCard';
+import CartInputs from '../CartInputs/CartInputs';
+import CartResult from '../CartResult/CartResult';
 
 function Cart({ producs }) {
-  const [isTypeContact, setIsTypeContact] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+
+  function handleIsSending() {
+    setIsSending(!isSending)
+  }
 
   function handleCardSubmit(evt) {
     evt.preventDefault();
   }
 
+  function handleFormSubmit(evt) {
+    evt.preventDefault();
+  }
+
   return (
-    <>
+    <section className='cart'>
       <Navigation />
-      <section className='cart'>
-        <h1 className='cart__title'>Корзина</h1>
-        <div className='cart__card-list'>
-          {producs.map((item) => (
-            <CartCard
-              id={item.id}
-              name={item.name}
-              count={item.count}
-              price={item.price}
-              img={item.img}
-            />
-          ))}
-        </div>
-        <form className='cart__form' onSubmit={handleCardSubmit}>
-          <div className='cart__container-form'></div>
+      <div className='cart__container'>
+        <h1 className='cart__title'>{!isSending ? 'Корзина' : 'Оформление заказа'}</h1>
+        <form className='cart__form' onSubmit={handleFormSubmit}>
+          {!isSending ? (
+            <div className='cart__card-list'>
+              {producs.map((item) => (
+                <CartCard
+                  id={item.id}
+                  name={item.name}
+                  count={item.count}
+                  price={item.price}
+                  img={item.img}
+                />
+              ))}
+            </div>
+          ) : (
+            <CartInputs />
+          )}
+          <CartResult />
         </form>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
