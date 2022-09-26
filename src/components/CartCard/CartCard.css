@@ -1,0 +1,109 @@
+.cart-card {
+  max-width: 255px;
+  position: relative;
+  border: 2px solid #E9E9E9;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.cart-card__container {
+  max-width: 100%;
+  margin: 15px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-card__title {
+  max-width: 100%;
+  margin: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  color: #17B111;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cart-card__img {
+  max-width: 100%;
+  height: 156px;
+  margin-top: 10px;
+  object-fit: contain;
+}
+
+.cart-card__price {
+  max-width: 100%;
+  margin: 10px 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #617960;
+  text-align: center;
+}
+
+.cart-card__container-price {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-card__count {
+  min-width: 40px;
+  margin: 0 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #17B111;
+  text-align: center;
+}
+
+.cart-card__btn {
+  width: 40px;
+  height: 40px;
+  background-image: url(../../images/icon-plus.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cart-card__btn_type_under {
+  background-image: url(../../images/icon-minus.svg);
+}
+
+.cart-card__btn:hover {
+  box-shadow: none;
+}
+
+.cart-card__sum {
+  max-width: 100%;
+  margin: 15px 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+}
+
+.cart-card__btn-delete {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background-image: url(../../images/icon-delete.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  cursor: pointer;
+}

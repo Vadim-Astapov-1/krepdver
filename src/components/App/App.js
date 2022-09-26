@@ -7,12 +7,14 @@ import Main from '../Main/Main';
 import Product from '../Product/Product';
 import Footer from '../Footer/Footer';
 import SideBar from '../SideBar/SideBar';
+import Cart from '../Cart/Cart';
 import NotFound from '../NotFound/NotFound';
 
 import { productsList } from '../../utils/productsList';
 
 function App() {
   const [isMenuHidden, setIsMenuHidden] = useState(false);
+  const [cartList, setCartList] = useState([]);
   const location = useLocation();
 
   function handleNavMenuVisible() {
@@ -27,8 +29,20 @@ function App() {
     return routers.some((item) => item === location.pathname);
   }
 
-  function handleCardSubmit({ name, count, price }) {
-    console.log(`Добавлен товар в корзину ${name} ${count} шт, цена: ${price}`);
+  function handleCardSubmit(card) {
+    if (!cartList.some((item) => item.id === card.id)) {
+      return setCartList([...cartList, card]);
+    }
+
+    setCartList(
+      cartList.map((item) => {
+        if (item.id === card.id) {
+          return { ...item, count: item.count + card.count };
+        }
+
+        return item;
+      })
+    );
   }
 
   useEffect(() => {
@@ -44,6 +58,7 @@ function App() {
       />
       <Routes>
         <Route exact path='/' element={<Main handleCardSubmit={handleCardSubmit} />} />
+        <Route path='/cart' element={<Cart producs={cartList} />}></Route>
         {productsList.map((item) => (
           <Route
             path={`/product/${item.id}`}

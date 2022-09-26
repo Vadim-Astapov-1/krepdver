@@ -4,12 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import CardForm from '../CardForm/CardForm';
 import { Pricing } from '../Pricing/Pricing';
 
-function CompleteSetCard({ id, article, price, description, img, onAddInCart }) {
+function CompleteSetCard({ id, name, article, price, description, img, onAddInCart }) {
   const navigate = useNavigate();
 
   const pricing = Pricing({
     type: 'set-card',
     price: price,
+    count: null,
   });
 
   function handleToProductPage() {
@@ -20,9 +21,11 @@ function CompleteSetCard({ id, article, price, description, img, onAddInCart }) 
     evt.preventDefault();
 
     onAddInCart({
-      name: article,
-      count: pricing.count,
-      price: pricing.priceProduct,
+      id: id,
+      name: name,
+      count: pricing.countProduct,
+      price: price,
+      img: img,
     });
 
     pricing.resetCounter();
@@ -39,7 +42,7 @@ function CompleteSetCard({ id, article, price, description, img, onAddInCart }) 
       <CardForm
         onSubmit={handleCardSubmit}
         onBtnClick={pricing.handleCountClick}
-        count={pricing.count}
+        count={pricing.countProduct}
         type='set-card'
       />
     </article>

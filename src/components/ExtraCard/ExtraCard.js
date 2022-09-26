@@ -10,6 +10,7 @@ function ExtraCard({ id, article, name, price, descriptionList, img, onAddInCart
   const pricing = Pricing({
     type: 'extra-card',
     price: price,
+    count: null,
   });
 
   function handleToProductPage() {
@@ -20,9 +21,11 @@ function ExtraCard({ id, article, name, price, descriptionList, img, onAddInCart
     evt.preventDefault();
 
     onAddInCart({
+      id: id,
       name: name,
-      count: pricing.count,
-      price: pricing.priceProduct,
+      count: pricing.countProduct,
+      price: price,
+      img: img,
     });
 
     pricing.resetCounter();
@@ -44,7 +47,7 @@ function ExtraCard({ id, article, name, price, descriptionList, img, onAddInCart
           <CardForm
             onSubmit={handleCardSubmit}
             onBtnClick={pricing.handleCountClick}
-            count={pricing.count}
+            count={pricing.countProduct}
             type='extra-card'
           />
         </div>

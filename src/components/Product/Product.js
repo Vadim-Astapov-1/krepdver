@@ -23,15 +23,18 @@ function Product({
   const pricing = Pricing({
     type: 'product',
     price: price,
+    count: null,
   });
 
   function handleCardSubmit(evt) {
     evt.preventDefault();
 
     onAddInCart({
+      id: id,
       name: name,
-      count: pricing.count,
-      price: pricing.priceProduct,
+      count: pricing.countProduct,
+      price: price,
+      img: img,
     });
 
     pricing.resetCounter();
@@ -60,7 +63,7 @@ function Product({
                 <CardForm
                   onSubmit={handleCardSubmit}
                   onBtnClick={pricing.handleCountClick}
-                  count={pricing.count}
+                  count={pricing.countProduct}
                   type='product'
                 />
               </div>

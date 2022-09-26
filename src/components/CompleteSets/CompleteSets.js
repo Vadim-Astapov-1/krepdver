@@ -15,6 +15,7 @@ function CompleteSets({ handleCardSubmit, sectionRef }) {
                 <CompleteSetCard
                   key={item.id}
                   id={item.id}
+                  name={item.name}
                   article={item.article}
                   price={item.price}
                   description={item.description}
