@@ -6,25 +6,47 @@ import CartCard from '../CartCard/CartCard';
 import CartInputs from '../CartInputs/CartInputs';
 import CartResult from '../CartResult/CartResult';
 
-function Cart({ producs }) {
+function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
   const [isSending, setIsSending] = useState(false);
+  const [isDelivery, setIsDelivery] = useState(300);
+  const [sum, setSum] = useState(0);
   const cartRef = useRef();
 
   function handleIsSending() {
     setIsSending(!isSending);
   }
 
-  function handleCardSubmit(evt) {
-    evt.preventDefault();
+  function handleInputChangeDelivery(evt) {
+    if (evt.target.id === 'cart-result-input-door') {
+      setIsDelivery(300);
+    } else {
+      setIsDelivery(0);
+    }
+  }
+
+  function handleSum(list) {
+    let total = 0;
+
+    list.forEach((item) => {
+      total = total + item.price * item.count;
+    });
+
+    setSum(total);
   }
 
   function handleFormSubmit(evt) {
     evt.preventDefault();
+
+    console.log('submit');
   }
 
   useEffect(() => {
     cartRef.current.scrollIntoView();
   }, []);
+
+  useEffect(() => {
+    handleSum(itemList);
+  }, [itemList]);
 
   return (
     <section className='cart' ref={cartRef}>
@@ -34,7 +56,7 @@ function Cart({ producs }) {
         <form className='cart__form' onSubmit={handleFormSubmit}>
           {!isSending ? (
             <div className='cart__card-list'>
-              {producs.map((item) => (
+              {itemList.map((item) => (
                 <CartCard
                   key={item.id}
                   id={item.id}
@@ -42,13 +64,22 @@ function Cart({ producs }) {
                   count={item.count}
                   price={item.price}
                   img={item.img}
+                  handleChangeCountItemCart={handleChangeCountItemCart}
+                  handleDeleteItemCart={handleDeleteItemCart}
                 />
               ))}
             </div>
           ) : (
             <CartInputs />
           )}
-          <CartResult isTypeSending={!isSending} handleIsSending={handleIsSending} />
+          <CartResult
+            isTypeSending={!isSending}
+            totalPrice={sum}
+            isDelivery={isDelivery}
+            resultPrice={sum + isDelivery}
+            handleIsSending={handleIsSending}
+            handleInputChangeDelivery={handleInputChangeDelivery}
+          />
         </form>
       </div>
     </section>

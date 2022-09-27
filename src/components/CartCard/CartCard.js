@@ -2,12 +2,32 @@ import './CartCard.css';
 
 import { Pricing } from '../Pricing/Pricing';
 
-function CartCard({ id, name, count, price, img }) {
+function CartCard({
+  id,
+  name,
+  count,
+  price,
+  img,
+  handleChangeCountItemCart,
+  handleDeleteItemCart,
+}) {
+  // Добавление функции extraChangeCounter для отслеживания без асинхронности.
+  // Решило проблему беспонечного рендеринка - при обновлении основного хранилища корзины,
+  // за ним обновлялось pricing.countProduct.
   const pricing = Pricing({
     type: 'cart-card',
     price: price,
     count: count,
+    extraChangeCounter: onChangeCount,
   });
+
+  function onDeleteCard() {
+    handleDeleteItemCart(id);
+  }
+
+  function onChangeCount(count) {
+    handleChangeCountItemCart(id, count);
+  }
 
   return (
     <div className='cart-card'>
@@ -32,7 +52,7 @@ function CartCard({ id, name, count, price, img }) {
         </div>
       </div>
       <p className='cart-card__sum'>{`${pricing.priceProduct} руб`}</p>
-      <button type='button' className='cart-card__btn-delete'></button>
+      <button type='button' className='cart-card__btn-delete' onClick={onDeleteCard}></button>
     </div>
   );
 }

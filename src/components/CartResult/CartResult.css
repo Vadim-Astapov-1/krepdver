@@ -118,6 +118,10 @@
   cursor: pointer;
 }
 
+.cart-result__btn:focus {
+  outline: none;
+}
+
 .cart-result__text {
   max-width: 100%;
   font-style: normal;

@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 
-export function Pricing({ type, price, count }) {
+export function Pricing({ type, price, count, extraChangeCounter }) {
   const [countProduct, setCountProduct] = useState(1);
   const [priceProduct, setPriceProduct] = useState(0);
+
+  // extraChangeCounter только для CartCard.
 
   function handleCountClick(evt) {
     if (evt.target.name === `${type}-btn-up`) {
@@ -12,6 +14,9 @@ export function Pricing({ type, price, count }) {
 
       setCountProduct(countProduct + 1);
       setPriceProduct(priceProduct + price);
+      if (extraChangeCounter) {
+        extraChangeCounter(countProduct + 1);
+      }
       return;
     }
 
@@ -21,6 +26,9 @@ export function Pricing({ type, price, count }) {
 
     setCountProduct(countProduct - 1);
     setPriceProduct(priceProduct - price);
+    if (extraChangeCounter) {
+      extraChangeCounter(countProduct - 1);
+    }
   }
 
   const resetCounter = useCallback(() => {

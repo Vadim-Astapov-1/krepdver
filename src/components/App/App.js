@@ -45,6 +45,24 @@ function App() {
     );
   }
 
+  function handleChangeCountItemCart(id, counts) {
+    setCartList(
+      cartList.map((item) => {
+        if (item.id === id) {
+          return { ...item, count: counts };
+        }
+
+        return item;
+      })
+    );
+  }
+
+  function handleDeleteItemCart(id) {
+    setCartList(
+      cartList.filter((item) => item.id !== id)
+    );
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsMenuHidden(true);
@@ -58,7 +76,10 @@ function App() {
       />
       <Routes>
         <Route exact path='/' element={<Main handleCardSubmit={handleCardSubmit} />} />
-        <Route path='/cart' element={<Cart producs={cartList} />}></Route>
+        <Route
+          path='/cart'
+          element={<Cart itemList={cartList} handleChangeCountItemCart={handleChangeCountItemCart} handleDeleteItemCart={handleDeleteItemCart} />}
+        ></Route>
         {productsList.map((item) => (
           <Route
             path={`/product/${item.id}`}

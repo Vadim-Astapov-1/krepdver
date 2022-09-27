@@ -1,17 +1,13 @@
-import { useState } from 'react';
 import './CartResult.css';
 
-function CartResult({ isTypeSending, handleIsSending }) {
-  const [isDelivery, setIsDelivery] = useState(true);
-
-  function handleInputChange(evt) {
-    if (evt.target.id === 'cart-result-input-door') {
-      setIsDelivery(true);
-    } else {
-      setIsDelivery(false);
-    }
-  }
-
+function CartResult({
+  isTypeSending,
+  isDelivery,
+  totalPrice,
+  resultPrice,
+  handleIsSending,
+  handleInputChangeDelivery,
+}) {
   return (
     <div className='cart-result'>
       <div className='cart-result__container'>
@@ -22,7 +18,7 @@ function CartResult({ isTypeSending, handleIsSending }) {
             type='radio'
             name='cart-result-input'
             id='cart-result-input-door'
-            onChange={handleInputChange}
+            onChange={handleInputChangeDelivery}
             defaultChecked
           ></input>
           <label className='cart-result__input-name' htmlFor='cart-result-input-door'>
@@ -33,7 +29,7 @@ function CartResult({ isTypeSending, handleIsSending }) {
             type='radio'
             name='cart-result-input'
             id='cart-result-input-sdek'
-            onChange={handleInputChange}
+            onChange={handleInputChangeDelivery}
           ></input>
           <label className='cart-result__input-name' htmlFor='cart-result-input-sdek'>
             До пункта выдачи заказов СДЭК
@@ -41,13 +37,13 @@ function CartResult({ isTypeSending, handleIsSending }) {
         </fieldset>
         <div className='cart-result__container-price'>
           <p className='cart-result__text-price cart-result__text-price_type_name'>Сумма</p>
-          <p className='cart-result__text-price'></p>
+          <p className='cart-result__text-price'>{totalPrice ? `${totalPrice} руб` : 0}</p>
           <p className='cart-result__text-price cart-result__text-price_type_name'>Доставка</p>
-          <p className='cart-result__text-price'>{isDelivery ? '300 руб' : 0}</p>
+          <p className='cart-result__text-price'>{isDelivery ? `${isDelivery} руб` : 0}</p>
           <p className='cart-result__text-price cart-result__text-price_type_name cart-result__text-price_style_result'>
             Итог
           </p>
-          <p className='cart-result__text-price cart-result__text-price_style_result'></p>
+          <p className='cart-result__text-price cart-result__text-price_style_result'>{`${resultPrice} руб`}</p>
         </div>
         {!isTypeSending ? (
           <button type='submit' className='cart-result__btn'>
