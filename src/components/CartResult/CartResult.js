@@ -5,6 +5,7 @@ function CartResult({
   isDelivery,
   totalPrice,
   resultPrice,
+  isError,
   handleIsSending,
   handleInputChangeDelivery,
 }) {
@@ -47,14 +48,18 @@ function CartResult({
         </div>
         <button
           type='submit'
-          className={`cart-result__btn ${!isTypeSending ? 'cart-result__btn_visible' : ''}`}
+          className={`cart-result__btn ${!isTypeSending ? 'cart-result__btn_visible' : ''} ${
+            isError ? 'cart-result__btn_type_error' : ''
+          }`}
           style={{ display: `${isTypeSending ? 'none' : 'block'}` }}
         >
           Отправить заказ
         </button>
         <button
           type='button'
-          className={`cart-result__btn ${isTypeSending ? 'cart-result__btn_visible' : ''}`}
+          className={`cart-result__btn ${isTypeSending ? 'cart-result__btn_visible' : ''} ${
+            isError ? 'cart-result__btn_type_error' : ''
+          }`}
           onClick={handleIsSending}
         >
           Оформить заказ

@@ -41,6 +41,21 @@
   gap: 30px;
 }
 
+.cart__warning {
+  max-width: 100%;
+  margin: 175px auto 0 auto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #AAAAAA;
+  transition: 0.3s;
+}
+
+.cart__warning_active {
+  color: red;
+}
+
 @media all and (max-width: 1280px) {
   .cart__container {
     max-width: calc(100% - 96px);

@@ -129,6 +129,14 @@
   display: block;
 }
 
+.cart-result__btn_type_error {
+  background-color: red;
+}
+
+.cart-result__btn_type_error:hover {
+  background-color: red;
+}
+
 .cart-result__text {
   max-width: 100%;
   font-style: normal;

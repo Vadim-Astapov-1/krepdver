@@ -10,11 +10,12 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
   const [isSending, setIsSending] = useState(false);
   const [isDelivery, setIsDelivery] = useState(0);
   const [sum, setSum] = useState(0);
+  const [isError, setIsError] = useState(false);
   const cartRef = useRef();
 
   function handleIsSending() {
-    if(itemList.length === 0) {
-      return
+    if (itemList.length === 0) {
+      return handleError();
     }
 
     setIsSending(!isSending);
@@ -45,7 +46,9 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
   }
 
   function handleError() {
+    setIsError(true);
 
+    setTimeout(() => setIsError(false), 2000);
   }
 
   useEffect(() => {
@@ -63,20 +66,24 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
         <h1 className='cart__title'>{!isSending ? 'Корзина' : 'Оформление заказа'}</h1>
         <form className='cart__form' onSubmit={handleFormSubmit}>
           {!isSending ? (
-            <div className='cart__card-list'>
-              {itemList.map((item) => (
-                <CartCard
-                  key={item.id}
-                  id={item.id}
-                  name={item.name}
-                  count={item.count}
-                  price={item.price}
-                  img={item.img}
-                  handleChangeCountItemCart={handleChangeCountItemCart}
-                  handleDeleteItemCart={handleDeleteItemCart}
-                />
-              ))}
-            </div>
+            itemList.length !== 0 ? (
+              <div className='cart__card-list'>
+                {itemList.map((item) => (
+                  <CartCard
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    count={item.count}
+                    price={item.price}
+                    img={item.img}
+                    handleChangeCountItemCart={handleChangeCountItemCart}
+                    handleDeleteItemCart={handleDeleteItemCart}
+                  />
+                ))}
+              </div>
+            ) : (
+              <p className={`cart__warning ${isError ? 'cart__warning_active' : ''}`}>В корзине пусто</p>
+            )
           ) : (
             <CartInputs />
           )}
@@ -85,6 +92,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
             totalPrice={sum}
             isDelivery={isDelivery}
             resultPrice={sum + isDelivery}
+            isError={isError}
             handleIsSending={handleIsSending}
             handleInputChangeDelivery={handleInputChangeDelivery}
           />
