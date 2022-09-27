@@ -48,7 +48,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
   function handleError() {
     setIsError(true);
 
-    setTimeout(() => setIsError(false), 2000);
+    setTimeout(() => setIsError(false), 500);
   }
 
   useEffect(() => {
@@ -85,7 +85,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
               <p className={`cart__warning ${isError ? 'cart__warning_active' : ''}`}>В корзине пусто</p>
             )
           ) : (
-            <CartInputs />
+            <CartInputs handleIsSending={handleIsSending} />
           )}
           <CartResult
             isTypeSending={!isSending}
