@@ -64,7 +64,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
       <Navigation />
       <div className='cart__container'>
         <h1 className='cart__title'>{!isSending ? 'Корзина' : 'Оформление заказа'}</h1>
-        <form className='cart__form' onSubmit={handleFormSubmit}>
+        <form className='cart__form' onSubmit={handleFormSubmit} noValidate>
           {!isSending ? (
             itemList.length !== 0 ? (
               <div className='cart__card-list'>
