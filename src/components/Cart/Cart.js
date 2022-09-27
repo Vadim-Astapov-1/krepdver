@@ -8,11 +8,15 @@ import CartResult from '../CartResult/CartResult';
 
 function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
   const [isSending, setIsSending] = useState(false);
-  const [isDelivery, setIsDelivery] = useState(300);
+  const [isDelivery, setIsDelivery] = useState(0);
   const [sum, setSum] = useState(0);
   const cartRef = useRef();
 
   function handleIsSending() {
+    if(itemList.length === 0) {
+      return
+    }
+
     setIsSending(!isSending);
   }
 
@@ -37,7 +41,11 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
   function handleFormSubmit(evt) {
     evt.preventDefault();
 
-    console.log('submit');
+    console.log('click');
+  }
+
+  function handleError() {
+
   }
 
   useEffect(() => {

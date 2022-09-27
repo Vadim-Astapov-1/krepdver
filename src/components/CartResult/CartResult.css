@@ -104,6 +104,7 @@
 
 .cart-result__btn {
   max-width: 100%;
+  display: none;
   margin-top: 25px;
   padding-top: 14px;
   padding-bottom: 14px;
@@ -116,10 +117,16 @@
   line-height: 24px;
   color: #FFFFFF;
   cursor: pointer;
+  outline: none;
+  transition: 0.3s;
 }
 
-.cart-result__btn:focus {
-  outline: none;
+.cart-result__btn:hover {
+  background-color: #289924;
+}
+
+.cart-result__btn_visible {
+  display: block;
 }
 
 .cart-result__text {

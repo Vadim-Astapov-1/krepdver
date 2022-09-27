@@ -19,7 +19,6 @@ function CartResult({
             name='cart-result-input'
             id='cart-result-input-door'
             onChange={handleInputChangeDelivery}
-            defaultChecked
           ></input>
           <label className='cart-result__input-name' htmlFor='cart-result-input-door'>
             До двери
@@ -30,6 +29,7 @@ function CartResult({
             name='cart-result-input'
             id='cart-result-input-sdek'
             onChange={handleInputChangeDelivery}
+            defaultChecked
           ></input>
           <label className='cart-result__input-name' htmlFor='cart-result-input-sdek'>
             До пункта выдачи заказов СДЭК
@@ -45,15 +45,20 @@ function CartResult({
           </p>
           <p className='cart-result__text-price cart-result__text-price_style_result'>{`${resultPrice} руб`}</p>
         </div>
-        {!isTypeSending ? (
-          <button type='submit' className='cart-result__btn'>
-            Отправить заказ
-          </button>
-        ) : (
-          <button type='button' className='cart-result__btn' onClick={handleIsSending}>
-            Оформить заказ
-          </button>
-        )}
+        <button
+          type='submit'
+          className={`cart-result__btn ${!isTypeSending ? 'cart-result__btn_visible' : ''}`}
+          style={{ display: `${isTypeSending ? 'none' : 'block'}` }}
+        >
+          Отправить заказ
+        </button>
+        <button
+          type='button'
+          className={`cart-result__btn ${isTypeSending ? 'cart-result__btn_visible' : ''}`}
+          onClick={handleIsSending}
+        >
+          Оформить заказ
+        </button>
         {!isTypeSending && (
           <p className='cart-result__text'>
             Нажимая на кнопку, вы даёте согласие на{' '}
