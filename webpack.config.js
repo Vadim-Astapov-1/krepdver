@@ -7,21 +7,18 @@ const production = process.env.NODE_ENV === 'production';
 
 module.exports = {
   mode: 'development',
-  entry: { main: './src/index.js' },
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: production ? '[name].[contenthash].js' : '[name].js',
   },
   devServer: {
+    static: path.resolve(__dirname, './dist'),
     port: 3000,
+    hot: true,
+    compress: true,
+    open: true,
   },
-  plugins: [
-    new HtmlWebpackPlugin({ template: './public/index.html' }),
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: production ? '[name].[contenthash].css' : '[name].css',
-    }),
-  ],
   module: {
     rules: [
       {
@@ -31,18 +28,27 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [MiniCssExtractPlugin.loader, {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+          }
+        }, 'postcss-loader'],
       },
       {
         test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
-        use: ['file-loader'],
+        type: 'asset/resource',
       },
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.css'],
+    extensions: ['*', '.js', '.css'],
   },
+  plugins: [
+    new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: production ? '[name].[contenthash].css' : '[name].css',
+    }),
+  ],
 };
-
-// entry: ['@babel/polyfill', './src/index.js'],
-// ["style-loader", "css-loader"]
