@@ -10,15 +10,16 @@ if (process.env.NODE_ENV === 'production') {
 const production = mode === 'production';
 
 module.exports = {
-  mode,
-  entry: ['@babel/polyfill', './src/index.js'],
+  mode: production ? 'production' : 'development',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: production ? '[name].[contenthash].js' : '[name].js',
     clean: true,
   },
-  devtool: 'source-map',
+  devtool: production ? 'source-map' : 'inline-source-map',
   devServer: {
+    historyApiFallback: true,
     static: path.resolve(__dirname, 'dist'),
     port: 3000,
     hot: true,
@@ -28,17 +29,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js||jsx)$/,
+        test: /\.(js||jsx)$/i,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
       {
-        test: /\.css$/,
+        test: /\.css$/i,
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
+              sourceMap: true,
               importLoaders: 1,
             },
           },
@@ -46,7 +49,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf|ico)$/,
+        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf|ico)$/i,
+        exclude: /node_modules/,
         type: 'asset/resource',
       },
     ],
@@ -56,7 +60,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      favicon: './public/favicon.ico',
+      filename: './index.html',
+    }),
     new MiniCssExtractPlugin({
       filename: production ? '[name].[contenthash].css' : '[name].css',
     }),
