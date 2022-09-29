@@ -3,17 +3,23 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const production = process.env.NODE_ENV === 'production';
+let mode = 'development';
+if (process.env.NODE_ENV === 'production') {
+  mode = 'production';
+}
+const production = mode === 'production';
 
 module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
+  mode,
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: production ? '[name].[contenthash].js' : '[name].js',
+    clean: true,
   },
+  devtool: 'source-map',
   devServer: {
-    static: path.resolve(__dirname, './dist'),
+    static: path.resolve(__dirname, 'dist'),
     port: 3000,
     hot: true,
     compress: true,
@@ -28,15 +34,19 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 1,
-          }
-        }, 'postcss-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          'postcss-loader',
+        ],
       },
       {
-        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf|ico)$/,
         type: 'asset/resource',
       },
     ],
@@ -45,8 +55,8 @@ module.exports = {
     extensions: ['*', '.js', '.css'],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './public/index.html' }),
     new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({ template: './public/index.html' }),
     new MiniCssExtractPlugin({
       filename: production ? '[name].[contenthash].css' : '[name].css',
     }),
