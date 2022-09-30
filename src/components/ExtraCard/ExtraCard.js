@@ -23,6 +23,7 @@ function ExtraCard({ id, article, name, price, descriptionList, img, onAddInCart
     onAddInCart({
       id: id,
       name: name,
+      article: article,
       count: pricing.countProduct,
       price: price,
       img: img,

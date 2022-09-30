@@ -23,6 +23,7 @@ function CompleteSetCard({ id, name, article, price, description, img, onAddInCa
     onAddInCart({
       id: id,
       name: name,
+      article: article,
       count: pricing.countProduct,
       price: price,
       img: img,

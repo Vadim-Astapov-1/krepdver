@@ -9,7 +9,7 @@ class EmailjsApi {
 
   _checkResponse(res) {
     if (res.ok) {
-      return res.json();
+      return res;
     } else {
       return Promise.reject(`Ошибка: ${res.status}`);
     }

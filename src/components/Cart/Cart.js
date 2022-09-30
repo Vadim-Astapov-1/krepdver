@@ -81,8 +81,32 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
   function handleFormSubmit(evt) {
     evt.preventDefault();
 
+    let list = itemList.map((item) => `Артикль ${item.article} шт. ${item.count}`);
+
+    let date = new Date();
+
+    let params = {
+      name: formValues.name ? formValues.name : '-',
+      surname: formValues.surname ? formValues.surname : '-',
+      phone: formValues.phone ? formValues.phone : '-',
+      email: formValues.email ? formValues.email : '-',
+      location: formValues.location ? formValues.location : '-',
+      comment: formValues.comment ? formValues.comment : '-',
+      items: list.join(', '),
+      deliveryType: isDelivery ? 'до двери' : 'cдэк',
+      sum: sum + ' руб',
+      delivery: isDelivery ? isDelivery + ' руб' : isDelivery,
+      fullPrice: sum + isDelivery + ' руб',
+      time: `${date.getHours()}:${
+        date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+      }`,
+      date: `${date.getDate() < 10 ? '0' + date.getDate() : date.getDate()}.${
+        date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth()
+      }.${date.getFullYear()}`,
+    };
+
     emailApi
-      .sendEmail(formValues)
+      .sendEmail(params)
       .then(() => console.log('Заказ отправлен'))
       .catch((err) => console.log(err));
   }
