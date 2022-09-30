@@ -81,7 +81,12 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
   function handleFormSubmit(evt) {
     evt.preventDefault();
 
-    let list = itemList.map((item) => `Артикль ${item.article} шт. ${item.count}`);
+    let list = itemList.map(
+      (item) =>
+        `Арт. ${item.article} ${item.name} ${item.count} шт, цена ${item.price}.00, сумма ${
+          item.count * item.price
+        }.00`
+    );
 
     let date = new Date();
 
@@ -92,7 +97,6 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
       email: formValues.email ? formValues.email : '-',
       location: formValues.location ? formValues.location : '-',
       comment: formValues.comment ? formValues.comment : '-',
-      items: list.join(', '),
       deliveryType: isDelivery ? 'до двери' : 'cдэк',
       sum: sum + ' руб',
       delivery: isDelivery ? isDelivery + ' руб' : isDelivery,
@@ -104,6 +108,11 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
         date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth()
       }.${date.getFullYear()}`,
     };
+
+    // Заполняем товарами
+    list.forEach((item, index) => {
+      params[`item${index}`] = item;
+    });
 
     emailApi
       .sendEmail(params)
