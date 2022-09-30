@@ -83,7 +83,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
 
     let list = itemList.map(
       (item) =>
-        `Арт. ${item.article} ${item.name} ${item.count} шт, цена ${item.price}.00, сумма ${
+        `Арт. ${item.article} ${item.name.split(item.article)[0]} ${item.count} шт, цена ${item.price}.00, сумма ${
           item.count * item.price
         }.00`
     );

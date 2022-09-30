@@ -7,7 +7,7 @@ import pistol from '../images/pistol.png';
 {
   id: уникальное число - на 1 выше предыдущего,
   type: 'complete-set/extra',
-  name: 'имя',
+  name: 'имя', (Если с артиклем, то ставить его только в конец!)
   article: 'артикль',
   price: цена - только число,
   description:
