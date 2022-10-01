@@ -51,8 +51,9 @@ function Product({
   }, [id]);
 
   useEffect(() => {
-    productRef.current.scrollIntoView();
-    console.log(id)
+    if(window.innerWidth > 425) {
+      productRef.current.scrollIntoView();
+    }
   }, [id]);
 
   return (
@@ -117,7 +118,7 @@ function Product({
             <CardForm
               onSubmit={handleCardSubmit}
               onBtnClick={pricing.handleCountClick}
-              count={pricing.count}
+              count={pricing.countProduct}
               type='product'
             />
           </div>
