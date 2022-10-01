@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -58,9 +59,7 @@ function App() {
   }
 
   function handleDeleteItemCart(id) {
-    setCartList(
-      cartList.filter((item) => item.id !== id)
-    );
+    setCartList(cartList.filter((item) => item.id !== id));
   }
 
   useEffect(() => {
@@ -70,6 +69,20 @@ function App() {
 
   return (
     <div className='app'>
+      <Helmet prioritizeSeoTags>
+        <title>Крепежы для установки межкомнатных дверей в Москве</title>
+        <meta
+          name='description'
+          content='Специальные монтажные комплекты для профессиональной установки межкомнатных дверей. Дверная коробка монтируется в проем любой готовности. Справиться даже новичок, подходит для самостоятельного монтажа!'
+        />
+        <meta property='og:title' content='Крепежы для установки межкомнатных дверей в Москве' />
+        <meta
+          property='og:description'
+          content='Специальные монтажные комплекты для профессиональной установки межкомнатных дверей. Дверная коробка монтируется в проем любой готовности. Справиться даже новичок, подходит для самостоятельного монтажа!'
+        />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://krepdver.ru' />
+      </Helmet>
       <Header
         handleComponentVisible={handleComponentVisible}
         handleNavMenuVisible={handleNavMenuVisible}
@@ -78,7 +91,13 @@ function App() {
         <Route exact path='/' element={<Main handleCardSubmit={handleCardSubmit} />} />
         <Route
           path='/cart'
-          element={<Cart itemList={cartList} handleChangeCountItemCart={handleChangeCountItemCart} handleDeleteItemCart={handleDeleteItemCart} />}
+          element={
+            <Cart
+              itemList={cartList}
+              handleChangeCountItemCart={handleChangeCountItemCart}
+              handleDeleteItemCart={handleDeleteItemCart}
+            />
+          }
         ></Route>
         {productsList.map((item) => (
           <Route

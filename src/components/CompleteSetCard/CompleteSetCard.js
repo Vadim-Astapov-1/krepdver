@@ -34,7 +34,7 @@ function CompleteSetCard({ id, name, article, price, description, img, onAddInCa
 
   return (
     <article className='set-card'>
-      <img className='set-card__img' src={img} alt={article} onClick={handleToProductPage}></img>
+      <img className='set-card__img' src={img} alt={article} title={name} onClick={handleToProductPage}></img>
       <h3 className='set-card__title'>{article}</h3>
       <p className='set-card__price'>{`Цена: ${pricing.priceProduct} руб`}</p>
       <Link to={`/product/${id}`} className='set-card__description'>

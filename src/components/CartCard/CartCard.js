@@ -33,7 +33,7 @@ function CartCard({
     <div className='cart-card'>
       <div className='cart-card__container'>
         <h2 className='cart-card__title'>{name}</h2>
-        <img className='cart-card__img' src={img} alt={name}></img>
+        <img className='cart-card__img' src={img} alt={name} title={name}></img>
         <p className='cart-card__price'>{`${price} руб`}</p>
         <div className='cart-card__container-price'>
           <button

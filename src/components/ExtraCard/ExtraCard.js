@@ -34,7 +34,7 @@ function ExtraCard({ id, article, name, price, descriptionList, img, onAddInCart
 
   return (
     <article className='extra-card'>
-      <img className='extra-card__img' src={img} alt={article} onClick={handleToProductPage}></img>
+      <img className='extra-card__img' src={img} alt={article} title={name} onClick={handleToProductPage}></img>
       <div className='extra-card__info'>
         <h3 className='extra-card__title'>{article}</h3>
         <Link to={`/product/${id}`} className='extra-card__container-link'>

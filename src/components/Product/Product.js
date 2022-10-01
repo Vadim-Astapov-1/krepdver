@@ -1,11 +1,13 @@
 import './Product.css';
 import { useEffect, useMemo, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 import Navigation from '../Navigation/Navigation';
 import CardForm from '../CardForm/CardForm';
 import SliderProducts from '../SliderProducts/SliderProducts';
 import { Pricing } from '../Pricing/Pricing';
 import { productsList } from '../../utils/productsList';
+import { useLocation } from 'react-router-dom';
 
 function Product({
   id,
@@ -20,6 +22,7 @@ function Product({
   packageInfo,
   feature,
 }) {
+  const location = useLocation();
   const productRef = useRef();
 
   const pricing = Pricing({
@@ -48,21 +51,26 @@ function Product({
   }, [id]);
 
   useEffect(() => {
-    document.title = name;
-  }, [name]);
-
-  useEffect(() => {
     productRef.current.scrollIntoView();
   }, []);
 
   return (
     <>
       <section className='product' ref={productRef}>
+        <Helmet prioritizeSeoTags>
+          <title>{name}</title>
+          <meta name='description' content={description} />
+          <meta property='og:title' content={name} />
+          <meta property='og:description' content={description} />
+          <meta property='og:type' content='article' />
+          <meta property='og:url' content={`https://krepdver.ru${location.pathname}`} />
+          <meta property="og:image" content={img}></meta>
+        </Helmet>
         <Navigation />
         <h1 className='product__title'>{name}</h1>
         <div className='container product__container'>
           <div className='product__heading'>
-            <img className='product__img' src={img} alt={name}></img>
+            <img className='product__img' src={img} alt={name} title={name}></img>
             <p className='product__description'>{description}</p>
             {window.innerWidth > 670 ? (
               <div className='product__container-price'>

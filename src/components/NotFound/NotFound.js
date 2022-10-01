@@ -14,7 +14,7 @@ function NotFound() {
 
   return (
     <div className='not-found'>
-      <img className='not-found__img' src={iconNotFound} alt='Знак ошибки'></img>
+      <img className='not-found__img' src={iconNotFound} alt='Знак ошибки' title='Ошибка'></img>
       <div className='not-found__code-info'>
         <h1 className='not-found__code'>404</h1>
         <p className='not-found__text'>Страница не найдена</p>

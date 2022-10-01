@@ -22,9 +22,9 @@ function Header({ handleComponentVisible, handleNavMenuVisible }) {
     handleComponentVisible(myRouters, location) && (
       <header className='header'>
         <div className='header__container'>
-          <img className='header__logo' src={logo} alt='Логотип'></img>
+          <img className='header__logo' src={logo} alt='Логотип' title='Логотип'></img>
           <div className='header__column-delivery'>
-            <img className='header__icon-delivery' src={sdek} alt='Иконка доставки'></img>
+            <img className='header__icon-delivery' src={sdek} alt='Иконка доставки' title='Доставка'></img>
             <p className='header__text-delivery'>Доставка по СДЭК</p>
             <p className='header__text-delivery'>Самовывоз по Москве и Московской области</p>
           </div>
@@ -32,7 +32,7 @@ function Header({ handleComponentVisible, handleNavMenuVisible }) {
         </div>
         <div className='header__container-mobile'>
           <Link to='/cart' className='header__btn-cart' />
-          <img className='header__logo' src={logo} alt='Логотип'></img>
+          <img className='header__logo' src={logo} alt='Логотип' title='Логотип'></img>
           <a href='tel:+79263677030' className='header__link header__link_type_tel'>tel:+79263677030</a>
           <a href='mailto:krepdver@yandex.ru' className='header__link header__link_type_email'>mailto:krepdver@yandex.ru</a>
           <button

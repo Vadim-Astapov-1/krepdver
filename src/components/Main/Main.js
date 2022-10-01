@@ -1,8 +1,9 @@
 import './Main.css';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
-import { websiteName } from '../../utils/constants';
+import logo from '../../images/logo.png';
 
 import Description from '../Description/Description';
 import CompleteSets from '../CompleteSets/CompleteSets';
@@ -35,10 +36,6 @@ function Main({ handleCardSubmit }) {
   }
 
   useEffect(() => {
-    document.title = websiteName;
-  }, []);
-
-  useEffect(() => {
     if (location.state !== null) {
       handleScroll(location.state.scrollMain);
     }
@@ -46,6 +43,21 @@ function Main({ handleCardSubmit }) {
 
   return (
     <main className='content'>
+      <Helmet prioritizeSeoTags>
+        <title>Крепежы для установки межкомнатных дверей в Москве</title>
+        <meta
+          name='description'
+          content='Специальные монтажные комплекты для профессиональной установки межкомнатных дверей. Дверная коробка монтируется в проем любой готовности. Справиться даже новичок, подходит для самостоятельного монтажа!'
+        />
+        <meta property='og:title' content='Крепежы для установки межкомнатных дверей в Москве' />
+        <meta
+          property='og:description'
+          content='Специальные монтажные комплекты для профессиональной установки межкомнатных дверей. Дверная коробка монтируется в проем любой готовности. Справиться даже новичок, подходит для самостоятельного монтажа!'
+        />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://krepdver.ru' />
+        <meta property="og:image" content={logo}></meta>
+      </Helmet>
       <Description />
       <CompleteSets handleCardSubmit={handleCardSubmit} sectionRef={completeSetsRef} />
       <Extra handleCardSubmit={handleCardSubmit} />

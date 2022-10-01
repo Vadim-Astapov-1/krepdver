@@ -24,17 +24,17 @@ function Footer({ handleComponentVisible }) {
       <footer className='footer'>
         <div className='footer__container'>
           <div className='footer__column-view'>
-            <img className='footer__logo' src={logo} alt='Логотип'></img>
+            <img className='footer__logo' src={logo} alt='Логотип' title='Логотип'></img>
             <p className='footer__copyright'>&#169; 2022 Все права защищены.</p>
           </div>
           <div className='footer__columns'>
             <nav className='footer__column-links'>
               <a className='footer__link' href='#/' target='_blank'>
-                <img className='footer__img-link' src={youtube} alt='Иконка ютуб'></img>
+                <img className='footer__img-link' src={youtube} alt='Иконка ютуб' title='WhatsApp'></img>
                 <p className='footer__text-link'> Youtube</p>
               </a>
               <a className='footer__link' href='#/' target='_blank'>
-                <img className='footer__img-link' src={whatsapp} alt='Иконка ватсапп'></img>
+                <img className='footer__img-link' src={whatsapp} alt='Иконка ватсапп' title='Youtube'></img>
                 <p className='footer__text-link'> Whatsapp</p>
               </a>
             </nav>

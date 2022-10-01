@@ -19,7 +19,7 @@ function Description() {
           Заказать прямо сейчас!
         </Link>
       </div>
-      <img className='description__img' src={banner} alt='Баннер'></img>
+      <img className='description__img' src={banner} alt='Баннер' title='Баннер'></img>
     </section>
   );
 }
