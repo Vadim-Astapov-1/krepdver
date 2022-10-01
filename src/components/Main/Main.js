@@ -31,7 +31,7 @@ function Main({ handleCardSubmit }) {
         mapRef.current.scrollIntoView();
         break;
       default:
-        console.log('Error: ошибка скроллинга');
+        window.scrollTo(0, 0);;
     }
   }
 

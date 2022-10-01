@@ -52,7 +52,8 @@ function Product({
 
   useEffect(() => {
     productRef.current.scrollIntoView();
-  }, []);
+    console.log(id)
+  }, [id]);
 
   return (
     <>
