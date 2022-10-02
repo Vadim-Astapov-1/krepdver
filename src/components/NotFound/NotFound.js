@@ -1,5 +1,6 @@
 import './NotFound.css';
 import { useLocation, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import iconNotFound from '../../images/icon-not-found.svg';
 import { websiteLink } from '../../utils/constants';
@@ -9,6 +10,9 @@ function NotFound() {
 
   return (
     <div className='not-found'>
+      <Helmet>
+        <title>Страница не найдена</title>
+      </Helmet>
       <img className='not-found__img' src={iconNotFound} alt='Знак ошибки' title='Ошибка'></img>
       <div className='not-found__code-info'>
         <h1 className='not-found__code'>404</h1>

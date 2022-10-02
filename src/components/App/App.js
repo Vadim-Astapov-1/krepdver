@@ -1,7 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -68,23 +67,6 @@ function App() {
 
   return (
     <div className='app'>
-      <Helmet prioritizeSeoTags>
-        <meta
-          name='description'
-          content='Специальные монтажные комплекты для профессиональной установки межкомнатных дверей. Дверная коробка монтируется в проем любой готовности. Справиться даже новичок, подходит для самостоятельного монтажа!'
-        ></meta>
-        <meta
-          property='og:title'
-          content='Крепежы для установки межкомнатных дверей в Москве'
-        ></meta>
-        <meta
-          property='og:description'
-          content='Специальные монтажные комплекты для профессиональной установки межкомнатных дверей. Дверная коробка монтируется в проем любой готовности. Справиться даже новичок, подходит для самостоятельного монтажа!'
-        ></meta>
-        <meta property='og:type' content='website'></meta>
-        <meta property='og:url' content='https://krepdver.ru'></meta>
-        <title>Крепежы для установки межкомнатных дверей в Москве</title>
-      </Helmet>
       <Header
         handleComponentVisible={handleComponentVisible}
         handleNavMenuVisible={handleNavMenuVisible}
