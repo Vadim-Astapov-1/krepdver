@@ -128,6 +128,13 @@
   background-color: #289924;
 }
 
+.cart-result__btn:disabled {
+  color: #000000;
+  background-color: #e5e5e5;
+  font-weight: 400;
+  font-size: 16;
+}
+
 .cart-result__btn_visible {
   display: block;
 }

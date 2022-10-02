@@ -7,6 +7,7 @@ import CartInputs from '../CartInputs/CartInputs';
 import CartResult from '../CartResult/CartResult';
 
 import { emailApi } from '../../utils/EmailjsApi';
+import { Validation } from '../Validation/Validation';
 
 function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
   const [isSending, setIsSending] = useState(false);
@@ -24,6 +25,8 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
     comment: '',
   });
 
+  let validation = Validation();
+
   function handleIsSending() {
     if (itemList.length === 0) {
       return handleError();
@@ -34,6 +37,8 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
 
   function handleChangeInputs(evt) {
     let input = evt.target;
+
+    validation.handleChangeInput(evt);
 
     if (input.name === 'name') {
       return setFormValues({ ...formValues, name: input.value });
@@ -105,7 +110,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
         date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
       }`,
       date: `${date.getDate() < 10 ? '0' + date.getDate() : date.getDate()}.${
-        date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth()
+        date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1
       }.${date.getFullYear()}`,
     };
 
@@ -116,7 +121,10 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
 
     emailApi
       .sendEmail(params)
-      .then(() => console.log('Заказ отправлен'))
+      .then(() => {
+        console.log('Заказ отправлен')
+        validation.resetForm();
+      })
       .catch((err) => console.log(err));
   }
 
@@ -139,7 +147,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
       <Navigation />
       <div className='cart__container'>
         <h1 className='cart__title'>{!isSending ? 'Корзина' : 'Оформление заказа'}</h1>
-        <form className='cart__form' onSubmit={handleFormSubmit}>
+        <form className='cart__form' onSubmit={handleFormSubmit} noValidate>
           {!isSending ? (
             itemList.length !== 0 ? (
               <div className='cart__card-list'>
@@ -165,6 +173,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
             <CartInputs
               handleIsSending={handleIsSending}
               formValues={formValues}
+              validation={validation}
               handleChangeInputs={handleChangeInputs}
             />
           )}
@@ -174,6 +183,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
             isDelivery={isDelivery}
             resultPrice={sum + isDelivery}
             isError={isError}
+            isValid={validation.isValid}
             handleIsSending={handleIsSending}
             handleInputChangeDelivery={handleInputChangeDelivery}
           />

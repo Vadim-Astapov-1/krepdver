@@ -1,16 +1,11 @@
 import './NotFound.css';
 import { useLocation, Link } from 'react-router-dom';
-import { useEffect } from 'react';
 
 import iconNotFound from '../../images/icon-not-found.svg';
-import { websiteLink, webPageNotFoundName } from '../../utils/constants';
+import { websiteLink } from '../../utils/constants';
 
 function NotFound() {
   const location = useLocation();
-
-  useEffect(() => {
-    document.title = webPageNotFoundName;
-  }, []);
 
   return (
     <div className='not-found'>

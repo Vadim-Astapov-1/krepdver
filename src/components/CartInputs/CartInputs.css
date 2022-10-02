@@ -56,10 +56,6 @@
   color: #000000;
 }
 
-.cart-form__input_type_error {
-  border: 1px solid red;
-}
-
 .cart-form__input_type_field {
   min-height: 154px;
   resize: none;

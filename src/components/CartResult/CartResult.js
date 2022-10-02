@@ -6,6 +6,7 @@ function CartResult({
   totalPrice,
   resultPrice,
   isError,
+  isValid,
   handleIsSending,
   handleInputChangeDelivery,
 }) {
@@ -52,6 +53,7 @@ function CartResult({
             isError ? 'cart-result__btn_type_error' : ''
           }`}
           style={{ display: `${isTypeSending ? 'none' : 'block'}` }}
+          disabled={!isValid && true}
         >
           Отправить заказ
         </button>

@@ -1,9 +1,9 @@
 // example name
 export const websiteLink = 'https://krepdver';
-
 export const websiteName = 'Крепеж для установки межкомнатных дверей в Москве';
-export const webPageNotFoundName = '404 Not Found';
+
+export const regexWord = /^[a-zа-яё\s-]+$/i;
+export const regexNumber = /^[0-9]+$/;
 
 export const headerRouters = ['/', '/cart'];
-
 export const footerRouters = ['/', '/cart'];

@@ -1,6 +1,6 @@
 import './CartInputs.css';
 
-function CartInputs({ handleIsSending, formValues, handleChangeInputs }) {
+function CartInputs({ handleIsSending, formValues, validation, handleChangeInputs }) {
   return (
     <fieldset className='cart-form__container'>
       <div className='cart-form__container-shorts'>
@@ -15,8 +15,9 @@ function CartInputs({ handleIsSending, formValues, handleChangeInputs }) {
             name='name'
             value={formValues.name}
             onChange={handleChangeInputs}
+            required
           ></input>
-          <span className='cart-form__error-message'></span>
+          <span className='cart-form__error-message'>{validation.errors.name}</span>
         </div>
         <div className='cart-form__item-input'>
           <label className='cart-form__input-name' htmlFor='cart-form-input-surname'>
@@ -29,8 +30,9 @@ function CartInputs({ handleIsSending, formValues, handleChangeInputs }) {
             name='surname'
             value={formValues.surname}
             onChange={handleChangeInputs}
+            required
           ></input>
-          <span className='cart-form__error-message'></span>
+          <span className='cart-form__error-message'>{validation.errors.surname}</span>
         </div>
         <div className='cart-form__item-input'>
           <label className='cart-form__input-name' htmlFor='cart-form-input-phone'>
@@ -43,11 +45,9 @@ function CartInputs({ handleIsSending, formValues, handleChangeInputs }) {
             name='phone'
             value={formValues.phone}
             onChange={handleChangeInputs}
-            minLength={6}
-            maxLength={20}
             required
           ></input>
-          <span className='cart-form__error-message'></span>
+          <span className='cart-form__error-message'>{validation.errors.phone}</span>
         </div>
         <div className='cart-form__item-input'>
           <label className='cart-form__input-name' htmlFor='cart-form-input-email'>
@@ -60,11 +60,9 @@ function CartInputs({ handleIsSending, formValues, handleChangeInputs }) {
             name='email'
             value={formValues.email}
             onChange={handleChangeInputs}
-            minLength={5}
-            maxLength={50}
             required
           ></input>
-          <span className='cart-form__error-message'></span>
+          <span className='cart-form__error-message'>{validation.errors.email}</span>
         </div>
       </div>
       <div className='cart-form__container-longs'>
@@ -79,12 +77,9 @@ function CartInputs({ handleIsSending, formValues, handleChangeInputs }) {
             name='location'
             value={formValues.location}
             onChange={handleChangeInputs}
-            minLength={6}
-            maxLength={100}
-            autocomplate='off'
             required
           ></input>
-          <span className='cart-form__error-message'></span>
+          <span className='cart-form__error-message'>{validation.errors.location}</span>
         </div>
         <div className='cart-form__item-input cart-form__item-input_long_full'>
           <label className='cart-form__input-name' htmlFor='cart-form-input-comment'>
