@@ -31,7 +31,7 @@ function Main({ handleCardSubmit }) {
         mapRef.current.scrollIntoView();
         break;
       default:
-        window.scrollTo(0, 0);;
+        window.scrollTo(0, 0);
     }
   }
 
@@ -44,19 +44,22 @@ function Main({ handleCardSubmit }) {
   return (
     <main className='content'>
       <Helmet prioritizeSeoTags>
-        <title>Крепежы для установки межкомнатных дверей в Москве</title>
         <meta
           name='description'
           content='Специальные монтажные комплекты для профессиональной установки межкомнатных дверей. Дверная коробка монтируется в проем любой готовности. Справиться даже новичок, подходит для самостоятельного монтажа!'
-        />
-        <meta property='og:title' content='Крепежы для установки межкомнатных дверей в Москве' />
+        ></meta>
+        <meta
+          property='og:title'
+          content='Крепежы для установки межкомнатных дверей в Москве'
+        ></meta>
         <meta
           property='og:description'
           content='Специальные монтажные комплекты для профессиональной установки межкомнатных дверей. Дверная коробка монтируется в проем любой готовности. Справиться даже новичок, подходит для самостоятельного монтажа!'
-        />
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://krepdver.ru' />
-        <meta property="og:image" content={logo}></meta>
+        ></meta>
+        <meta property='og:type' content='website'></meta>
+        <meta property='og:url' content='https://krepdver.ru'></meta>
+        <meta property='og:image' content={logo}></meta>
+        <title>Крепежы для установки межкомнатных дверей в Москве</title>
       </Helmet>
       <Description />
       <CompleteSets handleCardSubmit={handleCardSubmit} sectionRef={completeSetsRef} />

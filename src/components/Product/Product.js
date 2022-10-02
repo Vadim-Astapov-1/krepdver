@@ -51,7 +51,7 @@ function Product({
   }, [id]);
 
   useEffect(() => {
-    if(window.innerWidth > 425) {
+    if (window.innerWidth > 425) {
       productRef.current.scrollIntoView();
     }
   }, [id]);
@@ -60,13 +60,13 @@ function Product({
     <>
       <section className='product' ref={productRef}>
         <Helmet prioritizeSeoTags>
+          <meta name='description' content={description}></meta>
+          <meta property='og:title' content={name}></meta>
+          <meta property='og:description' content={description}></meta>
+          <meta property='og:type' content='article'></meta>
+          <meta property='og:url' content={`https://krepdver.ru${location.pathname}`}></meta>
+          <meta property='og:image' content={img}></meta>
           <title>{name}</title>
-          <meta name='description' content={description} />
-          <meta property='og:title' content={name} />
-          <meta property='og:description' content={description} />
-          <meta property='og:type' content='article' />
-          <meta property='og:url' content={`https://krepdver.ru${location.pathname}`} />
-          <meta property="og:image" content={img}></meta>
         </Helmet>
         <Navigation />
         <h1 className='product__title'>{name}</h1>

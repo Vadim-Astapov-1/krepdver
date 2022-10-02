@@ -1,5 +1,6 @@
 // example name
-export const websiteLink = 'https://krepdver';
+// export const websiteLink = 'https://krepdver';
+export const websiteLink = 'https://www.ekzopol.ru';
 export const websiteName = 'Крепеж для установки межкомнатных дверей в Москве';
 
 export const regexWord = /^[a-zа-яё\s-]+$/i;
