@@ -41,7 +41,7 @@ function CartResult({
           <p className='cart-result__text-price cart-result__text-price_type_name'>Сумма</p>
           <p className='cart-result__text-price'>{totalPrice ? `${totalPrice} руб` : 0}</p>
           <p className='cart-result__text-price cart-result__text-price_type_name'>Доставка</p>
-          <p className='cart-result__text-price'>{isDelivery ? `${isDelivery} руб` : 0}</p>
+          <p className='cart-result__text-price'>{`от ${isDelivery ? `${isDelivery} руб` : 0}`}</p>
           <p className='cart-result__text-price cart-result__text-price_type_name cart-result__text-price_style_result'>
             Итог
           </p>

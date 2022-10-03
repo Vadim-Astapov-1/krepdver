@@ -11,7 +11,7 @@ import { Validation } from '../Validation/Validation';
 
 function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
   const [isSending, setIsSending] = useState(false);
-  const [isDelivery, setIsDelivery] = useState(0);
+  const [isDelivery, setIsDelivery] = useState(500);
   const [sum, setSum] = useState(0);
   const [isError, setIsError] = useState(false);
   const cartRef = useRef();
@@ -67,9 +67,9 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
 
   function handleInputChangeDelivery(evt) {
     if (evt.target.id === 'cart-result-input-door') {
-      setIsDelivery(300);
+      setIsDelivery(500);
     } else {
-      setIsDelivery(0);
+      setIsDelivery(300);
     }
   }
 
