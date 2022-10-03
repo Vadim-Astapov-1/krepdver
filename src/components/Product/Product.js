@@ -2,6 +2,8 @@ import './Product.css';
 import { useEffect, useMemo, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 
+import { websiteLink } from '../../utils/constants';
+
 import Navigation from '../Navigation/Navigation';
 import CardForm from '../CardForm/CardForm';
 import SliderProducts from '../SliderProducts/SliderProducts';
@@ -64,7 +66,7 @@ function Product({
           <meta property='og:title' content={name}></meta>
           <meta property='og:description' content={description}></meta>
           <meta property='og:type' content='article'></meta>
-          <meta property='og:url' content={`https://krepdver.ru${location.pathname}`}></meta>
+          <meta property='og:url' content={`${websiteLink}${location.pathname}`}></meta>
           <meta property='og:image' content={img}></meta>
           <title>{name}</title>
         </Helmet>

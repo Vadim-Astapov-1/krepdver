@@ -88,9 +88,9 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
 
     let list = itemList.map(
       (item) =>
-        `Арт. ${item.article} ${item.name.split(item.article)[0]} ${item.count} шт, цена ${item.price}.00, сумма ${
-          item.count * item.price
-        }.00`
+        `Арт. ${item.article} ${item.name.split(item.article)[0]} ${item.count} шт, цена ${
+          item.price
+        }.00, сумма ${item.count * item.price}.00`
     );
 
     let date = new Date();
@@ -122,7 +122,6 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
     emailApi
       .sendEmail(params)
       .then(() => {
-        console.log('Заказ отправлен')
         validation.resetForm();
       })
       .catch((err) => console.log(err));

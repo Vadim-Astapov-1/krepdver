@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
@@ -54,15 +55,10 @@ module.exports = {
         exclude: /node_modules/,
         type: 'asset/resource',
       },
-      {
-        test: /\.(ico|json)$/i,
-        exclude: /node_modules/,
-        use: ["file-loader?name=[name].[ext]"]
-      ,}
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.css'],
+    extensions: ['*', '.js', '.css'],
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -76,6 +72,9 @@ module.exports = {
     }),
     new WebpackManifestPlugin({
       fileName: 'manifest.json',
+    }),
+    new RobotstxtPlugin({
+      filePath: './public/robots.txt',
     }),
   ],
 };

@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 import logo from '../../images/logo.png';
+import { websiteLink } from '../../utils/constants';
 
 import Description from '../Description/Description';
 import CompleteSets from '../CompleteSets/CompleteSets';
@@ -50,16 +51,16 @@ function Main({ handleCardSubmit }) {
         ></meta>
         <meta
           property='og:title'
-          content='Крепежы для установки межкомнатных дверей в Москве'
+          content='Крепеж для установки межкомнатных дверей в Москве'
         ></meta>
         <meta
           property='og:description'
           content='Специальные монтажные комплекты для профессиональной установки межкомнатных дверей. Дверная коробка монтируется в проем любой готовности. Справиться даже новичок, подходит для самостоятельного монтажа!'
         ></meta>
         <meta property='og:type' content='website'></meta>
-        <meta property='og:url' content='https://krepdver.ru'></meta>
+        <meta property='og:url' content={websiteLink}></meta>
         <meta property='og:image' content={logo}></meta>
-        <title>Крепежы для установки межкомнатных дверей в Москве</title>
+        <title>Крепеж для установки межкомнатных дверей в Москве</title>
       </Helmet>
       <Description />
       <CompleteSets handleCardSubmit={handleCardSubmit} sectionRef={completeSetsRef} />
