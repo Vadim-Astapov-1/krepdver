@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -19,6 +18,7 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: production ? '[name].[contenthash].js' : '[name].js',
     clean: true,
+    publicPath: '/',
   },
   devtool: production ? 'source-map' : 'inline-source-map',
   devServer: {
@@ -62,7 +62,6 @@ module.exports = {
     extensions: ['*', '.js', '.css'],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
