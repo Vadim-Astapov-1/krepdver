@@ -13,7 +13,7 @@ const production = mode === 'production';
 
 module.exports = {
   mode: production ? 'production' : 'development',
-  entry: './src/index.js',
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: production ? '[name].[contenthash].js' : '[name].js',
