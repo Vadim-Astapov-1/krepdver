@@ -34,18 +34,26 @@ function CompleteSetCard({ id, name, article, price, description, img, onAddInCa
 
   return (
     <article className='set-card'>
-      <img className='set-card__img' src={img} alt={article} title={name} onClick={handleToProductPage}></img>
+      <img
+        className='set-card__img'
+        src={img}
+        alt={article}
+        title={name}
+        onClick={handleToProductPage}
+      ></img>
       <h3 className='set-card__title'>{article}</h3>
       <p className='set-card__price'>{`Цена: ${pricing.priceProduct} руб`}</p>
       <Link to={`/product/${id}`} className='set-card__description'>
         {description}
       </Link>
-      <CardForm
-        onSubmit={handleCardSubmit}
-        onBtnClick={pricing.handleCountClick}
-        count={pricing.countProduct}
-        type='set-card'
-      />
+      <div className='set-card__container-form'>
+        <CardForm
+          onSubmit={handleCardSubmit}
+          onBtnClick={pricing.handleCountClick}
+          count={pricing.countProduct}
+          type='set-card'
+        />
+      </div>
     </article>
   );
 }

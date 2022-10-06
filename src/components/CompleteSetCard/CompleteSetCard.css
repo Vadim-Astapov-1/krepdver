@@ -56,6 +56,10 @@
   text-decoration: underline #17B111;
 }
 
+.set-card__container-form {
+  margin: auto 0 0 0;
+}
+
 @media all and (max-width: 1024px) {
   .set-card__img {
     height: 162px;
