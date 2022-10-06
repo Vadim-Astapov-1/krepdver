@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode=development",
-    "prebuild": "webpack-dev-server --mode=production",
+    "pre-build": "webpack-dev-server --mode=production",
     "build": "webpack --mode=production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -74,7 +74,7 @@ module.exports = {
       fileName: 'manifest.json',
     }),
     new RobotstxtPlugin({
-      filePath: './public/robots.txt',
+      filePath: 'robots.txt',
     }),
   ],
 };
