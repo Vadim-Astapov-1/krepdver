@@ -149,6 +149,7 @@
 
 .cart-result__text {
   max-width: 100%;
+  margin: 15px 0 0 0;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
@@ -165,4 +166,125 @@
 
 .cart-result__text-allot:hover {
   text-decoration: underline #0500F5;
+}
+
+@media all and (max-width: 1024px) {
+  .cart-result {
+    max-width: 270px;
+  }
+
+  .cart-result__container-input {
+    grid-template-columns: 18px 1fr;
+    gap: 10px 16px;
+  }
+
+  .cart-result__inputs-title {
+    font-size: 17px;
+    line-height: 21px;
+  }
+
+  .cart-result__input-range {
+    width: 18px;
+    height: 18px;
+  }
+
+  .cart-result__input-range::before {
+    width: 10px;
+    height: 10px;
+  }
+
+  .cart-result__input-name {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .cart-result__container-price {
+    row-gap: 10px;
+  }
+
+  .cart-result__text-price {
+    font-size: 17px;
+    line-height: 21px;
+  }
+
+  .cart-result__text-price_style_result {
+    margin-top: 5px;
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  .cart-result__btn {
+    margin-top: 20px;
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  .cart-result__text {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .cart-result {
+    max-width: 230px;
+  }
+
+  .cart-result__container {
+    margin: 15px 10px;
+  }
+
+  .cart-result__container-input {
+    grid-template-columns: 15px 1fr;
+    gap: 15px;
+  }
+
+  .cart-result__inputs-title {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .cart-result__input-range {
+    width: 15px;
+    height: 15px;
+  }
+
+  .cart-result__input-range::before {
+    top: 3px;
+    left: 3px;
+    width: 9px;
+    height: 9px;
+  }
+
+  .cart-result__input-name {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .cart-result__text-price {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .cart-result__text-price_style_result {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .cart-result__btn {
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    line-height: 21px;
+  }
+
+  .cart-result__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media all and (max-width: 425px) {
+
 }

@@ -67,9 +67,9 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
 
   function handleInputChangeDelivery(evt) {
     if (evt.target.id === 'cart-result-input-door') {
-      setIsDelivery(500);
-    } else {
       setIsDelivery(300);
+    } else {
+      setIsDelivery(500);
     }
   }
 

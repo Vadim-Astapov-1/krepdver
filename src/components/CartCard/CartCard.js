@@ -50,8 +50,8 @@ function CartCard({
             onClick={pricing.handleCountClick}
           ></button>
         </div>
+        <p className='cart-card__sum'>{`${pricing.priceProduct} руб`}</p>
       </div>
-      <p className='cart-card__sum'>{`${pricing.priceProduct} руб`}</p>
       <button type='button' className='cart-card__btn-delete' onClick={onDeleteCard}></button>
     </div>
   );

@@ -85,9 +85,9 @@
 
 .cart-card__sum {
   max-width: 100%;
-  margin: 15px 0;
+  margin: 15px 0 0 0;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: #000000;
@@ -106,4 +106,120 @@
   background-size: cover;
   border: 0;
   cursor: pointer;
+}
+
+@media all and (max-width: 1024px) {
+  .cart-card {
+    max-width: 235px;
+  }
+
+  .cart-card__title {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .cart-card__img {
+    height: 136px;
+  }
+
+  .cart-card__price {
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  .cart-card__sum {
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  .cart-card__btn-delete {
+    width: 18px;
+    height: 18px;
+    top: -21px;
+    right: -21px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .cart-card {
+    max-width: 195px;
+  }
+
+  .cart-card__container {
+    margin: 10px;
+  }
+
+  .cart-card__title {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .cart-card__img {
+    margin-top: 5px;
+    height: 111px;
+  }
+
+  .cart-card__price {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .cart-card__sum {
+    font-size: 17px;
+    line-height: 21px;
+  }
+
+  .cart-card__btn-delete {
+    width: 15px;
+    height: 15px;
+    top: -18px;
+    right: -18px;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .cart-card {
+    max-width: 135px;
+    border-radius: 10px;
+  }
+
+  .cart-card__title {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .cart-card__img {
+    height: 72px;
+  }
+
+  .cart-card__price {
+    margin: 5px 0 10px 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .cart-card__btn {
+    width: 30px;
+    height: 30px;
+    background-size: 13px 13px;
+  }
+
+  .cart-card__count {
+    min-width: 30px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .cart-card__sum {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .cart-card__btn-delete {
+    width: 15px;
+    height: 15px;
+    top: -22px;
+    right: 0;
+  }
 }
