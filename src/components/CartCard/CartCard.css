@@ -1,5 +1,6 @@
 .cart-card {
   max-width: 255px;
+  margin: 0 auto;
   position: relative;
   border: 2px solid #E9E9E9;
   border-radius: 20px;
