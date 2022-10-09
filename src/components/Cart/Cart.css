@@ -89,6 +89,10 @@
 }
 
 @media all and (max-width: 768px) {
+  .cart {
+    margin-top: 15px;
+  }
+
   .cart__container {
     max-width: calc(100% - 48px);
     margin: 15px auto 50px auto;
@@ -116,10 +120,6 @@
 }
 
 @media all and (max-width: 500px) {
-  .cart {
-    margin-top: 0;
-  }
-
   .cart__container {
     max-width: 100%;
     margin: 0 0 20px 0;
@@ -150,6 +150,10 @@
 }
 
 @media all and (max-width: 425px) {
+  .cart {
+    margin-top: 0;
+  }
+
   .cart__card-list {
     grid-template-columns: repeat(auto-fit, minmax(130px, 135px));
   }

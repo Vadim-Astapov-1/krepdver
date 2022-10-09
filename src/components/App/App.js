@@ -13,6 +13,7 @@ import NotFound from '../NotFound/NotFound';
 import { productsList } from '../../utils/productsList';
 
 function App() {
+  const [isCartFull, setIsCartFull] = useState(false);
   const [isMenuHidden, setIsMenuHidden] = useState(false);
   const [cartList, setCartList] = useState([]);
   const location = useLocation();
@@ -61,13 +62,28 @@ function App() {
     setCartList(cartList.filter((item) => item.id !== id));
   }
 
+  function handleFulledCart() {
+    if (cartList.length !== 0) {
+      return setIsCartFull(true);
+    }
+
+    setIsCartFull(false);
+  }
+
   useEffect(() => {
     setIsMenuHidden(true);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (window.innerWidth <= 425) {
+      handleFulledCart();
+    }
+  }, [cartList]);
+
   return (
     <div className='app'>
       <Header
+        isCartFull={isCartFull}
         handleComponentVisible={handleComponentVisible}
         handleNavMenuVisible={handleNavMenuVisible}
       />
