@@ -1,7 +1,8 @@
 .extra-card {
   max-width: 100%;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 353px 1fr;
+  column-gap: 37px;
   margin-top: 32px;
 }
 
@@ -24,7 +25,6 @@
 
 .extra-card__info {
   max-width: 100%;
-  margin: 0 0 0 37px;
   display: flex;
   flex-direction: column;
 }
@@ -95,13 +95,13 @@
 }
 
 @media all and (max-width: 1024px) {
+  .extra-card {
+    grid-template-columns: 314px 1fr;
+  }
+
   .extra-card__img {
     width: 314px;
     height: 202px;
-  }
-
-  .extra-card__info {
-    margin-left: 15px;
   }
 
   .extra-card__container-price {
@@ -126,15 +126,13 @@
 @media all and (max-width: 768px) {
   .extra-card {
     margin-top: 34px;
+    grid-template-columns: 244px 1fr;
+    column-gap: 11px;
   }
 
   .extra-card__img {
     width: 244px;
     height: 154px;
-  }
-
-  .extra-card__info {
-    margin-left: 11px;
   }
 
   .extra-card__title {
@@ -168,9 +166,11 @@
 @media all and (max-width: 600px) {
   .extra-card {
     max-width: 400px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin: 34px auto 0 auto;
+    column-gap: 0;
   }
 
   .extra-card__img {
