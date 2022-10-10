@@ -298,7 +298,7 @@
   }
 
   .cart-result__container {
-    margin: 15px 16px;
+    margin: 15px 24px;
   }
 
   .cart-result__inputs-title {
@@ -356,6 +356,10 @@
 }
 
 @media all and (max-width: 425px) {
+  .cart-result__container {
+    margin: 15px 16px;
+  }
+
   .cart-result__btn {
     width: 100%;
   }

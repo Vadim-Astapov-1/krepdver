@@ -1,5 +1,5 @@
 .cart-form__container {
-  max-width: 100%;
+  max-width: 635px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -95,6 +95,115 @@
 
 .cart-form__btn:hover {
   background-color: #17B111;
-  background-image: none;
+  background-image: url(../../images/icon-arrow-cart-white.svg);
   color: #ffffff;
+}
+
+@media all and (max-width: 1024px) {
+  .cart-form__container {
+    max-width: 545px;
+  }
+
+  .cart-form__container-shorts {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px 25px;
+  }
+
+  .cart-form__container-longs {
+    margin-top: 10px;
+    row-gap: 10px;
+  }
+
+  .cart-form__input-name {
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  .cart-form__input {
+    font-size: 17px;
+    line-height: 21px;
+  }
+
+  .cart-form__error-message {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .cart-form__container {
+    max-width: 300px;
+  }
+
+  .cart-form__container-shorts {
+    grid-template-columns: minmax(200px, 1fr);
+    gap: 10px 25px;
+  }
+
+  .cart-form__container-longs {
+    margin-top: 10px;
+    row-gap: 10px;
+  }
+
+  .cart-form__input-name {
+    font-size: 17px;
+    line-height: 21px;
+  }
+
+  .cart-form__input {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .cart-form__error-message {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .cart-form__container {
+    max-width: 100%;
+    margin: 15px 24px 0 24px;
+  }
+
+  .cart-form__container-longs {
+    margin-top: 10px;
+    row-gap: 10px;
+  }
+
+  .cart-form__input-name {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .cart-form__input {
+    font-size: 15px;
+    line-height: 18px;
+    padding: 12px 10px;
+  }
+
+  .cart-form__error-message {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .cart-form__btn {
+    margin-top: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .cart-form__container-shorts {
+    grid-template-columns: 1fr;
+    gap: 10px 25px;
+  }
+
+  .cart-form__item-input {
+    max-width: 100%;
+  }
 }
