@@ -136,7 +136,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart, handl
 
   useEffect(() => {
     cartRef.current.scrollIntoView();
-  }, []);
+  }, [isSending]);
 
   useEffect(() => {
     handleSum(itemList);
