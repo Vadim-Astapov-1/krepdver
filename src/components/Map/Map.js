@@ -3,9 +3,14 @@ import './Map.css';
 
 function Map({ sectionRef }) {
   const [pointerEvents, setPointerEvents] = useState(false);
+  const [mapName, setMapName] = useState('Москва');
 
   function handlePointerEvents() {
     setPointerEvents(true);
+  }
+
+  function handleMapChange(evt) {
+    setMapName(evt.target.textContent);
   }
 
   return (
@@ -15,40 +20,69 @@ function Map({ sectionRef }) {
       </h2>
       <ul className='map__btn-list'>
         <li className='map__list-element'>
-          <button type='button' className='map__btn'>
+          <button type='button' className='map__btn' onClick={handleMapChange}>
             Москва
           </button>
         </li>
         <li className='map__list-element'>
-          <button type='button' className='map__btn'>
-            Санкт-Петербург
-          </button>
-        </li>
-        <li className='map__list-element'>
-          <button type='button' className='map__btn'>
+          <button type='button' className='map__btn' onClick={handleMapChange}>
             Тула
           </button>
         </li>
         <li className='map__list-element'>
-          <button type='button' className='map__btn'>
+          <button type='button' className='map__btn' onClick={handleMapChange}>
             Липецк
           </button>
         </li>
         <li className='map__list-element'>
-          <button type='button' className='map__btn'>
+          <button type='button' className='map__btn' onClick={handleMapChange}>
             Зерноград
           </button>
         </li>
       </ul>
       <div className='map__container' onClick={handlePointerEvents}>
-        <iframe
-          className='map__iframe'
-          style={{ pointerEvents: `${pointerEvents ? 'all' : 'none'}` }}
-          loading='lazy'
-          title='Москва'
-          src='https://yandex.ru/map-widget/v1/?um=constructor%3Ab66098a6adc4d19b07bd15b2420002590ce542672060a2079fe3bc4e72fc9c47&amp;source=constructor'
-          frameBorder='0'
-        ></iframe>
+        {mapName === 'Москва' ? (
+          <iframe
+            className='map__iframe'
+            style={{ pointerEvents: `${pointerEvents ? 'all' : 'none'}` }}
+            loading='lazy'
+            title='Москва'
+            src='https://yandex.ru/map-widget/v1/?um=constructor%3A586343654b27e5426353bb7e3b97af626573f6f23a43c4ed9ccb7d15cb432680&amp;source=constructor'
+            width='100%'
+            // height 400
+            frameBorder='0'
+          ></iframe>
+        ) : mapName === 'Тула' ? (
+          <iframe
+            className='map__iframe'
+            style={{ pointerEvents: `${pointerEvents ? 'all' : 'none'}` }}
+            loading='lazy'
+            title='Тула'
+            src='https://yandex.ru/map-widget/v1/?um=constructor%3Acb389a44088a6d40aec6a6eec9193ccc2cb6f9c286571d970c7f6e0c924e2a3c&amp;source=constructor'
+            width='100%'
+            frameBorder='0'
+          ></iframe>
+        ) : mapName === 'Липецк' ? (
+          <iframe
+            className='map__iframe'
+            style={{ pointerEvents: `${pointerEvents ? 'all' : 'none'}` }}
+            loading='lazy'
+            title='Липецк'
+            src='https://yandex.ru/map-widget/v1/?um=constructor%3A4a02724734df75e314637ad075f781c76bb3983fd8c416264638fea76e2e9d82&amp;source=constructor'
+            width='100%'
+            frameBorder='0'
+          ></iframe>
+        ) : mapName === 'Зерноград' ? (
+          <iframe
+            className='map__iframe'
+            style={{ pointerEvents: `${pointerEvents ? 'all' : 'none'}` }}
+            loading='lazy'
+            title='Зерноград'
+            src='https://yandex.ru/map-widget/v1/?um=constructor%3A4c3d87459f69b9439739ebbb2f68ca21e6a784dddc75c1c54cd6dd0125d2a85e&amp;source=constructor'
+            width='100%'
+            frameBorder='0'
+          ></iframe>
+        ) : null}
       </div>
     </section>
   );
