@@ -136,7 +136,7 @@
   }
 
   .cart-form__container-shorts {
-    grid-template-columns: minmax(200px, 1fr);
+    grid-template-columns: 1fr;
     gap: 10px 25px;
   }
 
@@ -161,6 +161,13 @@
   }
 }
 
+@media all and (max-width: 557px) {
+  .cart-form__input {
+    box-sizing: border-box;
+    width: 180px;
+  }
+}
+
 @media all and (max-width: 500px) {
   .cart-form__container {
     max-width: 100%;
@@ -178,6 +185,7 @@
   }
 
   .cart-form__input {
+    width: 100%;
     font-size: 15px;
     line-height: 18px;
     padding: 12px 10px;
