@@ -227,6 +227,7 @@
 
 @media all and (max-width: 768px) {
   .cart-result {
+    top: 20px;
     max-width: 230px;
   }
 
@@ -280,6 +281,7 @@
   }
 
   .cart-result__text {
+    margin-top: 10px;
     font-size: 12px;
     line-height: 15px;
   }

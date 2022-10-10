@@ -62,6 +62,10 @@ function App() {
     setCartList(cartList.filter((item) => item.id !== id));
   }
 
+  function handleClearCart() {
+    setCartList([]);
+  }
+
   function handleFulledCart() {
     if (cartList.length !== 0) {
       return setIsCartFull(true);
@@ -96,6 +100,7 @@ function App() {
               itemList={cartList}
               handleChangeCountItemCart={handleChangeCountItemCart}
               handleDeleteItemCart={handleDeleteItemCart}
+              handleClearCart={handleClearCart}
             />
           }
         ></Route>

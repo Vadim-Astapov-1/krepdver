@@ -9,7 +9,7 @@ import CartResult from '../CartResult/CartResult';
 import { emailApi } from '../../utils/EmailjsApi';
 import { Validation } from '../Validation/Validation';
 
-function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
+function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart, handleClearCart }) {
   const [isSending, setIsSending] = useState(false);
   const [isDelivery, setIsDelivery] = useState(500);
   const [sum, setSum] = useState(0);
@@ -122,6 +122,7 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart }) {
     emailApi
       .sendEmail(params)
       .then(() => {
+        handleClearCart();
         validation.resetForm();
       })
       .catch((err) => console.log(err));
