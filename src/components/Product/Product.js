@@ -53,6 +53,10 @@ function Product({
   }, [id]);
 
   useEffect(() => {
+    if (window.innerWidth <= 425) {
+      return window.scroll(0, 0);
+    }
+
     productRef.current.scrollIntoView();
   }, [id]);
 

@@ -135,6 +135,10 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart, handl
   }
 
   useEffect(() => {
+    if (window.innerWidth <= 425) {
+      return window.scroll(0, 0);
+    }
+
     cartRef.current.scrollIntoView();
   }, [isSending]);
 
