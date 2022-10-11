@@ -7,6 +7,7 @@
   right: 48px;
   background-color: transparent;
   transition: 0.3s ease-in;
+  z-index: 10;
 }
 
 .cart-btn::after {
@@ -18,7 +19,7 @@
   top: 5px;
   left: 5px;
   border-radius: 50%;
-  border: 2px solid #63A631;
+  border: 2px solid #17B111;
   background-color: #ffffff;
   background-image: url(../../images/cart_null.png);
   background-size: 50px 40px;
@@ -27,12 +28,13 @@
 }
 
 .cart-btn:hover {
-  background-color: #63A631;
-  box-shadow: 0 0 15px #63A631;
+  background-color: #17B111;
+  box-shadow: 0 0 15px #17B111;
 }
 
 .cart-btn_type_full::after {
   background-image: url(../../images/cart-full.png);
+  transition: 1s;
 }
 
 @media all and (max-width: 768px) {

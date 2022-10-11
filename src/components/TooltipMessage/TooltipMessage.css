@@ -1,0 +1,66 @@
+.tooltip-message {
+  position: fixed;
+  right: 60px;
+  bottom: 38px;
+  cursor: default;
+  overflow: hidden;
+}
+
+.tooltip-message__text {
+  width: 218px;
+  padding: 10px 55px 10px 10px;
+  border: 2px solid #17B111;
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #17B111;
+  transform: translateX(100%);
+  transition: 0.5s;
+}
+
+.tooltip-message__text_active {
+  transform: translateX(0);
+}
+
+@media all and (max-width: 768px) {
+  .tooltip-message {
+    bottom: 28px;
+  }
+
+  .tooltip-message__text {
+    max-width: 170px;
+    padding: 5px 10px 5px 5px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .tooltip-message {
+    width: 100%;
+    top: 57px;
+    right: 0;
+    bottom: auto;
+  }
+
+  .tooltip-message__text {
+    min-width: 100%;
+    margin: 0;
+    padding: 6px 0;
+    border: 0;
+    border-radius: 0;
+    background-color: #17B111;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    text-align: center;
+    transform: translateY(-100%);
+  }
+
+  .tooltip-message__text_active {
+    transform: translateY(0);
+  }
+}

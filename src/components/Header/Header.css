@@ -64,6 +64,7 @@
 
 .header__btn-cart_type_full {
   background-image: url('../../images/cart-full.png');
+  transition: 1s;
 }
 
 .header__link {

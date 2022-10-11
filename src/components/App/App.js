@@ -12,10 +12,12 @@ import NotFound from '../NotFound/NotFound';
 import CartButton from '../CartButton/CartButton';
 
 import { productsList } from '../../utils/productsList';
+import TooltipMessage from '../TooltipMessage/TooltipMessage';
 
 function App() {
   const [isCartFull, setIsCartFull] = useState(false);
   const [isMenuHidden, setIsMenuHidden] = useState(false);
+  const [isAddInCart, setIsAddInCart] = useState(false);
   const [cartList, setCartList] = useState([]);
   const location = useLocation();
 
@@ -32,6 +34,8 @@ function App() {
   }
 
   function handleCardSubmit(card) {
+    handleMessageAddingInCart();
+
     if (!cartList.some((item) => item.id === card.id)) {
       return setCartList([...cartList, card]);
     }
@@ -73,6 +77,12 @@ function App() {
     }
 
     setIsCartFull(false);
+  }
+
+  function handleMessageAddingInCart() {
+    setIsAddInCart(true);
+
+    setTimeout(() => setIsAddInCart(false), 1000);
   }
 
   useEffect(() => {
@@ -133,6 +143,7 @@ function App() {
       <Footer handleComponentVisible={handleComponentVisible} />
       <SideBar isHidden={isMenuHidden} handleNavMenuVisible={handleNavMenuVisible} />
       <CartButton isCartFull={isCartFull} />
+      <TooltipMessage isAddInCart={isAddInCart} />
     </div>
   );
 }
