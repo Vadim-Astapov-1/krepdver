@@ -60,7 +60,6 @@ function CartInputs({ handleIsSending, formValues, validation, handleChangeInput
             name='email'
             value={formValues.email}
             onChange={handleChangeInputs}
-            required
           ></input>
           <span className='cart-form__error-message'>{validation.errors.email}</span>
         </div>

@@ -35,7 +35,7 @@ export function Validation() {
       } else if (!regexNumber.test(value)) {
         setErrors({
           ...errors,
-          [name]: 'Поле может содержать только цифры.',
+          [name]: 'Поле может содержать только цифры и знак плюс.',
         });
         setIsValid(false);
       } else {
@@ -53,7 +53,8 @@ export function Validation() {
 
     if (name === 'email') {
       if (value === '') {
-        setErrors({ ...errors, [name]: 'Вы пропустили это поле.' });
+        setErrors({ ...errors, [name]: evt.target.validationMessage });
+        //setErrors({ ...errors, [name]: 'Вы пропустили это поле.' });
       } else if (!validator.isEmail(value)) {
         setErrors({ ...errors, [name]: 'Некорректный E-Mail.' });
       } else {
