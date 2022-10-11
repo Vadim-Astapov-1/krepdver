@@ -9,6 +9,7 @@ import Footer from '../Footer/Footer';
 import SideBar from '../SideBar/SideBar';
 import Cart from '../Cart/Cart';
 import NotFound from '../NotFound/NotFound';
+import CartButton from '../CartButton/CartButton';
 
 import { productsList } from '../../utils/productsList';
 
@@ -79,9 +80,7 @@ function App() {
   }, [location.pathname]);
 
   useEffect(() => {
-    if (window.innerWidth <= 425) {
-      handleFulledCart();
-    }
+    handleFulledCart();
   }, [cartList]);
 
   return (
@@ -92,7 +91,11 @@ function App() {
         handleNavMenuVisible={handleNavMenuVisible}
       />
       <Routes>
-        <Route exact path='/' element={<Main handleCardSubmit={handleCardSubmit} />} />
+        <Route
+          exact
+          path='/'
+          element={<Main isCartFull={isCartFull} handleCardSubmit={handleCardSubmit} />}
+        />
         <Route
           path='/cart'
           element={
@@ -129,6 +132,7 @@ function App() {
       </Routes>
       <Footer handleComponentVisible={handleComponentVisible} />
       <SideBar isHidden={isMenuHidden} handleNavMenuVisible={handleNavMenuVisible} />
+      <CartButton isCartFull={isCartFull} />
     </div>
   );
 }
