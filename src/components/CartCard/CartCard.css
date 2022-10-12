@@ -107,6 +107,7 @@
   background-size: cover;
   border: 0;
   cursor: pointer;
+  z-index: 1;
 }
 
 @media all and (max-width: 1024px) {
