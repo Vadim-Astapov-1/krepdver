@@ -31,15 +31,15 @@ function Main({ handleCardSubmit }) {
       case 'map':
         mapRef.current.scrollIntoView();
         break;
-      default:
-        window.scrollTo(0, 0);
     }
   }
 
   useEffect(() => {
     if (location.state !== null) {
-      handleScroll(location.state.scrollMain);
+      return handleScroll(location.state.scrollMain);
     }
+
+    window.scrollTo(0, 0);
   }, [location.state]);
 
   return (

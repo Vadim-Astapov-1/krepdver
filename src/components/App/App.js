@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -10,16 +10,21 @@ import SideBar from '../SideBar/SideBar';
 import Cart from '../Cart/Cart';
 import NotFound from '../NotFound/NotFound';
 import CartButton from '../CartButton/CartButton';
+import TooltipMessage from '../TooltipMessage/TooltipMessage';
+import Popup from '../Popup/Popup';
 
 import { productsList } from '../../utils/productsList';
-import TooltipMessage from '../TooltipMessage/TooltipMessage';
 
 function App() {
   const [isCartFull, setIsCartFull] = useState(false);
   const [isMenuHidden, setIsMenuHidden] = useState(false);
   const [isAddInCart, setIsAddInCart] = useState(false);
+  const [popupIsOpen, setPopupIsOpen] = useState(false);
+  const [popupTypeError, setPopupTypeError] = useState(false);
   const [cartList, setCartList] = useState([]);
+
   const location = useLocation();
+  const navigate = useNavigate();
 
   function handleNavMenuVisible() {
     if (isMenuHidden) {
@@ -31,6 +36,17 @@ function App() {
 
   function handleComponentVisible(routers, location) {
     return routers.some((item) => item === location.pathname);
+  }
+
+  function handlePopupOpen(isError) {
+    // fix -
+    setPopupTypeError(isError);
+    setPopupIsOpen(true);
+
+    setTimeout(() => {
+      setPopupIsOpen(false);
+      navigate('/');
+    }, 2000);
   }
 
   function handleCardSubmit(card) {
@@ -114,6 +130,7 @@ function App() {
               handleChangeCountItemCart={handleChangeCountItemCart}
               handleDeleteItemCart={handleDeleteItemCart}
               handleClearCart={handleClearCart}
+              handlePopupOpen={handlePopupOpen}
             />
           }
         ></Route>
@@ -144,6 +161,7 @@ function App() {
       <SideBar isHidden={isMenuHidden} handleNavMenuVisible={handleNavMenuVisible} />
       <CartButton isCartFull={isCartFull} />
       <TooltipMessage isAddInCart={isAddInCart} />
+      <Popup isOpen={popupIsOpen} isError={popupTypeError}/>
     </div>
   );
 }

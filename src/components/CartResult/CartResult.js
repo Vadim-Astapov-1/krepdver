@@ -66,12 +66,12 @@ function CartResult({
         >
           Оформить заказ
         </button>
-        {!isTypeSending && (
+        {/*!isTypeSending && (
           <p className='cart-result__text'>
             Нажимая на кнопку, вы даёте согласие на{' '}
             <span className='cart-result__text-allot'>обработку персональных данных</span>.
           </p>
-        )}
+        )*/}
       </div>
     </div>
   );
