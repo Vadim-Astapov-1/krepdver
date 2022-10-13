@@ -31,6 +31,8 @@ function Main({ handleCardSubmit }) {
       case 'map':
         mapRef.current.scrollIntoView();
         break;
+      default:
+        window.scrollTo(0, 0);
     }
   }
 

@@ -39,13 +39,14 @@ function App() {
   }
 
   function handlePopupOpen(isError) {
-    // fix -
     setPopupTypeError(isError);
     setPopupIsOpen(true);
 
     setTimeout(() => {
       setPopupIsOpen(false);
-      navigate('/');
+      if (!isError) {
+        navigate('/');
+      }
     }, 2000);
   }
 
@@ -161,7 +162,7 @@ function App() {
       <SideBar isHidden={isMenuHidden} handleNavMenuVisible={handleNavMenuVisible} />
       <CartButton isCartFull={isCartFull} />
       <TooltipMessage isAddInCart={isAddInCart} />
-      <Popup isOpen={popupIsOpen} isError={popupTypeError}/>
+      <Popup isOpen={popupIsOpen} isError={popupTypeError} />
     </div>
   );
 }

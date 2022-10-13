@@ -63,11 +63,15 @@ export function Validation() {
     }
   };
 
+  const handleIsValid = (boolean) => {
+    setIsValid(boolean);
+  };
+
   const resetForm = useCallback(() => {
     setValues({});
     setErrors({});
     setIsValid(false);
   }, [setValues, setErrors, setIsValid]);
 
-  return { errors, isValid, handleChangeInput, resetForm };
+  return { errors, isValid, handleChangeInput, handleIsValid, resetForm };
 }

@@ -10,6 +10,7 @@
   justify-content: center;
   visibility: hidden;
   opacity: 0;
+  transition: opacity 0.3s linear;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 11;
 }
@@ -17,7 +18,6 @@
 .popup_opened {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.3s linear;
 }
 
 .popup__container {

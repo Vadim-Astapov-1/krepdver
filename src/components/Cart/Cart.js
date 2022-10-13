@@ -9,7 +9,13 @@ import CartResult from '../CartResult/CartResult';
 import { emailApi } from '../../utils/EmailjsApi';
 import { Validation } from '../Validation/Validation';
 
-function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart, handleClearCart, handlePopupOpen }) {
+function Cart({
+  itemList,
+  handleChangeCountItemCart,
+  handleDeleteItemCart,
+  handleClearCart,
+  handlePopupOpen,
+}) {
   const [isSending, setIsSending] = useState(false);
   const [isDelivery, setIsDelivery] = useState(500);
   const [sum, setSum] = useState(0);
@@ -114,6 +120,8 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart, handl
       }.${date.getFullYear()}`,
     };
 
+    validation.handleIsValid(false);
+
     // Заполняем товарами
     list.forEach((item, index) => {
       params[`item${index}`] = item;
@@ -122,13 +130,17 @@ function Cart({ itemList, handleChangeCountItemCart, handleDeleteItemCart, handl
     emailApi
       .sendEmail(params)
       .then(() => {
-        handlePopupOpen();
+        handlePopupOpen(false);
       })
       .then(() => {
         handleClearCart();
         validation.resetForm();
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        handlePopupOpen(true);
+        validation.handleIsValid(true);
+        console.log(err);
+      });
   }
 
   function handleError() {
