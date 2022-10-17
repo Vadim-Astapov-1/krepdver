@@ -4,6 +4,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
+
+const paths = [
+  '/',
+  '/cart/',
+  '/product/1/',
+  '/product/2/',
+  '/product/3/',
+  '/product/4/',
+  '/product/5/',
+  '/product/6/',
+  '/product/7/',
+];
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
@@ -76,5 +89,6 @@ module.exports = {
     new RobotstxtPlugin({
       filePath: 'robots.txt',
     }),
+    new SitemapPlugin({ base: 'https://крепдвер.рф', paths: paths }),
   ],
 };
