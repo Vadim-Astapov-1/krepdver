@@ -4,6 +4,11 @@
   bottom: 38px;
   cursor: default;
   overflow: hidden;
+  visibility: hidden;
+}
+
+.tooltip-message_active {
+  visibility: visible;
 }
 
 .tooltip-message__text {
