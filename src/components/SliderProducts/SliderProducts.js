@@ -54,8 +54,9 @@ function SliderProducts({ productList }) {
       }
 
       if (window.innerWidth <= 425) {
+        let cardWidth = document.querySelector('.slider-card').clientWidth;
         setLastPosition(productList.length - 1);
-        setStep(listCardRef.current.offsetWidth);
+        setStep(cardWidth);
         return;
       }
     },
