@@ -61,7 +61,7 @@ function Main({ handleCardSubmit }) {
         ></meta>
         <meta property='og:type' content='website'></meta>
         <meta property='og:url' content={websiteLink}></meta>
-        <meta property='og:image' content={logo}></meta>
+        <meta property='og:image' content={websiteLink + logo}></meta>
         <meta property='og:image:width' content='310'></meta>
         <meta property='og:image:height' content='180'></meta>
         <title>Крепеж для установки межкомнатных дверей в Москве</title>

@@ -69,7 +69,7 @@ function Product({
           <meta property='og:description' content={description}></meta>
           <meta property='og:type' content='article'></meta>
           <meta property='og:url' content={`${websiteLink}${location.pathname}`}></meta>
-          <meta property='og:image' content={img}></meta>
+          <meta property='og:image' content={websiteLink + img}></meta>
           <meta property='og:image:width' content='400'></meta>
           <meta property='og:image:height' content='300'></meta>
           <title>{name}</title>
