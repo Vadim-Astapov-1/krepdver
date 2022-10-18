@@ -5,6 +5,7 @@ import Navigation from '../Navigation/Navigation';
 import CartCard from '../CartCard/CartCard';
 import CartInputs from '../CartInputs/CartInputs';
 import CartResult from '../CartResult/CartResult';
+import ConsentToGivingDataPopup from '../ConsentToGivingDataPopup/ConsentToGivingDataPopup';
 
 import { emailApi } from '../../utils/EmailjsApi';
 import { Validation } from '../Validation/Validation';
@@ -17,6 +18,7 @@ function Cart({
   handlePopupOpen,
 }) {
   const [isSending, setIsSending] = useState(false);
+  const [isConsentPopupOpen, setIsConsentPopupOpen] = useState(false);
   const [isDelivery, setIsDelivery] = useState(500);
   const [sum, setSum] = useState(0);
   const [isError, setIsError] = useState(false);
@@ -39,6 +41,10 @@ function Cart({
     }
 
     setIsSending(!isSending);
+  }
+
+  function handleConsentPopupOpen() {
+    setIsConsentPopupOpen(!isConsentPopupOpen);
   }
 
   function handleChangeInputs(evt) {
@@ -205,9 +211,11 @@ function Cart({
             isValid={validation.isValid}
             handleIsSending={handleIsSending}
             handleInputChangeDelivery={handleInputChangeDelivery}
+            handleConsentPopupOpen={handleConsentPopupOpen}
           />
         </form>
       </div>
+      <ConsentToGivingDataPopup isOpen={isConsentPopupOpen} handleConsentPopupOpen={handleConsentPopupOpen} />
     </section>
   );
 }

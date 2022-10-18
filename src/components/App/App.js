@@ -11,7 +11,7 @@ import Cart from '../Cart/Cart';
 import NotFound from '../NotFound/NotFound';
 import CartButton from '../CartButton/CartButton';
 import TooltipMessage from '../TooltipMessage/TooltipMessage';
-import Popup from '../Popup/Popup';
+import TooltipPopup from '../TooltipPopup/TooltipPopup';
 
 import { productsList } from '../../utils/productsList';
 
@@ -162,7 +162,7 @@ function App() {
       <SideBar isHidden={isMenuHidden} handleNavMenuVisible={handleNavMenuVisible} />
       <CartButton isCartFull={isCartFull} />
       <TooltipMessage isAddInCart={isAddInCart} />
-      <Popup isOpen={popupIsOpen} isError={popupTypeError} />
+      <TooltipPopup isOpen={popupIsOpen} isError={popupTypeError} />
     </div>
   );
 }

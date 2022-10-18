@@ -9,6 +9,7 @@ function CartResult({
   isValid,
   handleIsSending,
   handleInputChangeDelivery,
+  handleConsentPopupOpen,
 }) {
   return (
     <div className='cart-result'>
@@ -66,12 +67,15 @@ function CartResult({
         >
           Оформить заказ
         </button>
-        {/*!isTypeSending && (
+        {!isTypeSending && (
           <p className='cart-result__text'>
             Нажимая на кнопку, вы даёте согласие на{' '}
-            <span className='cart-result__text-allot'>обработку персональных данных</span>.
+            <span className='cart-result__text-allot' onClick={handleConsentPopupOpen}>
+              обработку персональных данных
+            </span>
+            .
           </p>
-        )*/}
+        )}
       </div>
     </div>
   );
