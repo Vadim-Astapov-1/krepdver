@@ -6,14 +6,19 @@
   border-radius: 20px;
   background-color: #ffffff;
   z-index: 12;
+  opacity: 0;
 }
 
 .popup-tooltip__container_type_success {
   border: 1px solid #17B111;
+  opacity: 1;
+  transition: 0.5s;
 }
 
 .popup-tooltip__container_type_error {
   border: 1px solid red;
+  opacity: 1;
+  transition: 0.5s;
 }
 
 .popup-tooltip__img {

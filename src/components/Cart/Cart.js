@@ -15,7 +15,8 @@ function Cart({
   handleChangeCountItemCart,
   handleDeleteItemCart,
   handleClearCart,
-  handlePopupOpen,
+  handlePopupLoader,
+  handlePopupIsError,
 }) {
   const [isSending, setIsSending] = useState(false);
   const [isConsentPopupOpen, setIsConsentPopupOpen] = useState(false);
@@ -133,17 +134,19 @@ function Cart({
       params[`item${index}`] = item;
     });
 
+    handlePopupLoader();
+
     emailApi
       .sendEmail(params)
       .then(() => {
-        handlePopupOpen(false);
+        handlePopupIsError(false);
       })
       .then(() => {
         handleClearCart();
         validation.resetForm();
       })
       .catch((err) => {
-        handlePopupOpen(true);
+        handlePopupIsError(true);
         validation.handleIsValid(true);
         console.log(err);
       });

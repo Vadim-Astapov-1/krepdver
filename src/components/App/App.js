@@ -20,7 +20,7 @@ function App() {
   const [isMenuHidden, setIsMenuHidden] = useState(false);
   const [isAddInCart, setIsAddInCart] = useState(false);
   const [popupIsOpen, setPopupIsOpen] = useState(false);
-  const [popupTypeError, setPopupTypeError] = useState(false);
+  const [popupTypeError, setPopupTypeError] = useState(null);
   const [cartList, setCartList] = useState([]);
 
   const location = useLocation();
@@ -38,9 +38,13 @@ function App() {
     return routers.some((item) => item === location.pathname);
   }
 
-  function handlePopupOpen(isError) {
-    setPopupTypeError(isError);
+  function handlePopupLoader() {
     setPopupIsOpen(true);
+    setPopupTypeError(null);
+  }
+
+  function handlePopupIsError(isError) {
+    setPopupTypeError(isError);
 
     setTimeout(() => {
       setPopupIsOpen(false);
@@ -131,7 +135,8 @@ function App() {
               handleChangeCountItemCart={handleChangeCountItemCart}
               handleDeleteItemCart={handleDeleteItemCart}
               handleClearCart={handleClearCart}
-              handlePopupOpen={handlePopupOpen}
+              handlePopupLoader={handlePopupLoader}
+              handlePopupIsError={handlePopupIsError}
             />
           }
         ></Route>
