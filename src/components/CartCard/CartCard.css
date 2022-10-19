@@ -16,7 +16,7 @@
 
 .cart-card__title {
   max-width: 100%;
-  min-height: 100%;
+  min-height: 63px;
   margin: 0;
   font-style: normal;
   font-weight: 700;
@@ -24,7 +24,7 @@
   line-height: 21px;
   color: #17B111;
   text-align: center;
-  cursor: pointer;
+  text-overflow: ellipsis;
 }
 
 .cart-card__img {
@@ -117,6 +117,7 @@
   }
 
   .cart-card__title {
+    min-height: 76px;
     font-size: 16px;
     line-height: 19px;
   }
@@ -153,6 +154,7 @@
   }
 
   .cart-card__title {
+    min-height: 64px;
     font-size: 13px;
     line-height: 16px;
   }
@@ -187,6 +189,7 @@
   }
 
   .cart-card__title {
+    min-height: 60px;
     font-size: 10px;
     line-height: 12px;
   }

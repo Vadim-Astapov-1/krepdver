@@ -20,7 +20,7 @@ function Cart({
 }) {
   const [isSending, setIsSending] = useState(false);
   const [isConsentPopupOpen, setIsConsentPopupOpen] = useState(false);
-  const [isDelivery, setIsDelivery] = useState(500);
+  const [isDelivery, setIsDelivery] = useState(300);
   const [sum, setSum] = useState(0);
   const [isError, setIsError] = useState(false);
   const cartRef = useRef();
@@ -80,9 +80,9 @@ function Cart({
 
   function handleInputChangeDelivery(evt) {
     if (evt.target.id === 'cart-result-input-door') {
-      setIsDelivery(300);
-    } else {
       setIsDelivery(500);
+    } else {
+      setIsDelivery(300);
     }
   }
 
