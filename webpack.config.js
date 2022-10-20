@@ -92,7 +92,7 @@ module.exports = {
       test: /\.js(\?.*)?$/i,
       exclude: /node_modules/,
       algorithm: 'gzip',
-      threshold: 8192,
+      threshold: 10240,
       minRatio: 0.8,
     }),
     new webpack.ids.HashedModuleIdsPlugin({
