@@ -89,7 +89,7 @@ module.exports = {
       filename: production ? '[name].[contenthash].css' : '[name].css',
     }),
     new CompressionPlugin({
-      test: /\.js(\?.*)?$/i,
+      test: /\.(js|css)$/i,
       exclude: /node_modules/,
       algorithm: 'gzip',
       threshold: 10240,
