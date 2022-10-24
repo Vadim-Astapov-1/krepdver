@@ -67,7 +67,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/i,
+        test: /\.(png|svg|jpg|gif)$/i,
+        exclude: /node_modules/,
+        type: production ? 'asset' : 'asset/resource',
+      },
+      {
+        test: /\.(woff(2)|eot|ttf|otf)?$/i,
         exclude: /node_modules/,
         type: production ? 'asset' : 'asset/resource',
       },
