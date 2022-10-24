@@ -22,9 +22,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode=development",
-    "pre-build": "webpack-dev-server --mode=production",
-    "build": "webpack --mode=production",
+    "start": "webpack-dev-server --node-env=development",
+    "build": "webpack --node-env=production",
     "react-start": "react-scripts start",
     "react-build": "react-scripts build",
     "test": "react-scripts test",

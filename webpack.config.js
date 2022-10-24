@@ -71,7 +71,7 @@ module.exports = {
         exclude: /node_modules/,
         type: production ? 'asset' : 'asset/resource',
         generator: {
-          filename: 'images/[hash][ext][query]',
+          filename: `images/${production ? '[name][ext]' : '[hash][ext][query]'}`,
         },
       },
       {
@@ -79,7 +79,7 @@ module.exports = {
         exclude: /node_modules/,
         type: production ? 'asset' : 'asset/resource',
         generator: {
-          filename: 'fonts/[hash][ext][query]',
+          filename: `fonts/${production ? '[name][ext]' : '[hash][ext][query]'}`,
         },
       },
     ],
