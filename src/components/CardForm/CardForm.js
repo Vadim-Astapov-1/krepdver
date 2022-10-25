@@ -9,6 +9,7 @@ function CardForm({ onSubmit, onBtnClick, count, type }) {
           className='card-form__btn-triangle'
           name={`${type}-btn-up`}
           onClick={onBtnClick}
+          aria-label='Увеличить количество товара'
         ></button>
         <p className='card-form__count'>{count}</p>
         <p className='card-form__count-text'>шт</p>
@@ -17,6 +18,7 @@ function CardForm({ onSubmit, onBtnClick, count, type }) {
           className='card-form__btn-triangle card-form__btn-triangle_type_under'
           name={`${type}-btn-under`}
           onClick={onBtnClick}
+          aria-label='Уменьшить количество товара'
         ></button>
       </div>
       <button type='submit' className='card-form__btn'>

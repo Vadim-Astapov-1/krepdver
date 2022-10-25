@@ -6,7 +6,11 @@ function CartButton({ isCartFull }) {
 
   return (
     location.pathname === '/' && (
-      <Link to='/cart' className={`cart-btn ${isCartFull ? 'cart-btn_type_full' : ''}`}></Link>
+      <Link
+        to='/cart'
+        className={`cart-btn ${isCartFull ? 'cart-btn_type_full' : ''}`}
+        aria-label='Переход в корзину'
+      ></Link>
     )
   );
 }
