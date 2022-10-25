@@ -1,5 +1,5 @@
 import './Description.css';
-import Link from 'react-scroll/modules/components/Link';
+import Button from 'react-scroll/modules/components/Link';
 
 import banner from '../../images/banner-short.png';
 
@@ -15,9 +15,9 @@ function Description() {
           Дверная коробка монтируется в проем любой готовности. Справиться даже новичок, подходит
           для самостоятельного монтажа!
         </p>
-        <Link className='description__link' to='complete-sets' smooth='true' duration={800}>
+        <Button type='button' className='description__link' to='complete-sets' smooth='true' duration={800}>
           Заказать прямо сейчас!
-        </Link>
+        </Button>
       </div>
       <img className='description__img' src={banner} alt='Баннер' title='Баннер'></img>
     </section>

@@ -89,6 +89,9 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: true,
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),
