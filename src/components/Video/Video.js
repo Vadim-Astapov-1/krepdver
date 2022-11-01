@@ -14,7 +14,7 @@ function Video({ sectionRef }) {
             frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
-            srcdoc="
+            srcDoc="
               <style>
                   body, .full {
                       width: 100%;
@@ -54,7 +54,7 @@ function Video({ sectionRef }) {
             frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
-            srcdoc="
+            srcDoc="
               <style>
                   body, .full {
                       width: 100%;
@@ -94,7 +94,7 @@ function Video({ sectionRef }) {
             frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
-            srcdoc="
+            srcDoc="
               <style>
                   body, .full {
                       width: 100%;
