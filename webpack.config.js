@@ -10,14 +10,14 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 const paths = [
   '/',
-  '/cart/',
-  '/product/1/',
-  '/product/2/',
-  '/product/3/',
-  '/product/4/',
-  '/product/5/',
-  '/product/6/',
-  '/product/7/',
+  '/cart',
+  '/product/1',
+  '/product/2',
+  '/product/3',
+  '/product/4',
+  '/product/5',
+  '/product/6',
+  '/product/7',
 ];
 
 let mode = 'development';
