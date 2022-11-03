@@ -1,5 +1,6 @@
 import './Cart.css';
 import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 import Navigation from '../Navigation/Navigation';
 import CartCard from '../CartCard/CartCard';
