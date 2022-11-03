@@ -12,6 +12,7 @@ function NotFound() {
     <div className='not-found'>
       <Helmet prioritizeSeoTags>
         <meta name='robots' content='noindex, nofollow' />
+        <meta name='prerender-status-code' content='404' />
         <title>Страница не найдена</title>
       </Helmet>
       <img className='not-found__img' src={iconNotFound} alt='Знак ошибки' title='Ошибка'></img>
