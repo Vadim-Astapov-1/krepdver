@@ -2,5 +2,5 @@ User-agent: *
 Allow: /
 Host: xn--b1adccv5aff.xn--p1ai
 
-Sitemap: https://крепдвер.рф/sitemap.xml
-Sitemap: http://крепдвер.рф/sitemap.xml
+Sitemap: https://xn--b1adccv5aff.xn--p1ai/sitemap.xml
+Sitemap: http://xn--b1adccv5aff.xn--p1ai/sitemap.xml
