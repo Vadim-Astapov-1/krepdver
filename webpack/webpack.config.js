@@ -4,9 +4,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const CompressionPlugin = require('compression-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const paths = [
   '/',
@@ -30,7 +30,7 @@ module.exports = {
   mode: production ? 'production' : 'development',
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: production ? '[name].[contenthash].js' : '[name].js',
     chunkFilename: production ? '[name].[contenthash].chunk.js' : '[name].chunk.js',
     clean: true,
@@ -50,7 +50,10 @@ module.exports = {
       {
         test: /\.(js|jsx)$/i,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]],
+        },
       },
       {
         test: /\.css$/i,
@@ -118,9 +121,9 @@ module.exports = {
     new WebpackManifestPlugin({
       fileName: 'manifest.json',
     }),
-    new RobotstxtPlugin({
-      filePath: 'robots.txt',
-    }),
     new SitemapPlugin({ base: 'https://крепдвер.рф', paths: paths }),
+    new CopyPlugin({
+      patterns: [{ from: './public/robots.txt', to: 'robots.txt' }],
+    }),
   ],
 };
