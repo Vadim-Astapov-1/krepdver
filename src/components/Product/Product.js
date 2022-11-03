@@ -64,6 +64,7 @@ function Product({
     <>
       <section className='product' ref={productRef}>
         <Helmet prioritizeSeoTags>
+          <link rel='canonical' href={`/product/${id}`}></link>
           <meta name='description' content={description}></meta>
           <meta property='og:title' content={name}></meta>
           <meta property='og:description' content={description}></meta>

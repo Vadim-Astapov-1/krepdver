@@ -174,6 +174,8 @@ function Cart({
   return (
     <section className='cart' ref={cartRef}>
       <Helmet prioritizeSeoTags>
+        <link rel='canonical' href='/cart'></link>
+        <meta name='description' content></meta>
         <title>Корзина</title>
       </Helmet>
       <Navigation />
