@@ -47,7 +47,7 @@ function Main({ handleCardSubmit }) {
   return (
     <main className='content'>
       <Helmet prioritizeSeoTags>
-        <link rel='canonical' href='/'></link>
+        <link rel='canonical' href={window.location.href}></link>
         <meta
           name='description'
           content='Специальные монтажные комплекты для профессиональной установки межкомнатных дверей. Дверная коробка монтируется в проем любой готовности. Подходит для самостоятельного монтажа!'
