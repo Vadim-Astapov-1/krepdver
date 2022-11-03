@@ -172,6 +172,9 @@ function Cart({
 
   return (
     <section className='cart' ref={cartRef}>
+      <Helmet prioritizeSeoTags>
+        <title>Корзина</title>
+      </Helmet>
       <Navigation />
       <div className='cart__container'>
         <h1 className='cart__title'>{!isSending ? 'Корзина' : 'Оформление заказа'}</h1>
@@ -218,7 +221,10 @@ function Cart({
           />
         </form>
       </div>
-      <ConsentToGivingDataPopup isOpen={isConsentPopupOpen} handleConsentPopupOpen={handleConsentPopupOpen} />
+      <ConsentToGivingDataPopup
+        isOpen={isConsentPopupOpen}
+        handleConsentPopupOpen={handleConsentPopupOpen}
+      />
     </section>
   );
 }

@@ -10,7 +10,8 @@ function NotFound() {
 
   return (
     <div className='not-found'>
-      <Helmet>
+      <Helmet prioritizeSeoTags>
+        <meta name='robots' content='noindex, nofollow' />
         <title>Страница не найдена</title>
       </Helmet>
       <img className='not-found__img' src={iconNotFound} alt='Знак ошибки' title='Ошибка'></img>
