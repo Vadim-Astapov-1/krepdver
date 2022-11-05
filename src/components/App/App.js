@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -15,13 +16,16 @@ import TooltipPopup from '../TooltipPopup/TooltipPopup';
 
 import { productsList } from '../../utils/productsList';
 
+import { cartListSelector, addItemCart } from '../../store/slices/cartListSlice';
+
 function App() {
   const [isCartFull, setIsCartFull] = useState(false);
   const [isMenuHidden, setIsMenuHidden] = useState(false);
   const [isAddInCart, setIsAddInCart] = useState(false);
   const [popupIsOpen, setPopupIsOpen] = useState(false);
   const [popupTypeError, setPopupTypeError] = useState(null);
-  const [cartList, setCartList] = useState([]);
+  const cartList = useSelector(cartListSelector.getCartList);
+  const dispatch = useDispatch();
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -56,40 +60,7 @@ function App() {
 
   function handleCardSubmit(card) {
     handleMessageAddingInCart();
-
-    if (!cartList.some((item) => item.id === card.id)) {
-      return setCartList([...cartList, card]);
-    }
-
-    setCartList(
-      cartList.map((item) => {
-        if (item.id === card.id) {
-          return { ...item, count: item.count + card.count };
-        }
-
-        return item;
-      })
-    );
-  }
-
-  function handleChangeCountItemCart(id, counts) {
-    setCartList(
-      cartList.map((item) => {
-        if (item.id === id) {
-          return { ...item, count: counts };
-        }
-
-        return item;
-      })
-    );
-  }
-
-  function handleDeleteItemCart(id) {
-    setCartList(cartList.filter((item) => item.id !== id));
-  }
-
-  function handleClearCart() {
-    setCartList([]);
+    dispatch(addItemCart(card));
   }
 
   function handleFulledCart() {
@@ -130,14 +101,7 @@ function App() {
         <Route
           path='/cart'
           element={
-            <Cart
-              itemList={cartList}
-              handleChangeCountItemCart={handleChangeCountItemCart}
-              handleDeleteItemCart={handleDeleteItemCart}
-              handleClearCart={handleClearCart}
-              handlePopupLoader={handlePopupLoader}
-              handlePopupIsError={handlePopupIsError}
-            />
+            <Cart handlePopupLoader={handlePopupLoader} handlePopupIsError={handlePopupIsError} />
           }
         ></Route>
         {productsList.map((item) => (

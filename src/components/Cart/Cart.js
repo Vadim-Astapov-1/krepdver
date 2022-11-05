@@ -1,6 +1,7 @@
 import './Cart.css';
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Navigation from '../Navigation/Navigation';
 import CartCard from '../CartCard/CartCard';
@@ -11,14 +12,11 @@ import ConsentToGivingDataPopup from '../ConsentToGivingDataPopup/ConsentToGivin
 import { emailApi } from '../../utils/EmailjsApi';
 import { Validation } from '../Validation/Validation';
 
-function Cart({
-  itemList,
-  handleChangeCountItemCart,
-  handleDeleteItemCart,
-  handleClearCart,
-  handlePopupLoader,
-  handlePopupIsError,
-}) {
+import { cartListSelector, clearCart } from '../../store/slices/cartListSlice';
+
+function Cart({ handlePopupLoader, handlePopupIsError }) {
+  const cartList = useSelector(cartListSelector.getCartList);
+  const dispatch = useDispatch();
   const [isSending, setIsSending] = useState(false);
   const [isConsentPopupOpen, setIsConsentPopupOpen] = useState(false);
   const [isDelivery, setIsDelivery] = useState(300);
@@ -38,7 +36,7 @@ function Cart({
   let validation = Validation();
 
   function handleIsSending() {
-    if (itemList.length === 0) {
+    if (cartList.length === 0) {
       return handleError();
     }
 
@@ -47,6 +45,10 @@ function Cart({
 
   function handleConsentPopupOpen() {
     setIsConsentPopupOpen(!isConsentPopupOpen);
+  }
+
+  function handleClearCart() {
+    dispatch(clearCart());
   }
 
   function handleChangeInputs(evt) {
@@ -100,7 +102,7 @@ function Cart({
   function handleFormSubmit(evt) {
     evt.preventDefault();
 
-    let list = itemList.map(
+    let list = cartList.map(
       (item) =>
         `Арт. ${item.article} ${item.name.split(item.article)[0]} ${item.count} шт, цена ${
           item.price
@@ -168,8 +170,8 @@ function Cart({
   }, [isSending]);
 
   useEffect(() => {
-    handleSum(itemList);
-  }, [itemList]);
+    handleSum(cartList);
+  }, [cartList]);
 
   return (
     <section className='cart' ref={cartRef}>
@@ -183,9 +185,9 @@ function Cart({
         <h1 className='cart__title'>{!isSending ? 'Корзина' : 'Оформление заказа'}</h1>
         <form className='cart__form' onSubmit={handleFormSubmit} noValidate>
           {!isSending ? (
-            itemList.length !== 0 ? (
+            cartList.length !== 0 ? (
               <div className='cart__card-list'>
-                {itemList.map((item) => (
+                {cartList.map((item) => (
                   <CartCard
                     key={item.id}
                     id={item.id}
@@ -193,8 +195,6 @@ function Cart({
                     count={item.count}
                     price={item.price}
                     img={item.img}
-                    handleChangeCountItemCart={handleChangeCountItemCart}
-                    handleDeleteItemCart={handleDeleteItemCart}
                   />
                 ))}
               </div>

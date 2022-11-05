@@ -1,16 +1,12 @@
 import './CartCard.css';
+import { useDispatch } from 'react-redux';
 
 import { Pricing } from '../Pricing/Pricing';
 
-function CartCard({
-  id,
-  name,
-  count,
-  price,
-  img,
-  handleChangeCountItemCart,
-  handleDeleteItemCart,
-}) {
+import { deleteItemCart, changeCountItemCart } from '../../store/slices/cartListSlice';
+
+function CartCard({ id, name, count, price, img }) {
+  const dispatch = useDispatch();
   // Добавление функции extraChangeCounter для отслеживания без асинхронности.
   // Решило проблему беспонечного рендеринка - при обновлении основного хранилища корзины,
   // за ним обновлялось pricing.countProduct.
@@ -22,11 +18,11 @@ function CartCard({
   });
 
   function onDeleteCard() {
-    handleDeleteItemCart(id);
+    dispatch(deleteItemCart(id));
   }
 
   function onChangeCount(count) {
-    handleChangeCountItemCart(id, count);
+    dispatch(changeCountItemCart({ id, count }));
   }
 
   return (

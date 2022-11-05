@@ -7,10 +7,20 @@ function Navigation() {
   return (
     <div className='navigation'>
       <nav className='navigation__container'>
-        <Link to='/' className={`navigation__link ${location.pathname !== '/cart' ? 'navigation__link_active' : ''}`}>
+        <Link
+          to='/'
+          className={`navigation__link ${
+            location.pathname !== '/cart' ? 'navigation__link_active' : ''
+          }`}
+        >
           Главная
         </Link>
-        <Link to='/cart' className={`navigation__link ${location.pathname === '/cart' ? 'navigation__link_active' : ''}`}>
+        <Link
+          to='/cart'
+          className={`navigation__link ${
+            location.pathname === '/cart' ? 'navigation__link_active' : ''
+          }`}
+        >
           Корзина
         </Link>
         <Link to='/' className='navigation__link' state={{ scrollMain: 'complete-sets' }}>

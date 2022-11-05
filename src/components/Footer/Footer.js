@@ -30,11 +30,21 @@ function Footer({ handleComponentVisible }) {
           <div className='footer__columns'>
             <nav className='footer__column-links'>
               <a className='footer__link' href='#/' target='_blank'>
-                <img className='footer__img-link' src={youtube} alt='Иконка ютуб' title='WhatsApp'></img>
+                <img
+                  className='footer__img-link'
+                  src={youtube}
+                  alt='Иконка ютуб'
+                  title='WhatsApp'
+                ></img>
                 <p className='footer__text-link'> Youtube</p>
               </a>
               <a className='footer__link' href='#/' target='_blank'>
-                <img className='footer__img-link' src={whatsapp} alt='Иконка ватсапп' title='Youtube'></img>
+                <img
+                  className='footer__img-link'
+                  src={whatsapp}
+                  alt='Иконка ватсапп'
+                  title='Youtube'
+                ></img>
                 <p className='footer__text-link'> Whatsapp</p>
               </a>
             </nav>
